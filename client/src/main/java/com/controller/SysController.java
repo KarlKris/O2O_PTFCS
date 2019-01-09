@@ -19,6 +19,8 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -111,6 +113,18 @@ public class SysController extends BaseController {
             System.out.println("获取验证码异常：" + e.getMessage());
         }
 
+    }
+
+    @RequestMapping(path = "/getCity.do")
+    @ResponseBody
+    public List getCity(){
+        System.out.println("正在获取城市信息。。。。");
+        List<String> list=new ArrayList();
+        list.add("广州");
+        list.add("深圳");
+        list.add("珠海");
+        list.add("中山");
+        return list;
     }
 
 
