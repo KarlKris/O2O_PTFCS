@@ -22,8 +22,8 @@
           <element id="library" level="project" name="Maven: org.apache.shiro:shiro-event:1.4.0" />
           <element id="library" level="project" name="Maven: org.apache.shiro:shiro-spring:1.4.0" />
           <element id="library" level="project" name="Maven: org.apache.shiro:shiro-web:1.4.0" />
-          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-core:2.9.4" />
-          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.9.4" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-core:2.9.8" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.9.8" />
           <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.9.0" />
           <element id="library" level="project" name="Maven: org.springframework:spring-core:4.3.18.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-test:4.3.18.RELEASE" />

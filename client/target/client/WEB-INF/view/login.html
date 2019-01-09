@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en" >
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v3.8.5">
+    <title>Login</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.1.0/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/popper.js/1.12.5/umd/popper.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/4.1.0/js/bootstrap.min.js"></script>
+    <script src="static/js/md5.js" type="text/javascript"  async defer></script>
+    <script type="text/javascript" charset="utf-8" async defer>
+        $(document).ready(function(){
+            $(".vcode").click(function() {
+                /* Act on the event */
+                // 加时间戳才能实现更换验证码图
+                var date = new Date().getTime();
+                $(".vcode").attr('src', 'getGIFCode.do?'+date);
+            });
+
+            $(".submit").click(function() {
+                /* Act on the event */
+                var phone=$("#inputPhone").val();
+                var psw=$("#inputPassword").val();
+                var vc=$(".vc").val();
+                var rem=$(".rememberMe").is(":checked");
+                var data={
+                    phone:phone,
+                    psw  :psw,
+                    verificationCode:vc,
+                    rem:rem
+                };
+                console.log(data);
+                $.post('login.do', data, function(msg) {
+                    /*optional stuff to do after success */
+                    console.log(msg);
+                    if(msg.status){
+                        alert("success");
+                        location='index.html';
+
+                    }else{
+                     alert(msg.message);
+                 }
+             });
+            });
+
+        });
+
+    </script>
+
+    <style>
+    .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+    }
+
+    @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+            font-size: 3.5rem;
+        }
+    }
+</style>
+<!-- Custom styles for this template -->
+<link href="static/css/signin.css" rel="stylesheet">
+</head>
+<body class="text-center">
+    <form class="form-signin" >
+        <img class="mb-4" src="static/images/bootstrap-solid.svg" alt="" width="72" height="72">
+        <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+        <label for="inputEmail" class="sr-only">Phone</label>
+        <input type="tel" id="inputPhone" class="form-control" placeholder="手机号码" name="phone" required autofocus>
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input type="password" id="inputPassword" class="form-control" placeholder="密码" name="psw" required autocomplete >
+
+        <div class="input-group mb-3">
+            <input type="text" class="form-control vc" placeholder="验证码" name="verificationCode" required>
+            <div class="input-group-prepend">
+              <img src="getGIFCode.do" alt="yanzhengma" class="vcode">
+          </div>
+      </div>
+
+      <div class="checkbox mb-3">
+        <label>
+            <input type="checkbox"  class="rememberMe"> Remember me
+        </label>
+        <label><a href="#" >Forget password?</a></label>
+    </div>
+    <button class="btn btn-lg btn-primary btn-block submit" type="button">登录</button>
+    <p class="mt-5 mb-3 text-muted">&copy; 2018-2019</p>
+</form>
+</body>
+</html>
