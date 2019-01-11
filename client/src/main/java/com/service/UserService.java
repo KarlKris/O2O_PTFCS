@@ -15,6 +15,12 @@ public class UserService implements BaseService{
     @Autowired
     UserMapper userMapper;
 
+    /**查询用户表不需要返回大量信息**/
+    @Override
+    public Object findSome() {
+        return null;
+    }
+
     @Override
     public Object selectOne(String id) {
         return null;

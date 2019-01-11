@@ -1,293 +1,389 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
-  <head>
+<head>
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="">
+	<meta name="author" content="">
 
-    <title>大学生兼职家教--为你的生活增添色彩</title>
+	<title>大学生兼职家教--为你的生活增添色彩</title>
 
-    <!-- Bootstrap core CSS -->
-    <link href="static/htmlTemplates/index/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<!-- Bootstrap core CSS -->
+	<link href="static/htmlTemplates/index/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Custom fonts for this template -->
-    <link href="static/htmlTemplates/index/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+	<!-- Custom fonts for this template -->
+	<link href="static/htmlTemplates/index/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
 
-    <!-- Plugin CSS -->
-    <link href="static/htmlTemplates/index/vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
+	<!-- Plugin CSS -->
+	<link href="static/htmlTemplates/index/vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
 
-    <!-- Custom styles for this template -->
-    <link href="static/htmlTemplates/index/css/creative.min.css" rel="stylesheet">
+	<!-- Custom styles for this template -->
+	<link href="static/htmlTemplates/index/css/creative.min.css" rel="stylesheet">
 
-  </head>
+	<!-- Custom styles for this template -->
+	<link href="static/htmlTemplates/index/css/jquery-ui.css" rel="stylesheet">
 
-  <body id="page-top">
+	<!-- Index styles for this template -->
+	<link href="static/css/index.css" rel="stylesheet">
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
-      <div class="container">
-      	<!-- -->
-        <a class="navbar-brand js-scroll-trigger" href="#page-top">大学生兼职家教</a>
-        <!--城市选择 -->
-        <div class="dropdown">
-        	<button type="button" class="btn btn-light dropdown-toggle city" data-toggle="dropdown" style="background: local;">
-        		广州
-        	</button>
-        	<div class="dropdown-menu city-name" style="min-width: auto;">
-        	</div>
-        </div>
+	<!--vue.js必须在Jquery.js之上 -->
+	<script src="static/js/vue.js"></script>
+	<!--Vue 要实现异步加载需要使用到 vue-resource 库。 -->
+	<script src="https://cdn.staticfile.org/vue-resource/1.5.1/vue-resource.min.js"></script>
 
-        <!--导航++++回到页顶 -->
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <!--滚动监听 -->
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#findteacher">招家教</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#findwork">找家教</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#thanks">成功案例</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#contact">反馈</a>
-            </li>
-          </ul>
-        </div>
+</head>
 
-        <!--登陆注册或用户名 -->
-        <div class="userOr">
-        	<a href="login.html" >登陆</a>
-        	<a href="register.html" >注册</a>
-        </div>
+<body id="page-top"><div class="maxDiv">
 
-      </div>
-    </nav>
+	<!-- Navigation -->
+	<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+		<div class="container">
+			<!-- -->
+			<a class="navbar-brand js-scroll-trigger" href="#page-top">大学生兼职家教</a>
+			<!--城市选择 -->
+			<div class="dropdown" >
+				<button type="button" class="btn btn-light dropdown-toggle city" data-toggle="dropdown" style="background: local;">广州</button>
+				<div class="dropdown-menu city-name" style="min-width: auto;">
+					<a class="dropdown-item"  v-for="city in cities" v-on:click="setCity($event)" v-if="cities!=0">{{city}}</a>
+				</div>
+			</div>
 
-    <header class="masthead text-center text-white d-flex">
-      <div class="container my-auto">
-        <div class="row">
-          <!--页顶标题 -->
-          <div class="col-lg-10 mx-auto">
-            <h1 class="text-uppercase">
-              <strong>工作好 选择多 上手快</strong>
-            </h1>
-          </div>
-          <!--页顶内容 搜索框-->
-          <div class="col-lg-8 mx-auto">
-          	<div class="input-group mb-3">
-          		<input type="text" class="form-control" placeholder="关键词">
-          		<div class="input-group-append">
-          			<button type="button" class="btn btn-primary">搜    索</button>
-          		</div>
-          	</div>
-          </div>
+			<!--导航++++回到页顶 -->
+			<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<!--滚动监听 -->
+			<div class="collapse navbar-collapse" id="navbarResponsive">
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item">
+						<a class="nav-link js-scroll-trigger" href="#findteacher">招家教</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link js-scroll-trigger" href="#findwork">找家教</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link js-scroll-trigger" href="#thanks">成功案例</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link js-scroll-trigger" href="#contact">反馈</a>
+					</li>
+				</ul>
+			</div>
 
-        </div>
-      </div>
-    </header>
+			<!--登陆注册或用户名 -->
+			<div class="userOr">
+				<a href="login.html" >登陆</a>
+				<a href="register.html" >注册</a>
+			</div>
 
-    <section class="bg-primary" id="findteacher">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-8 mx-auto text-center">
-            <h2 class="section-heading text-white">We've got what you need!</h2>
-            <hr class="light my-4">
-            <p class="text-faded mb-4">Start Bootstrap has everything you need to get your new website up and running in no time! All of the templates and themes on Start Bootstrap are open source, free to download, and easy to use. No strings attached!</p>
-            <a class="btn btn-light btn-xl js-scroll-trigger" href="#findwork">Get Started!</a>
-          </div>
-        </div>
-      </div>
-    </section>
+		</div>
+	</nav>
 
-    <section id="findwork">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12 text-center">
-            <h2 class="section-heading">At Your Service</h2>
-            <hr class="my-4">
-          </div>
-        </div>
-      </div>
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-3 col-md-6 text-center">
-            <div class="service-box mt-5 mx-auto">
-              <i class="fas fa-4x fa-gem text-primary mb-3 sr-icon-1"></i>
-              <h3 class="mb-3">Sturdy Templates</h3>
-              <p class="text-muted mb-0">Our templates are updated regularly so they don't break.</p>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6 text-center">
-            <div class="service-box mt-5 mx-auto">
-              <i class="fas fa-4x fa-paper-plane text-primary mb-3 sr-icon-2"></i>
-              <h3 class="mb-3">Ready to Ship</h3>
-              <p class="text-muted mb-0">You can use this theme as is, or you can make changes!</p>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6 text-center">
-            <div class="service-box mt-5 mx-auto">
-              <i class="fas fa-4x fa-code text-primary mb-3 sr-icon-3"></i>
-              <h3 class="mb-3">Up to Date</h3>
-              <p class="text-muted mb-0">We update dependencies to keep things fresh.</p>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6 text-center">
-            <div class="service-box mt-5 mx-auto">
-              <i class="fas fa-4x fa-heart text-primary mb-3 sr-icon-4"></i>
-              <h3 class="mb-3">Made with Love</h3>
-              <p class="text-muted mb-0">You have to make your websites with love these days!</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+	<header class="masthead text-center text-white d-flex">
+		<div class="container my-auto">
+			<div class="row">
+				<!--页顶标题 -->
+				<div class="col-lg-10 mx-auto">
+					<h1 class="text-uppercase">
+						<strong>工作好 选择多 上手快</strong>
+					</h1>
+				</div>
+				<!--页顶内容 搜索框-->
+				<div class="col-lg-8 mx-auto">
+					<div class="input-group mb-3">
+						<input type="text" class="form-control" placeholder="关键词">
+						<div class="input-group-append">
+							<button type="button" class="btn btn-primary">搜    索</button>
+						</div>
+					</div>
+				</div>
 
-    <section class="p-0" id="thanks">
-      <div class="container-fluid p-0">
-        <div class="row no-gutters popup-gallery">
-          <div class="col-lg-4 col-sm-6">
-            <a class="portfolio-box" href="static/htmlTemplates/index/img/portfolio/fullsize/1.jpg">
-              <img class="img-fluid" src="static/htmlTemplates/index/img/portfolio/thumbnails/1.jpg" alt="">
-              <div class="portfolio-box-caption">
-                <div class="portfolio-box-caption-content">
-                  <div class="project-category text-faded">
-                    Category
-                  </div>
-                  <div class="project-name">
-                    Project Name
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-          <div class="col-lg-4 col-sm-6">
-            <a class="portfolio-box" href="static/htmlTemplates/index/img/portfolio/fullsize/2.jpg">
-              <img class="img-fluid" src="static/htmlTemplates/index/img/portfolio/thumbnails/2.jpg" alt="">
-              <div class="portfolio-box-caption">
-                <div class="portfolio-box-caption-content">
-                  <div class="project-category text-faded">
-                    Category
-                  </div>
-                  <div class="project-name">
-                    Project Name
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-          <div class="col-lg-4 col-sm-6">
-            <a class="portfolio-box" href="static/htmlTemplates/index/img/portfolio/fullsize/3.jpg">
-              <img class="img-fluid" src="static/htmlTemplates/index/img/portfolio/thumbnails/3.jpg" alt="">
-              <div class="portfolio-box-caption">
-                <div class="portfolio-box-caption-content">
-                  <div class="project-category text-faded">
-                    Category
-                  </div>
-                  <div class="project-name">
-                    Project Name
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-          <div class="col-lg-4 col-sm-6">
-            <a class="portfolio-box" href="static/htmlTemplates/index/img/portfolio/fullsize/4.jpg">
-              <img class="img-fluid" src="static/htmlTemplates/index/img/portfolio/thumbnails/4.jpg" alt="">
-              <div class="portfolio-box-caption">
-                <div class="portfolio-box-caption-content">
-                  <div class="project-category text-faded">
-                    Category
-                  </div>
-                  <div class="project-name">
-                    Project Name
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-          <div class="col-lg-4 col-sm-6">
-            <a class="portfolio-box" href="static/htmlTemplates/index/img/portfolio/fullsize/5.jpg">
-              <img class="img-fluid" src="static/htmlTemplates/index/img/portfolio/thumbnails/5.jpg" alt="">
-              <div class="portfolio-box-caption">
-                <div class="portfolio-box-caption-content">
-                  <div class="project-category text-faded">
-                    Category
-                  </div>
-                  <div class="project-name">
-                    Project Name
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-          <div class="col-lg-4 col-sm-6">
-            <a class="portfolio-box" href="static/htmlTemplates/index/img/portfolio/fullsize/6.jpg">
-              <img class="img-fluid" src="static/htmlTemplates/index/img/portfolio/thumbnails/6.jpg" alt="">
-              <div class="portfolio-box-caption">
-                <div class="portfolio-box-caption-content">
-                  <div class="project-category text-faded">
-                    Category
-                  </div>
-                  <div class="project-name">
-                    Project Name
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
+			</div>
+		</div>
+	</header>
 
-    <section id="contact">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-8 mx-auto text-center">
-            <h2 class="section-heading">Let's Get In Touch!</h2>
-            <hr class="my-4">
-            <p class="mb-5">Ready to start your next project with us? That's great! Give us a call or send us an email and we will get back to you as soon as possible!</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-lg-4 ml-auto text-center">
-            <i class="fas fa-phone fa-3x mb-3 sr-contact-1"></i>
-            <p>123-456-6789</p>
-          </div>
-          <div class="col-lg-4 mr-auto text-center">
-            <i class="fas fa-envelope fa-3x mb-3 sr-contact-2"></i>
-            <p>
-              <a href="mailto:your-email@your-domain.com">feedback@startbootstrap.com</a>
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
+	<section class="bg-primary" id="findteacher" style="padding: 2rem 0;">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12 mx-auto " style="padding: 0;">
+					<!--找家教标题信息 -->
+					<div class="card">
+						<div class="card-body" style="font-size: x-large;padding: 1rem;">高薪招家教
+							<span>
+								<span></span>
+							</span>
+							<span class="icon-e"><a href="#" >更多</a>
+								<span class="ui-icon ui-icon-carat-1-sw"></span>
+							</span>
+						</div> 
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="row workMsg">
 
-    <!-- Bootstrap core JavaScript -->
-    <script src="static/htmlTemplates/index/vendor/jquery/jquery.min.js"></script>
-    <script src="static/htmlTemplates/index/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+				<div class="card col-lg-3 col-md-6" v-if='data.length==0'>
+					<div class="card-body padding-left  padding-top">
+						暂时没有满足条件的招聘信息
+					</div>
+				</div>
 
-    <!-- Plugin JavaScript -->
-    <script src="static/htmlTemplates/index/vendor/jquery-easing/jquery.easing.min.js"></script>
-    <script src="static/htmlTemplates/index/vendor/scrollreveal/scrollreveal.min.js"></script>
-    <script src="static/htmlTemplates/index/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+				<div class="card col-lg-3 col-md-6" v-for="msg in data" v-if='data.length!=0'>
+					<div class="card-body padding-left">
+						<div style="padding-bottom: inherit;">
+							<span class="ui-icon  ui-icon-grip-solid-vertical"></span>家教
+						</div>
+						<div>
+							<span class="workTitle">{{msg.title}}</span>
+							<div class="workDetail">
+								<span class="shuxian">{{msg.course[0].name}}</span>
+								<span class="shuxian">{{msg.address.city.cityArea}}</span>
+								<span class="shuxian last">1人</span>
+							</div>
+						</div> 
+						<div>
+							<span>{{msg.money}}元/小时  
+								<span class="pay">日结</span>
+							</span>
+						</div>
+					</div>
+				</div>
 
-    <!-- Custom scripts for this template -->
-    <script src="static/htmlTemplates/index/js/creative.min.js"></script>
+				<div class="card col-lg-3 col-md-6" v-if='0<data.length<4'>
+					<div class="card-body padding-left padding-top">
+						暂时只有这些满足条件的招聘信息
+					</div>
+				</div>
 
-    <!-- Custom scripts for this template -->
-    <script src="static/js/index.js"></script>
 
-  </body>
+
+			</div>
+		</div>
+	</section>
+
+	<section class="bg-primary" id="findwork" style="padding: 2rem 0;">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12 mx-auto " style="padding: 0;">
+					<!--找家教标题信息 -->
+					<div class="card">
+						<div class="card-body" style="font-size: x-large;padding: 1rem;">大学生找工作
+							<span class="icon-e"><a href="#" >更多</a>
+								<span class="ui-icon ui-icon-carat-1-sw"></span>
+							</span>
+						</div> 
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="row workMsg">
+				<div class="card col-lg-3 col-md-6">
+					<div class="card-body">内容</div> 
+				</div>
+				<div class="card col-lg-3 col-md-6">
+					<div class="card-body">内容</div> 
+				</div>
+				<div class="card col-lg-3 col-md-6">
+					<div class="card-body">内容</div> 
+				</div>
+				<div class="card col-lg-3 col-md-6">
+					<div class="card-body">内容</div> 
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section id="thanks">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12 text-center">
+					<h2 class="section-heading">At Your Service</h2>
+					<hr class="my-4">
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-3 col-md-6 text-center">
+					<div class="service-box mt-5 mx-auto">
+						<i class="fas fa-4x fa-gem text-primary mb-3 sr-icon-1"></i>
+						<h3 class="mb-3">Sturdy Templates</h3>
+						<p class="text-muted mb-0">Our templates are updated regularly so they don't break.</p>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6 text-center">
+					<div class="service-box mt-5 mx-auto">
+						<i class="fas fa-4x fa-paper-plane text-primary mb-3 sr-icon-2"></i>
+						<h3 class="mb-3">Ready to Ship</h3>
+						<p class="text-muted mb-0">You can use this theme as is, or you can make changes!</p>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6 text-center">
+					<div class="service-box mt-5 mx-auto">
+						<i class="fas fa-4x fa-code text-primary mb-3 sr-icon-3"></i>
+						<h3 class="mb-3">Up to Date</h3>
+						<p class="text-muted mb-0">We update dependencies to keep things fresh.</p>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6 text-center">
+					<div class="service-box mt-5 mx-auto">
+						<i class="fas fa-4x fa-heart text-primary mb-3 sr-icon-4"></i>
+						<h3 class="mb-3">Made with Love</h3>
+						<p class="text-muted mb-0">You have to make your websites with love these days!</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="p-0" id="">
+		<div class="container-fluid p-0">
+			<div class="row no-gutters popup-gallery">
+				<div class="col-lg-4 col-sm-6">
+					<a class="portfolio-box" href="static/htmlTemplates/index/img/portfolio/fullsize/1.jpg">
+						<img class="img-fluid" src="static/htmlTemplates/index/img/portfolio/thumbnails/1.jpg" alt="">
+						<div class="portfolio-box-caption">
+							<div class="portfolio-box-caption-content">
+								<div class="project-category text-faded">
+									Category
+								</div>
+								<div class="project-name">
+									Project Name
+								</div>
+							</div>
+						</div>
+					</a>
+				</div>
+				<div class="col-lg-4 col-sm-6">
+					<a class="portfolio-box" href="static/htmlTemplates/index/img/portfolio/fullsize/2.jpg">
+						<img class="img-fluid" src="static/htmlTemplates/index/img/portfolio/thumbnails/2.jpg" alt="">
+						<div class="portfolio-box-caption">
+							<div class="portfolio-box-caption-content">
+								<div class="project-category text-faded">
+									Category
+								</div>
+								<div class="project-name">
+									Project Name
+								</div>
+							</div>
+						</div>
+					</a>
+				</div>
+				<div class="col-lg-4 col-sm-6">
+					<a class="portfolio-box" href="static/htmlTemplates/index/img/portfolio/fullsize/3.jpg">
+						<img class="img-fluid" src="static/htmlTemplates/index/img/portfolio/thumbnails/3.jpg" alt="">
+						<div class="portfolio-box-caption">
+							<div class="portfolio-box-caption-content">
+								<div class="project-category text-faded">
+									Category
+								</div>
+								<div class="project-name">
+									Project Name
+								</div>
+							</div>
+						</div>
+					</a>
+				</div>
+				<div class="col-lg-4 col-sm-6">
+					<a class="portfolio-box" href="static/htmlTemplates/index/img/portfolio/fullsize/4.jpg">
+						<img class="img-fluid" src="static/htmlTemplates/index/img/portfolio/thumbnails/4.jpg" alt="">
+						<div class="portfolio-box-caption">
+							<div class="portfolio-box-caption-content">
+								<div class="project-category text-faded">
+									Category
+								</div>
+								<div class="project-name">
+									Project Name
+								</div>
+							</div>
+						</div>
+					</a>
+				</div>
+				<div class="col-lg-4 col-sm-6">
+					<a class="portfolio-box" href="static/htmlTemplates/index/img/portfolio/fullsize/5.jpg">
+						<img class="img-fluid" src="static/htmlTemplates/index/img/portfolio/thumbnails/5.jpg" alt="">
+						<div class="portfolio-box-caption">
+							<div class="portfolio-box-caption-content">
+								<div class="project-category text-faded">
+									Category
+								</div>
+								<div class="project-name">
+									Project Name
+								</div>
+							</div>
+						</div>
+					</a>
+				</div>
+				<div class="col-lg-4 col-sm-6">
+					<a class="portfolio-box" href="static/htmlTemplates/index/img/portfolio/fullsize/6.jpg">
+						<img class="img-fluid" src="static/htmlTemplates/index/img/portfolio/thumbnails/6.jpg" alt="">
+						<div class="portfolio-box-caption">
+							<div class="portfolio-box-caption-content">
+								<div class="project-category text-faded">
+									Category
+								</div>
+								<div class="project-name">
+									Project Name
+								</div>
+							</div>
+						</div>
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section id="contact">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 mx-auto text-center">
+					<h2 class="section-heading">Let's Get In Touch!</h2>
+					<hr class="my-4">
+					<p class="mb-5">Ready to start your next project with us? That's great! Give us a call or send us an email and we will get back to you as soon as possible!</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-4 ml-auto text-center">
+					<i class="fas fa-phone fa-3x mb-3 sr-contact-1"></i>
+					<p>123-456-6789</p>
+				</div>
+				<div class="col-lg-4 mr-auto text-center">
+					<i class="fas fa-envelope fa-3x mb-3 sr-contact-2"></i>
+					<p>
+						<a href="mailto:your-email@your-domain.com">feedback@startbootstrap.com</a>
+					</p>
+				</div>
+			</div>
+		</div>
+	</section>
+</div>
+
+</body>
+<!-- Bootstrap core JavaScript -->
+<script src="static/htmlTemplates/index/vendor/jquery/jquery.min.js"></script>
+<script src="static/htmlTemplates/index/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+<!-- Plugin JavaScript -->
+<script src="static/htmlTemplates/index/vendor/jquery-easing/jquery.easing.min.js"></script>
+<script src="static/htmlTemplates/index/vendor/scrollreveal/scrollreveal.min.js"></script>
+<script src="static/htmlTemplates/index/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+<!-- Custom scripts for this template -->
+<script src="static/htmlTemplates/index/js/creative.min.js"></script>
+
+<!-- Custom scripts for this template -->
+<script src="static/htmlTemplates/index/js/jquery-ui.min.js"></script>
+
+<!-- Custom scripts for this template -->
+<script src="static/htmlTemplates/index/js/jquery-ui.js"></script>
+
+<!-- Custom scripts for this template -->
+<script src="static/js/index.js"></script>
 
 </html>

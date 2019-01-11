@@ -1,7 +1,7 @@
 package com.controller;
 
-import com.model.LoginModel;
-import com.model.RegisterModel;
+import com.model.*;
+import com.service.BaseService;
 import com.util.verificationCode.Captcha;
 import com.util.verificationCode.GifCaptcha;
 import org.apache.shiro.SecurityUtils;
@@ -10,11 +10,14 @@ import org.apache.shiro.authc.IncorrectCredentialsException;
 import org.apache.shiro.authc.UnknownAccountException;
 import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.subject.Subject;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.annotation.Resource;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -30,9 +33,13 @@ import java.util.Map;
 @Controller
 public class SysController extends BaseController {
 
+    @Autowired
+    @Qualifier("sysService")
+    BaseService sysService;
+
     @RequestMapping(path = {"/","index"})
     public String index() {
-        return "index";
+        return  "index";
     }
 
     @RequestMapping(path = "/register")
@@ -119,11 +126,32 @@ public class SysController extends BaseController {
     @ResponseBody
     public List getCity(){
         System.out.println("正在获取城市信息。。。。");
-        List<String> list=new ArrayList();
-        list.add("广州");
-        list.add("深圳");
-        list.add("珠海");
-        list.add("中山");
+        return (List) sysService.findSome();
+    }
+
+    @RequestMapping(path = "/getMsgFromCity.do")
+    @ResponseBody
+    public List getMsgFromCity(String cityName){
+        System.out.println("正在获取招聘信息。。。。"+cityName);
+        Course course=new Course();
+        course.setName("初中物理");
+        List<Course> courseList=new ArrayList<>();
+        courseList.add(course);
+
+        City city=new City();
+        city.setCityArea("天河区");
+        Address address=new Address();
+        address.setCity(city);
+
+        PTJob ptJob=new PTJob();
+        ptJob.setCourse(courseList);
+        ptJob.setAddress(address);
+        ptJob.setMoney(25d);
+        ptJob.setTitle("直招初中物理老师");
+        List<PTJob> list=new ArrayList();
+        list.add(ptJob);
+        list.add(ptJob);
+        list.add(ptJob);
         return list;
     }
 
