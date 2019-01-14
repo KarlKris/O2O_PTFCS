@@ -33,21 +33,6 @@ jQuery(document).ready(function() {
     	});
     	
     });
-
-    $(".getPhoneVerificationCode").click(function(){
-        alert("getPhoneVerificationCode");
-        $.ajax({
-            url:"getPhoneVerificationCode.do",
-            success:function(result){
-                if(result.status){
-                    alert(result.message);
-                    $(".getPhoneVerificationCode").val("已发送");
-                }else{
-                    alert(result.message);
-                }
-            
-        }});
-    });
     
     
 });

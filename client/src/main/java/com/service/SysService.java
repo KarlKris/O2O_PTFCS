@@ -28,4 +28,9 @@ public class SysService implements BaseService {
     public Object findSome() {
         return cityMapper.findSome();
     }
+
+    @Override
+    public Object findSome(String object) {
+        return cityMapper.findAny(object);
+    }
 }

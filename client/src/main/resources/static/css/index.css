@@ -38,6 +38,9 @@
 .pay{
 	position: relative;
     left: 130px;
+    border: 1px solid #ddd;
+    font-size: small;
+    color: #707070;
 }
 
 .padding-left{
@@ -47,4 +50,25 @@
 .padding-top{
 	text-align: center;
     padding-top: 80px;
+}
+
+.logout{
+	right: 70px;
+    position: absolute;
+    top: 18px;
+}
+
+.smallerfont{
+	font-size: smaller;
+}
+
+.quhaos{
+	top: 15px;
+	left: 550px;
+	font-size: initial;
+	position: relative;
+}
+
+.quhao{
+	padding: 10px;
 }

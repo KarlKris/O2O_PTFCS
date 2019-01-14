@@ -20,63 +20,14 @@
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+<![endif]-->
 
-    <!-- Favicon and touch icons -->
-    <link rel="shortcut icon" href="static/htmlTemplates/register//ico/favicon.png">
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="static/htmlTemplates/register/ico/apple-touch-icon-144-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="static/htmlTemplates/register/ico/apple-touch-icon-114-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="static/htmlTemplates/register/ico/apple-touch-icon-72-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" href="static/htmlTemplates/register/ico/apple-touch-icon-57-precomposed.png">
-
-</head>
-
-<body>
-
-    <form action="register.do" method="post" accept-charset="utf-8">
-    
-
-<!-- Top content -->
-<div class="top-content">
-    <div class="inner-bg">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-7 text">
-                    <h1><strong>大 学 生</strong> 家 教 兼 职 </h1>
-                </div>
-                <div class="col-sm-5 form-box">
-                    <div class="form-top">
-                        <div class="form-top-left">
-                            <h3>即可注册</h3>
-                            <p>一起为大学生活增添色彩！</p>
-                        </div>
-                        <div class="form-top-right">
-                            <i class="fa fa-pencil"></i>
-                        </div>
-                        <div class="form-top-divider"></div>
-                    </div>
-                    <div class="form-bottom">
-                        <form role="form" action="" method="post" class="registration-form">
-                            <div class="form-group">
-                                <label class="sr-only" for="form-first-name">Phone</label>
-                                <input type="text" name="phone" placeholder="手机号码" class="form-first-name form-control" id="form-first-name">
-                            </div>
-                            <div class="form-group">
-                                <label class="sr-only" for="form-last-name">VerificationCode</label>
-                                <input type="text" name="phoneVerificationCode" placeholder="验证码" class="form-last-name form-control" id="form-last-name" style="float: left;width: 70%">
-                                <button type="button" class="btn btn-outline-primary getPhoneVerificationCode" style="width: 30%">获取验证码</button>
-                            </div>
-                            <button type="submit" class="btn">注册</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-</div>
-</form>
-
+<!-- Favicon and touch icons -->
+<link rel="shortcut icon" href="static/htmlTemplates/register//ico/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="static/htmlTemplates/register/ico/apple-touch-icon-144-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="static/htmlTemplates/register/ico/apple-touch-icon-114-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="static/htmlTemplates/register/ico/apple-touch-icon-72-precomposed.png">
+<link rel="apple-touch-icon-precomposed" href="static/htmlTemplates/register/ico/apple-touch-icon-57-precomposed.png">
 
 <!-- Javascript -->
 <script src="static/htmlTemplates/register/js/jquery-1.11.1.min.js"></script>
@@ -84,6 +35,53 @@
 <script src="static/htmlTemplates/register/js/jquery.backstretch.min.js"></script>
 <script src="static/htmlTemplates/register/js/retina-1.1.0.min.js"></script>
 <script src="static/htmlTemplates/register/js/scripts.js"></script>
+<script src="static/js/bmob-min.js"></script>
+</head>
+
+        <form action="register.do" method="post" accept-charset="utf-8">
+
+
+            <!-- Top content -->
+            <div class="top-content">
+                <div class="inner-bg">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-7 text">
+                                <h1><strong>大 学 生</strong> 家 教 兼 职 </h1>
+                            </div>
+                            <div class="col-sm-5 form-box">
+                                <div class="form-top">
+                                    <div class="form-top-left">
+                                        <h3>即可注册</h3>
+                                        <p>一起为大学生活增添色彩！</p>
+                                    </div>
+                                    <div class="form-top-right">
+                                        <i class="fa fa-pencil"></i>
+                                    </div>
+                                    <div class="form-top-divider"></div>
+                                </div>
+                                <div class="form-bottom">
+                                    <form role="form" action="" method="post" class="registration-form">
+                                        <div class="form-group">
+                                            <label class="sr-only" for="form-first-name">Phone</label>
+                                            <input type="text" name="phone" placeholder="手机号码" class="form-first-name form-control phone" id="form-first-name">
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="sr-only" for="form-last-name">VerificationCode</label>
+                                            <input type="text" name="phoneVerificationCode" placeholder="验证码" class="form-last-name form-control" id="form-last-name" style="float: left;width: 70%">
+                                            <button type="button" class="btn btn-outline-primary getPhoneVerificationCode" style="width: 30%">获取验证码</button>
+                                        </div>
+                                        <button type="submit" class="btn">注册</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </form>
+
 
 <!--[if lt IE 10]>
 <script src="static/htmlTemplates/register/js/placeholder.js"></script>

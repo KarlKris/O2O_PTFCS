@@ -1,6 +1,6 @@
 package com.mapper;
 
-import com.model.User;
+import com.model.PO.User;
 import org.apache.ibatis.annotations.Select;
 
 /**

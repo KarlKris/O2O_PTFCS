@@ -9,4 +9,7 @@ public interface CityMapper {
     @Select("select distinct cityName from city")
     List<String> findSome();
 
+    @Select("select cityArea from city where cityName = #{name}")
+    List<String> findAny(String name);
+
 }

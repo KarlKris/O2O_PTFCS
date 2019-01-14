@@ -1,7 +1,6 @@
 package com.service;
 
 import com.mapper.UserMapper;
-import com.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -29,5 +28,10 @@ public class UserService implements BaseService{
     @Override
     public Object findOne(String phone) {
         return userMapper.selectOne(phone);
+    }
+
+    @Override
+    public Object findSome(String object) {
+        return null;
     }
 }

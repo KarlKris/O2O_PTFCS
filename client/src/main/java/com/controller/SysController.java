@@ -1,6 +1,8 @@
 package com.controller;
 
-import com.model.*;
+import com.model.PO.*;
+import com.model.VO.LoginModel;
+import com.model.VO.RegisterModel;
 import com.service.BaseService;
 import com.util.verificationCode.Captcha;
 import com.util.verificationCode.GifCaptcha;
@@ -17,12 +19,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import javax.annotation.Resource;
-import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -99,6 +100,27 @@ public class SysController extends BaseController {
         return ajaxReturn(false, "用户已登录！");
     }
 
+    @RequestMapping(path = "/getUserName.do")
+    @ResponseBody
+    public Map getUsername(){
+        System.out.println("正在查询用户是否登陆。。。");
+        //获得当前登录用户，如无则返回null
+        Subject subject = SecurityUtils.getSubject();
+        User user = (User) subject.getPrincipal();
+        if (user == null) {
+            return ajaxReturn(false, "");
+        }
+        return ajaxReturn(true, user.getName());
+    }
+
+    @RequestMapping(path="/logout.do", produces="application/json;charset=utf-8")
+    @ResponseBody
+    public Map logout() {
+        //注销当前用户
+        SecurityUtils.getSubject().logout();
+        return ajaxReturn(true, "");
+    }
+
     @RequestMapping(path = "/getGIFCode.do")
     public void getGIFCode(HttpServletResponse response, HttpServletRequest request) {
         try {
@@ -131,28 +153,16 @@ public class SysController extends BaseController {
 
     @RequestMapping(path = "/getMsgFromCity.do")
     @ResponseBody
-    public List getMsgFromCity(String cityName){
+    public Map<String,List> getMsgFromCity(String cityName){
         System.out.println("正在获取招聘信息。。。。"+cityName);
-        Course course=new Course();
-        course.setName("初中物理");
-        List<Course> courseList=new ArrayList<>();
-        courseList.add(course);
+        Map<String,List> map=new HashMap<>();
 
-        City city=new City();
-        city.setCityArea("天河区");
-        Address address=new Address();
-        address.setCity(city);
+        List<String> cityAreaList=(List) sysService.findSome(cityName);
+        List<String> recruitList=new ArrayList<>();
 
-        PTJob ptJob=new PTJob();
-        ptJob.setCourse(courseList);
-        ptJob.setAddress(address);
-        ptJob.setMoney(25d);
-        ptJob.setTitle("直招初中物理老师");
-        List<PTJob> list=new ArrayList();
-        list.add(ptJob);
-        list.add(ptJob);
-        list.add(ptJob);
-        return list;
+        map.put("cityArea",cityAreaList);
+        map.put("recruit",recruitList);
+        return map;
     }
 
 

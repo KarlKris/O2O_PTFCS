@@ -37,7 +37,8 @@
 
 </head>
 
-<body id="page-top"><div class="maxDiv">
+<body id="page-top">
+	<div class="maxDiv">
 
 	<!-- Navigation -->
 	<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
@@ -75,9 +76,20 @@
 			</div>
 
 			<!--登陆注册或用户名 -->
-			<div class="userOr">
-				<a href="login.html" >登陆</a>
-				<a href="register.html" >注册</a>
+			<div class="userOr smallerfont">
+				<div v-if="userName == 'none' ">
+					<a href="login.html" >登陆</a>
+				    <a href="register.html" >注册</a>
+				</div>
+				<div v-else>		
+					<div class="dropdown" >
+						<button type="button" class="btn btn-light dropdown-toggle " data-toggle="dropdown" style="background: local;font-size: smaller;">欢迎你,{{userName}}</button>
+						<div class="dropdown-menu city-name smallerfont" style="min-width: auto;">
+							<a class="dropdown-item " >个人信息</a>
+						</div>
+					</div>
+					<div class="logout"><a href="javascript:void(0);" v-on:click="logout()" color="#000">退出</a></div>
+				</div>
 			</div>
 
 		</div>
@@ -113,10 +125,15 @@
 					<!--找家教标题信息 -->
 					<div class="card">
 						<div class="card-body" style="font-size: x-large;padding: 1rem;">高薪招家教
-							<span>
-								<span></span>
+							<!--区号选择 动态生成 -->
+							<span class="quhaos" >
+								<span>
+									<a href="javascript:void(0);" v-for="cityArea in data.cityArea" v-bind:class="{quhao:true}" @click='getMsgFromCityArea(cityArea)'>
+										{{cityArea}}
+									</a>
+								</span>
 							</span>
-							<span class="icon-e"><a href="#" >更多</a>
+							<span class="icon-e"><a href="javascript:void(0);">更多</a>
 								<span class="ui-icon ui-icon-carat-1-sw"></span>
 							</span>
 						</div> 
@@ -133,7 +150,7 @@
 					</div>
 				</div>
 
-				<div class="card col-lg-3 col-md-6" v-for="msg in data" v-if='data.length!=0'>
+				<div class="card col-lg-3 col-md-6" v-for="msg in data.recruit" v-if='data.recruit.length!=0'>
 					<div class="card-body padding-left">
 						<div style="padding-bottom: inherit;">
 							<span class="ui-icon  ui-icon-grip-solid-vertical"></span>家教
@@ -141,14 +158,14 @@
 						<div>
 							<span class="workTitle">{{msg.title}}</span>
 							<div class="workDetail">
-								<span class="shuxian">{{msg.course[0].name}}</span>
+								<span class="shuxian">{{msg.courseList[0].name}}</span>
 								<span class="shuxian">{{msg.address.city.cityArea}}</span>
 								<span class="shuxian last">1人</span>
 							</div>
 						</div> 
 						<div>
 							<span>{{msg.money}}元/小时  
-								<span class="pay">日结</span>
+								<span class="pay">{{msg.modeOfPayment}}</span>
 							</span>
 						</div>
 					</div>

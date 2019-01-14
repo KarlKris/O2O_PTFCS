@@ -13,5 +13,8 @@ public interface BaseService {
 
     /**查找一些**/
     Object findSome();
+
+    /**查找一些**/
+    Object findSome(String object);
 }
 
