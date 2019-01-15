@@ -1,6 +1,7 @@
 package com.service;
 
 import com.mapper.CityMapper;
+import com.mapper.UserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,6 +15,9 @@ public class SysService implements BaseService {
     @Autowired
     CityMapper cityMapper;
 
+    @Autowired
+    UserMapper userMapper;
+
     @Override
     public Object selectOne(String id) {
         return null;
@@ -21,7 +25,8 @@ public class SysService implements BaseService {
 
     @Override
     public Object findOne(String phone) {
-        return null;
+
+        return userMapper.selectOne(phone);
     }
 
     @Override

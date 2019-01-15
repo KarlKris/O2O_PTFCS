@@ -4,6 +4,7 @@ import com.model.PO.*;
 import com.model.VO.LoginModel;
 import com.model.VO.RegisterModel;
 import com.service.BaseService;
+import com.util.phoneVerificationCode.SendSMS;
 import com.util.verificationCode.Captcha;
 import com.util.verificationCode.GifCaptcha;
 import org.apache.shiro.SecurityUtils;
@@ -53,11 +54,16 @@ public class SysController extends BaseController {
         return "login";
     }
 
-    @ResponseBody
+
     @RequestMapping(path = "/register.do", method = RequestMethod.POST)
-    public Map register(RegisterModel pm) {
+    public String  register(RegisterModel pm,HttpServletRequest request) {
         System.out.println("Register.do");
-        return null;
+        //取出验证码
+        String code = (String) request.getSession().getAttribute("_phoneVerificationCode");
+        if(pm.getPhoneVerificationCode().equals(code)){
+            return "login";
+        }
+        return "register";
     }
 
     @RequestMapping(path = "/login.do", method = RequestMethod.POST,produces="application/json;charset=utf-8")
@@ -163,6 +169,21 @@ public class SysController extends BaseController {
         map.put("cityArea",cityAreaList);
         map.put("recruit",recruitList);
         return map;
+    }
+
+    @ResponseBody
+    @RequestMapping(path = "/getPhoneVerificationCode.do")
+    public Map getPhoneVerificationCode(String phone,HttpServletRequest request){
+        System.out.println("发送手机短信验证码。。。。"+"    "+phone);
+        if((User)sysService.findOne(phone)==null){
+            HttpSession session = request.getSession(true);
+            String code= SendSMS.randomVCode();
+            SendSMS.sendRegisterMsg(phone,code);
+            session.setAttribute("_phoneVerificationCode",code);
+            return ajaxReturn(true,"发送成功");
+        }else{
+            return ajaxReturn(false,"该手机号码已注册");
+        }
     }
 
 

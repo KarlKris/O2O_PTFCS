@@ -1,10 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>个人信息</title>
+    <meta charset="UTF-8">
+    <title>个人信息</title>
+    <!-- 新 Bootstrap4 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.1.0/css/bootstrap.min.css">
+
+    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+    <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- popper.min.js 用于弹窗、提示、下拉菜单 -->
+    <script src="https://cdn.staticfile.org/popper.js/1.12.5/umd/popper.min.js"></script>
+
+    <!-- 最新的 Bootstrap4 核心 JavaScript 文件 -->
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/4.1.0/js/bootstrap.min.js"></script>
+    
+    <script type="text/javascript">
+
+        function changepic(obj){
+            //console.log(obj.files[0]);//这里可以获取上传文件的name
+            var newsrc=getObjectURL(obj.files[0]);
+            $(".show").attr('src', newsrc);
+
+        }
+
+        function getObjectUrl(file){
+            var url = null ;
+            // 下面函数执行的效果是一样的，只是需要针对不同的浏览器执行不同的 js 函数而已
+            if (window.createObjectURL!=undefined) { // basic
+                url = window.createObjectURL(file) ;
+            } else if (window.URL!=undefined) { // mozilla(firefox)
+                url = window.URL.createObjectURL(file) ;
+            } else if (window.webkitURL!=undefined) { // webkit or chrome
+                url = window.webkitURL.createObjectURL(file) ;
+            }
+            return url ;
+        }
+</script>
 </head>
 <body>
-	
+    <div class="container">
+        <div class="row clearfix">
+            <div class="col-md-2 column">
+                
+            </div>
+            <div class="col-md-6 column">
+                <div class="card" style="font-size: small;">
+                    <div class="card-header">基本信息</div>
+                    <div class="card-body">
+                        <!--用户名 -->
+                        <div class="form-group">
+                            <label >用户名:</label>
+                            <input type="text" class="form-control"/>
+                        </div>
+                        <!--角色 -->
+                        <div style="height: 40px;">
+                            <label >角 色:</label>
+                            <div>
+                                <div class="custom-control custom-radio" style="left: 150px;top: -27px;">
+                                     <input type="radio" class="custom-control-input" id="student" name="role">
+                                     <label class="custom-control-label" for="student">大学生</label>
+                                </div>
+                                <div class="custom-control custom-radio" style="left: 300px;top: -49px;">
+                                    <input type="radio" class="custom-control-input" id="person" name="role">
+                                    <label class="custom-control-label" for="person">群众</label>
+                                </div>
+                            </div>
+                        </div>
+                        <!--联系电话 -->
+                        <div class="form-group">
+                            <label >联系电话:</label>
+                            <input type="text" class="form-control" readonly/>
+                        </div>
+                        <!--家庭住址 -->
+                        <div class="form-group">
+                            <label >家庭地址:</label>
+                            <input type="text" class="form-control"/>
+                        </div>
+                        <!-- 保存按钮-->
+                        <div style="text-align: center;">
+                            <button type="button" class="btn btn-success btn-sm">保存</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card bg-light text-dark" style="font-size: small;">
+                    <div class="card-header">认证信息</div>
+                    <div class="card-body">
+                        <!--姓名 -->
+                        <div class="form-group">
+                            <label >真实姓名:</label>
+                            <input type="text" class="form-control"/>
+                        </div>
+                        <!--身份证号码 -->
+                        <div class="form-group">
+                            <label >身份证号码:</label>
+                            <input type="text" class="form-control"/>
+                        </div>
+                        <!--图片上传 -->
+                        <div>
+                            <label >身份证正面图片:</label>
+                            <div class="custom-file mb-3">
+                                <input type="file" class="custom-file-input" id="img" name="filename" accept="image/png, image/jpeg, image/gif, image/jpg" onchange="changepic(this)" >
+                                <label class="custom-file-label" for="img">选择文件</label>
+                                <img src="" class="show">
+                            </div>
+                        </div>
+                        <!--认证按钮 -->
+                        <div  style="text-align: center;">
+                            <button type="button" class="btn btn-success btn-sm">认证</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 column">
+                
+            </div>
+        </div>
+    </div>
 </body>
 </html>
