@@ -55,56 +55,6 @@ public class SysController extends BaseController {
     }
 
 
-    @RequestMapping(path = "/register.do", method = RequestMethod.POST)
-    public String  register(RegisterModel pm,HttpServletRequest request) {
-        System.out.println("Register.do");
-        //取出验证码
-        String code = (String) request.getSession().getAttribute("_phoneVerificationCode");
-        if(pm.getPhoneVerificationCode().equals(code)){
-            return "login";
-        }
-        return "register";
-    }
-
-    @RequestMapping(path = "/login.do", method = RequestMethod.POST,produces="application/json;charset=utf-8")
-    @ResponseBody
-    public Map login(LoginModel lm, HttpServletRequest request, HttpServletResponse response) {
-        //取出验证码
-        String vcode = (String) request.getSession().getAttribute("_code");
-        System.out.println("用户输入： " + lm.getVerificationCode() + "    正确验证码： " + vcode);
-        if (!vcode.equals(lm.getVerificationCode())) {
-            return ajaxReturn(false, "VerificationCode error");
-        }
-
-        //第一步：创建令牌
-        UsernamePasswordToken token = new UsernamePasswordToken(lm.getPhone(),lm.getPsw());
-
-        /**
-         * 勾选记住密码则保存cookie
-         * 否则不保存
-         */
-        if (lm.getRem()) {
-            System.out.println("RememberMe");
-            token.setRememberMe(true);
-        }
-
-        //第二步：获取Subject对象，该对象封装了一系列的操作
-        Subject subject = SecurityUtils.getSubject();
-        //第三步：执行认证
-        try {
-            if(!subject.isAuthenticated()){
-                subject.login(token);
-                return ajaxReturn(true, "登录成功！");
-            }
-        } catch (UnknownAccountException | IncorrectCredentialsException e1) {
-            System.out.println("用户名或密码错误");
-            e1.printStackTrace();
-            return ajaxReturn(false, "用户名或密码错误！");
-        }  catch (AuthenticationException e) {
-            e.printStackTrace();
-        }
-        return ajaxReturn(false, "用户已登录！");
-    }
 
     @RequestMapping(path = "/getUserName.do")
     @ResponseBody
@@ -164,27 +114,23 @@ public class SysController extends BaseController {
         Map<String,List> map=new HashMap<>();
 
         List<String> cityAreaList=(List) sysService.findSome(cityName);
-        List<String> recruitList=new ArrayList<>();
+        List<Recruit> recruitList=new ArrayList<>();
+
+
 
         map.put("cityArea",cityAreaList);
         map.put("recruit",recruitList);
         return map;
     }
 
+    @RequestMapping(path = "/getPersonMsgFromCity.do")
     @ResponseBody
-    @RequestMapping(path = "/getPhoneVerificationCode.do")
-    public Map getPhoneVerificationCode(String phone,HttpServletRequest request){
-        System.out.println("发送手机短信验证码。。。。"+"    "+phone);
-        if((User)sysService.findOne(phone)==null){
-            HttpSession session = request.getSession(true);
-            String code= SendSMS.randomVCode();
-            SendSMS.sendRegisterMsg(phone,code);
-            session.setAttribute("_phoneVerificationCode",code);
-            return ajaxReturn(true,"发送成功");
-        }else{
-            return ajaxReturn(false,"该手机号码已注册");
-        }
+    public List getPersonMsgFromCity(String cityName){
+        System.out.println("正在获取下级城市信息。。。。"+cityName);
+        return (List) sysService.findSome(cityName);
     }
+
+
 
 
 }

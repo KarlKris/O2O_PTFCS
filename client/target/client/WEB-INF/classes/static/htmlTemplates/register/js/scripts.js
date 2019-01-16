@@ -45,15 +45,44 @@ jQuery(document).ready(function() {
                 url:"getPhoneVerificationCode.do",
                 data:{phone:phone},
                 success:function(msg){
-                    console.log(msg.message);
                     if(msg.status){
                         $('.getPhoneVerificationCode').text("已发送");
                     }else{
-
+                        alert(msg.message);
                     }
                 }
             });
          }
 
      });
+
+        $('.registerBtn').click(function() {
+            /* Act on the event */
+            console.log("正在注册前验证。。。。");
+            var p=/^1[34578]\d{9}$/;
+            var c=/^\d{6}$/;
+            var phone=$('.phone').val();
+            var code=$('.code').val();
+            if( (p.test(phone)) && (c.test(code)) ) {
+                $.ajax({
+                    url:"register.do",
+                    type:"POST",
+                    data:{
+                        phone:phone,
+                        phoneVerificationCode:code,
+                    },
+                    success:function(msg){
+                        console.log(msg.message);
+                        if(msg.status){
+                            alert("初始密码为手机号码");
+                            location="login.html";
+                        }else{
+                            alert("验证码有误");  
+                        }
+                    }
+                });
+            }else{
+                alert("手机号码或验证码有误");
+            }
+        });
     });

@@ -1,6 +1,7 @@
 package com.mapper;
 
 import com.model.PO.User;
+import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Select;
 
 /**
@@ -10,5 +11,8 @@ public interface UserMapper {
 
     @Select("select*from User where phone=#{phone} ")
     User selectOne(String phone);
+
+    @Insert({"insert user(id,name,phone,psw) value( #{id},#{name},#{phone},#{psw} )"})
+    boolean addOne(User user);
 
 }

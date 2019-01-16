@@ -32,37 +32,25 @@ public class SendSMS {
     //配置您申请的KEY
     public static final String APPKEY ="1ab3fd618d716b94388090a3e2402307";
 
-    //1.屏蔽词检查测
-    public static void getRequest1(){
-        String result =null;
-        String url ="http://v.juhe.cn/sms/black";//请求接口地址
-        Map params = new HashMap();//请求参数
-        params.put("word","");//需要检测的短信内容，需要UTF8 URLENCODE
-        params.put("key",APPKEY);//应用APPKEY(应用详细页查询)
 
-        try {
-            result =net(url, params, "GET");
-            JSONObject object = JSONObject.fromObject(result);
-            if(object.getInt("error_code")==0){
-                System.out.println(object.get("result"));
-            }else{
-                System.out.println(object.get("error_code")+":"+object.get("reason"));
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    //2.发送注册短信
-    public static void sendRegisterMsg(String phone,String code){
+    //2.发送短信
+    public static void sendRegisterMsg(String phone,String code,String mobanId) throws UnsupportedEncodingException {
+        String str_code = URLEncoder.encode("#code#=" + code, "UTF-8");
         String result =null;
-        String url ="http://v.juhe.cn/sms/send";//请求接口地址
-        Map params = new HashMap();//请求参数
-        params.put("mobile",phone);//接收短信的手机号码
-        params.put("tpl_id","130298");//短信模板ID，请参考个人中心短信模板设置
-        params.put("tpl_value",code);//变量名和变量值对。如果你的变量名或者变量值中带有#&=中的任意一个特殊符号，请先分别进行urlencode编码后再传递，<a href="http://www.juhe.cn/news/index/id/50" target="_blank">详细说明></a>
-        params.put("key",APPKEY);//应用APPKEY(应用详细页查询)
-        params.put("dtype","json");//返回数据的格式,xml或json，默认json
+        //请求接口地址
+        String url ="http://v.juhe.cn/sms/send";
+        //请求参数
+        Map params = new HashMap();
+        //接收短信的手机号码
+        params.put("mobile",phone);
+        //短信模板ID，请参考个人中心短信模板设置
+        params.put("tpl_id",mobanId);
+        //变量名和变量值对。如果你的变量名或者变量值中带有#&=中的任意一个特殊符号，请先分别进行urlencode编码后再传递，<a href="http://www.juhe.cn/news/index/id/50" target="_blank">详细说明></a>
+        params.put("tpl_value",str_code);
+        //应用APPKEY(应用详细页查询)
+        params.put("key",APPKEY);
+        //返回数据的格式,xml或json，默认json
+        params.put("dtype","json");
 
         try {
             result =net(url, params, "GET");
@@ -81,7 +69,7 @@ public class SendSMS {
      *  随机生成6为验证码
      **/
      public static String randomVCode(){
-         return String.valueOf(((Math.random()*9+1)*100000));
+         return String.valueOf((int)((Math.random()*9+1)*100000));
      }
 
     /**

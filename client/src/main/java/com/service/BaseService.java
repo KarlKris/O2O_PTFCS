@@ -16,5 +16,10 @@ public interface BaseService {
 
     /**查找一些**/
     Object findSome(String object);
+
+    /**
+     * 添加一条属性
+     **/
+    Boolean addOne(Object object);
 }
 

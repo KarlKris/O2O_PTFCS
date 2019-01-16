@@ -15,8 +15,6 @@ public class SysService implements BaseService {
     @Autowired
     CityMapper cityMapper;
 
-    @Autowired
-    UserMapper userMapper;
 
     @Override
     public Object selectOne(String id) {
@@ -26,7 +24,7 @@ public class SysService implements BaseService {
     @Override
     public Object findOne(String phone) {
 
-        return userMapper.selectOne(phone);
+        return null;
     }
 
     @Override
@@ -37,5 +35,10 @@ public class SysService implements BaseService {
     @Override
     public Object findSome(String object) {
         return cityMapper.findAny(object);
+    }
+
+    @Override
+    public Boolean addOne(Object object) {
+        return null;
     }
 }

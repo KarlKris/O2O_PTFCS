@@ -24,7 +24,7 @@
 
         }
 
-        function getObjectUrl(file){
+        function getObjectURL(file){
             var url = null ;
             // 下面函数执行的效果是一样的，只是需要针对不同的浏览器执行不同的 js 函数而已
             if (window.createObjectURL!=undefined) { // basic
@@ -36,6 +36,35 @@
             }
             return url ;
         }
+
+        $(document).ready(function() {
+           $('#student').click(function() {
+               /* Act on the event */
+               $('#classify').fadeIn("show");
+               $('#score').fadeIn("show");
+           });
+           $('#person').click(function() {
+               /* Act on the event */
+               $('#classify').fadeOut("show");
+               $('#score').fadeOut("show");
+           });
+           $('#arts').click(function() {
+               /* Act on the event */
+               $('#scienceScore').fadeOut("show");
+               $('#artsScore').fadeIn("show");
+           });
+           $('#science').click(function() {
+               /* Act on the event */
+               $('#artsScore').fadeOut("show");
+               $('#scienceScore').fadeIn("show");
+           });
+
+
+           
+        });
+
+
+
 </script>
 </head>
 <body>
@@ -67,6 +96,69 @@
                                 </div>
                             </div>
                         </div>
+                         <!--文理 -->
+                        <div  id="classify" style="display: none;height: 40px">
+                            <label >文 理:</label>
+                            <div class="height_0">
+                                <div class="custom-control custom-radio" style="left: 150px;top: -27px;">
+                                     <input type="radio" class="custom-control-input" id="arts" name="classify">
+                                     <label class="custom-control-label" for="arts">文科</label>
+                                </div>
+                                <div class="custom-control custom-radio" style="left: 300px;top: -49px;">
+                                    <input type="radio" class="custom-control-input" id="science" name="classify">
+                                    <label class="custom-control-label" for="science">理科</label>
+                                </div>
+                            </div>
+                        </div>
+                        <!--高考成绩 -->
+                        <div id="score" style="display: none;">
+                            <label >高考成绩:</label>
+                            <!--语数英 -->
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text">语文</span>
+                                </div>
+                                <input type="text" class="form-control" >
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text">数学</span>
+                                </div>
+                                <input type="text" class="form-control" >
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text">英语</span>
+                                </div>
+                                <input type="text" class="form-control">
+                            </div>
+                            <!--理科 -->
+                            <div class="input-group mb-3" style="display: none;" id="scienceScore">
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text">物理</span>
+                                </div>
+                                <input type="text" class="form-control" >
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text">化学</span>
+                                </div>
+                                <input type="text" class="form-control" >
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text">生物</span>
+                                </div>
+                                <input type="text" class="form-control">
+                            </div>
+                            <!--文科 -->
+                            <div class="input-group mb-3" style="display: none;" id="artsScore">
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text">政治</span>
+                                </div>
+                                <input type="text" class="form-control" >
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text">地理</span>
+                                </div>
+                                <input type="text" class="form-control" >
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text">历史</span>
+                                </div>
+                                <input type="text" class="form-control">
+                            </div>
+                        </div>
                         <!--联系电话 -->
                         <div class="form-group">
                             <label >联系电话:</label>
@@ -91,18 +183,28 @@
                             <label >真实姓名:</label>
                             <input type="text" class="form-control"/>
                         </div>
+                        <!--学生认证——学校 -->
+                        <div class="form-group">
+                            <label >学校:</label>
+                            <input type="text" class="form-control"/>
+                        </div>
+                        <!--学生认证——学号 -->
+                        <div class="form-group">
+                            <label >学号:</label>
+                            <input type="text" class="form-control"/>
+                        </div>
                         <!--身份证号码 -->
                         <div class="form-group">
                             <label >身份证号码:</label>
                             <input type="text" class="form-control"/>
                         </div>
-                        <!--图片上传 -->
+                        <!--身份证图片上传 -->
                         <div>
                             <label >身份证正面图片:</label>
+                            <img src="" class="show" width="100px">
                             <div class="custom-file mb-3">
                                 <input type="file" class="custom-file-input" id="img" name="filename" accept="image/png, image/jpeg, image/gif, image/jpg" onchange="changepic(this)" >
                                 <label class="custom-file-label" for="img">选择文件</label>
-                                <img src="" class="show">
                             </div>
                         </div>
                         <!--认证按钮 -->
