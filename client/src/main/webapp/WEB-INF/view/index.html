@@ -144,13 +144,13 @@
 		<div class="container">
 			<div class="row workMsg">
 
-				<div class="card col-lg-3 col-md-6" v-if='data.recruit != undefined && data.recruit.length==0'>
+				<div class="card col-lg-3 col-md-6" v-if='data.recruit && data.recruit.length==0'>
 					<div class="card-body padding-left  padding-top">
 						暂时没有满足条件的招聘信息
 					</div>
 				</div>
 
-				<div class="card col-lg-3 col-md-6" v-for="msg in data.recruit" v-if='data.recruit != undefined && data.recruit.length!=0'>
+				<div class="card col-lg-3 col-md-6" v-for="msg in data.recruit" v-if='data.recruit && data.recruit.length!=0'>
 					<div class="card-body padding-left">
 						<div style="padding-bottom: inherit;">
 							<span class="ui-icon  ui-icon-grip-solid-vertical"></span>家教
@@ -158,7 +158,7 @@
 						<div>
 							<span class="workTitle">{{msg.title}}</span>
 							<div class="workDetail">
-								<span class="shuxian">{{msg.courseList[0].name}}</span>
+								<span class="shuxian" v-for="course in msg.courseList">{{course.name}}</span>
 								<span class="shuxian">{{msg.address.city.cityArea}}</span>
 								<span class="shuxian last">1人</span>
 							</div>
@@ -171,7 +171,7 @@
 					</div>
 				</div>
 
-				<div class="card col-lg-3 col-md-6" v-if='data.recruit != undefined && 0<data.recruit.length<4'>
+				<div class="card col-lg-3 col-md-6" v-if="data.recruit && 0<data.recruit.length<4">
 					<div class="card-body padding-left padding-top">
 						暂时只有这些满足条件的招聘信息
 					</div>

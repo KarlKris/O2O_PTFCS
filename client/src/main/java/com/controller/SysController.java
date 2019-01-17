@@ -5,6 +5,7 @@ import com.model.VO.LoginModel;
 import com.model.VO.RegisterModel;
 import com.service.BaseService;
 import com.util.phoneVerificationCode.SendSMS;
+import com.util.redis.CacheUtil;
 import com.util.verificationCode.Captcha;
 import com.util.verificationCode.GifCaptcha;
 import org.apache.shiro.SecurityUtils;
@@ -104,7 +105,13 @@ public class SysController extends BaseController {
     @ResponseBody
     public List getCity(){
         System.out.println("正在获取城市信息。。。。");
-        return (List) sysService.findSome();
+        List list=CacheUtil.getCache().getList("市级");
+        if(list.isEmpty()){
+            System.out.println("从数据库中查询市级数据。。。。");
+            list=(List) sysService.findSome();
+            CacheUtil.getCache().setList("市级",list);
+        }
+        return list;
     }
 
     @RequestMapping(path = "/getMsgFromCity.do")
@@ -113,10 +120,16 @@ public class SysController extends BaseController {
         System.out.println("正在获取招聘信息。。。。"+cityName);
         Map<String,List> map=new HashMap<>();
 
-        List<String> cityAreaList=(List) sysService.findSome(cityName);
+        List<String> cityAreaList=new ArrayList<>();
         List<Recruit> recruitList=new ArrayList<>();
 
-
+        cityAreaList=CacheUtil.getCache().getList(cityName);
+        System.out.println("打印从缓冲的取出来的内容:  "+cityAreaList);
+        if(cityAreaList.isEmpty()){
+            System.out.println("从数据库中查询市区数据。。。。");
+            cityAreaList=(List) sysService.findSome(cityName);
+            CacheUtil.getCache().setList(cityName,cityAreaList);
+        }
 
         map.put("cityArea",cityAreaList);
         map.put("recruit",recruitList);
@@ -127,7 +140,14 @@ public class SysController extends BaseController {
     @ResponseBody
     public List getPersonMsgFromCity(String cityName){
         System.out.println("正在获取下级城市信息。。。。"+cityName);
-        return (List) sysService.findSome(cityName);
+        List list=new ArrayList();
+        list=CacheUtil.getCache().getList(cityName);
+        if(list.isEmpty()){
+            System.out.println("从数据库中查询市区数据。。。。");
+            list=(List) sysService.findSome(cityName);
+            CacheUtil.getCache().setList(cityName,list);
+        }
+        return list;
     }
 
 
