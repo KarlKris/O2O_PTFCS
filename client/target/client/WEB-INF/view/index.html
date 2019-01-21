@@ -10,6 +10,10 @@
 
 	<title>大学生兼职家教--为你的生活增添色彩</title>
 
+	<link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
 	<!-- Bootstrap core CSS -->
 	<link href="static/htmlTemplates/index/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
@@ -85,7 +89,7 @@
 					<div class="dropdown" >
 						<button type="button" class="btn btn-light dropdown-toggle " data-toggle="dropdown" style="background: local;font-size: smaller;">欢迎你,{{userName}}</button>
 						<div class="dropdown-menu city-name smallerfont" style="min-width: auto;">
-							<a class="dropdown-item " data-toggle="modal" data-target="#message">个人信息</a>
+							<a class="dropdown-item" data-toggle="modal" data-target="#message" v-on:click="getUserMsg()">个人信息</a>
 						</div>
 					</div>
 					<div class="logout"><a href="javascript:void(0);" v-on:click="logout()" color="#000">退出</a></div>
@@ -144,7 +148,7 @@
 		<div class="container">
 			<div class="row workMsg">
 
-				<div class="card col-lg-3 col-md-6" v-if='data.recruit && data.recruit.length==0'>
+				<div class="card col-lg-3 col-md-6" v-if='data.recruit && data.recruit.length'>
 					<div class="card-body padding-left  padding-top">
 						暂时没有满足条件的招聘信息
 					</div>
@@ -396,7 +400,7 @@
 					<!--用户名 -->
 					<div class="form-group">
 						<label >用户名:</label>
-						<input type="text" class="form-control"/>
+						<input type="text" class="form-control" required/>
 					</div>
 					<!--角色 -->
 					<div style="height: 40px;">
@@ -413,9 +417,9 @@
 						</div>
 					</div>
 					<!--文理 -->
-					<div  id="classify" style="display: none;height: 40px">
+					<div  id="classify" style="display: none;height: 200px">
 						<label >文 理:</label>
-						<div class="height_0">
+						<div class="height_0" style="height: 0;">
 							<div class="custom-control custom-radio" style="left: 150px;top: -27px;">
 								<input type="radio" class="custom-control-input" id="arts" name="classify">
 								<label class="custom-control-label" for="arts">文科</label>
@@ -424,6 +428,16 @@
 								<input type="radio" class="custom-control-input" id="science" name="classify">
 								<label class="custom-control-label" for="science">理科</label>
 							</div>
+						</div>
+						<!--大学 -->
+						<div class="form-group">
+							<label >大学:</label>
+							<input type="text" class="form-control" required/>
+						</div>
+						<!--专业 -->
+						<div class="form-group">
+							<label >专业:</label>
+							<input type="text" class="form-control" required/>
 						</div>
 					</div>
 					<!--高考成绩 -->
@@ -434,15 +448,15 @@
 							<div class="input-group-prepend">
 								<span class="input-group-text">语文</span>
 							</div>
-							<input type="text" class="form-control" >
+							<input type="text" class="form-control" required/>
 							<div class="input-group-prepend">
 								<span class="input-group-text">数学</span>
 							</div>
-							<input type="text" class="form-control" >
+							<input type="text" class="form-control" required/>
 							<div class="input-group-prepend">
 								<span class="input-group-text">英语</span>
 							</div>
-							<input type="text" class="form-control">
+							<input type="text" class="form-control" required/>
 						</div>
 						<!--理科 -->
 						<div class="input-group mb-3" style="display: none;" id="scienceScore">
@@ -475,14 +489,9 @@
 							<input type="text" class="form-control">
 						</div>
 					</div>
-					<!--联系电话 -->
-					<div class="form-group">
-						<label >联系电话:</label>
-						<input type="text" class="form-control" readonly/>
-					</div>
 					<!--家庭住址 -->
 					<div class="form-group">
-						<label >家庭地址:</label>
+						<label >居住地址:</label>
 						<div>
 							<select class="form-control" @change='getPersonMsgFromCity($event)'>
 								<option v-for='city in cities' >{{city}}</option>
@@ -490,7 +499,7 @@
 							<select class="form-control" >
 								<option v-for='area in areas' v-if='area.length!=0'>{{area}}</option>
 							</select>
-							<input type="text" class="form-control" placeholder="详细地址" />
+							<input type="text" class="form-control" placeholder="详细地址" required/>
 						</div>
 					</div>
 				</div>

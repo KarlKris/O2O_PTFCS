@@ -11,6 +11,8 @@ import org.apache.shiro.subject.PrincipalCollection;
 import org.apache.shiro.util.ByteSource;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.util.UUID;
+
 public class UserRealm extends AuthorizingRealm {
 
 
@@ -60,7 +62,7 @@ public class UserRealm extends AuthorizingRealm {
 
     public static void main(String[] args) {
         Md5Hash hash=new Md5Hash("123456","mm");
-        System.out.println(hash.toString());
+        System.out.println(UUID.randomUUID().toString());
     }
 
 }

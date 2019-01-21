@@ -5,6 +5,7 @@ import com.model.VO.LoginModel;
 import com.model.VO.RegisterModel;
 import com.service.BaseService;
 import com.util.phoneVerificationCode.SendSMS;
+import com.util.redis.CacheUtil;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.IncorrectCredentialsException;
@@ -21,6 +22,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.UnsupportedEncodingException;
+import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -58,10 +61,8 @@ public class UserController extends BaseController {
         if (!vcode.equals(lm.getVerificationCode())) {
             return ajaxReturn(false, "VerificationCode error");
         }
-
         //第一步：创建令牌
         UsernamePasswordToken token = new UsernamePasswordToken(lm.getPhone(),lm.getPsw());
-
         /**
          * 勾选记住密码则保存cookie
          * 否则不保存
@@ -70,7 +71,6 @@ public class UserController extends BaseController {
             System.out.println("RememberMe");
             token.setRememberMe(true);
         }
-
         //第二步：获取Subject对象，该对象封装了一系列的操作
         Subject subject = SecurityUtils.getSubject();
         //第三步：执行认证
@@ -103,5 +103,24 @@ public class UserController extends BaseController {
         }else{
             return ajaxReturn(false,"该手机号码已注册");
         }
+    }
+
+    @RequestMapping(path = "/getUserMsg.do", method=RequestMethod.POST)
+    @ResponseBody
+    public Map getUserMsg(){
+        Map<String,Object> map=new HashMap();
+        User user = (User) SecurityUtils.getSubject().getPrincipal();
+        if(user == null){
+            return ajaxReturn(false,"用户未登录");
+        }
+        map.put("status",true);
+        map.put("userName",user.getName());
+        List list= CacheUtil.getCache().getList("UserMsg");
+        if(list.isEmpty()){
+            list=(List) userService.selectOne(user.getPhone());
+            CacheUtil.getCache().setList("UserMsg",list);
+        }
+        map.put("message",list);
+        return map;
     }
 }

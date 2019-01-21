@@ -82,6 +82,16 @@ $(document).ready(function(){
 					}
 				});
 			},
+			getUserMsg(){
+				alert(1);
+				$.ajax({
+					url:"getUserMsg.do",
+					type:"POST",
+					success:function(msg){
+						console.log(msg);
+					}
+				});
+			}
 		},
 		created:function(){
 			this.getUserName();
@@ -90,7 +100,7 @@ $(document).ready(function(){
 		}
 	})
 
-	function changepic(obj){
+	    function changepic(obj){
             //console.log(obj.files[0]);//这里可以获取上传文件的name
             var newsrc=getObjectURL(obj.files[0]);
             $(".show").attr('src', newsrc);

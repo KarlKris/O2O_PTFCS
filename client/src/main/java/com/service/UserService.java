@@ -26,9 +26,12 @@ public class UserService implements BaseService{
         return null;
     }
 
+    /**
+     * 查询用户信息表
+     **/
     @Override
     public Object selectOne(String id) {
-        return null;
+        return userMapper.getUserMsg(id);
     }
 
     @Override
