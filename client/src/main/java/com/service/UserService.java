@@ -1,5 +1,6 @@
 package com.service;
 
+import com.mapper.CityMapper;
 import com.mapper.UserMapper;
 import com.model.PO.User;
 import com.model.VO.RegisterModel;
@@ -19,6 +20,8 @@ public class UserService implements BaseService{
 
     @Autowired
     UserMapper userMapper;
+    @Autowired
+    CityMapper cityMapper;
 
     /**查询用户表不需要返回大量信息**/
     @Override
@@ -41,7 +44,7 @@ public class UserService implements BaseService{
 
     @Override
     public Object findSome(String object) {
-        return null;
+        return cityMapper.findAny(object);
     }
 
     @Override

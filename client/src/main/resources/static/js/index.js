@@ -45,7 +45,8 @@ $(document).ready(function(){
 					success:function(msg){
 						console.log(msg);
 						that.areas=msg;
-					}});
+					}
+				});
 			},
 			getUserName(){
 				var that =this;
@@ -83,13 +84,67 @@ $(document).ready(function(){
 				});
 			},
 			getUserMsg(){
-				alert(1);
+				var that =this;
 				$.ajax({
 					url:"getUserMsg.do",
 					type:"POST",
 					success:function(msg){
 						console.log(msg);
-					}
+						if (!msg.status) {
+                            //用户未登录
+                            location='login.html';
+						}else{
+							//false为0true为1
+							if (msg.message == null) {
+								//用户第一次查看用户信息
+						    }else{
+							    //用户查看信息
+							    //赋值市区下拉框
+								that.areas=msg.area;
+							    $('#userName').val(msg.userName);
+							    var str=msg.message;
+							    if (str.role) {
+								    //群众
+								}else{
+									//大学生
+									//模拟点击大学生事件
+									$('#student').click();
+									//语数英成绩赋值
+									$('#chinese').val(str.chinese);
+									$('#math').val(str.math);
+									$('#english').val(str.english);
+									//文科 理科成绩赋值
+									if(str.arts_or_science){
+										//理科
+										//模拟点击理科
+										$('#science').click();
+										$('#comScience').val(str.comprehensive_liberal_or_science);
+									}else{
+										//文科
+										//模拟点击文科
+										$('#arts').click();
+										$('#comLiberal').val(str.comprehensive_liberal_or_science);
+									}
+								
+								}
+								//不可选取角色
+								$('#student').attr('disabled', true);
+								$('#person').attr('disabled', true);
+								//大学跟专业
+								$('#university').val(str.university);
+								$('#major').val(str.major);
+								//居住地址
+								var city=str.cityName;var area=str.cityArea;
+								var optionCity="option:contains('"+city+"')";
+								var optionArea="option:contains('"+area+"')";
+								$('#Ucity').find(optionCity).attr('selected', true);
+								$('#Uarea').find(optionArea).attr('selected', true);
+								$('#addrDetail').val(str.addressDetail);
+								//支付宝账号
+								$('#pay').val(str.payId);
+							}
+						}
+					}	
 				});
 			}
 		},

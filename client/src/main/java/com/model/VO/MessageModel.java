@@ -2,12 +2,14 @@ package com.model.VO;
 
 import lombok.Data;
 
+import java.io.Serializable;
+
 /**
  * @author:liyuanwen
  * @date: 2019/1/21 12:19
  **/
 @Data
-public class MessageModel {
+public class MessageModel implements Serializable {
 
     private String payId;
     private boolean role;

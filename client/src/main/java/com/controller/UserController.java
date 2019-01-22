@@ -2,6 +2,7 @@ package com.controller;
 
 import com.model.PO.User;
 import com.model.VO.LoginModel;
+import com.model.VO.MessageModel;
 import com.model.VO.RegisterModel;
 import com.service.BaseService;
 import com.util.phoneVerificationCode.SendSMS;
@@ -22,6 +23,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.UnsupportedEncodingException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -115,12 +117,22 @@ public class UserController extends BaseController {
         }
         map.put("status",true);
         map.put("userName",user.getName());
-        List list= CacheUtil.getCache().getList("UserMsg");
-        if(list.isEmpty()){
-            list=(List) userService.selectOne(user.getPhone());
-            CacheUtil.getCache().setList("UserMsg",list);
+        MessageModel msg = (MessageModel) CacheUtil.getCache().get("UserMsg:"+user.getPhone());
+        if(msg == null){
+            msg=(MessageModel) userService.selectOne(user.getPhone());
+            CacheUtil.getCache().set("UserMsg:"+user.getPhone(),msg);
         }
-        map.put("message",list);
+        map.put("message",msg);
+        List list=new ArrayList();
+        if(msg.getCityName()!=null){
+            list=CacheUtil.getCache().getList(msg.getCityName());
+            if(list.isEmpty()){
+                System.out.println("从数据库中查询市区数据。。。。");
+                list=(List) userService.findSome(msg.getCityName());
+                CacheUtil.getCache().setList(msg.getCityName(),list);
+            }
+        }
+        map.put("area",list);
         return map;
     }
 }

@@ -400,7 +400,7 @@
 					<!--用户名 -->
 					<div class="form-group">
 						<label >用户名:</label>
-						<input type="text" class="form-control" required/>
+						<input type="text" class="form-control" id="userName" required/>
 					</div>
 					<!--角色 -->
 					<div style="height: 40px;">
@@ -432,12 +432,12 @@
 						<!--大学 -->
 						<div class="form-group">
 							<label >大学:</label>
-							<input type="text" class="form-control" required/>
+							<input type="text" class="form-control" id="university" required/>
 						</div>
 						<!--专业 -->
 						<div class="form-group">
 							<label >专业:</label>
-							<input type="text" class="form-control" required/>
+							<input type="text" class="form-control" id="major" required/>
 						</div>
 					</div>
 					<!--高考成绩 -->
@@ -448,59 +448,48 @@
 							<div class="input-group-prepend">
 								<span class="input-group-text">语文</span>
 							</div>
-							<input type="text" class="form-control" required/>
+							<input type="text" class="form-control" id="chinese" required/>
 							<div class="input-group-prepend">
 								<span class="input-group-text">数学</span>
 							</div>
-							<input type="text" class="form-control" required/>
+							<input type="text" class="form-control" id="math" required/>
 							<div class="input-group-prepend">
 								<span class="input-group-text">英语</span>
 							</div>
-							<input type="text" class="form-control" required/>
+							<input type="text" class="form-control" id="english" required/>
 						</div>
 						<!--理科 -->
 						<div class="input-group mb-3" style="display: none;" id="scienceScore">
 							<div class="input-group-prepend">
-								<span class="input-group-text">物理</span>
+								<span class="input-group-text">理综</span>
 							</div>
-							<input type="text" class="form-control" >
-							<div class="input-group-prepend">
-								<span class="input-group-text">化学</span>
-							</div>
-							<input type="text" class="form-control" >
-							<div class="input-group-prepend">
-								<span class="input-group-text">生物</span>
-							</div>
-							<input type="text" class="form-control">
+							<input type="text" class="form-control" id="comScience" required>
 						</div>
 						<!--文科 -->
 						<div class="input-group mb-3" style="display: none;" id="artsScore">
 							<div class="input-group-prepend">
-								<span class="input-group-text">政治</span>
+								<span class="input-group-text">文综</span>
 							</div>
-							<input type="text" class="form-control" >
-							<div class="input-group-prepend">
-								<span class="input-group-text">地理</span>
-							</div>
-							<input type="text" class="form-control" >
-							<div class="input-group-prepend">
-								<span class="input-group-text">历史</span>
-							</div>
-							<input type="text" class="form-control">
+							<input type="text" class="form-control" id="comLiberal" required>
 						</div>
 					</div>
 					<!--家庭住址 -->
 					<div class="form-group">
 						<label >居住地址:</label>
-						<div>
-							<select class="form-control" @change='getPersonMsgFromCity($event)'>
+						<div style="height: 75px;">
+							<select class="form-control" @change='getPersonMsgFromCity($event)' id="Ucity" style="width: 49%;">
 								<option v-for='city in cities' >{{city}}</option>
 							</select>
-							<select class="form-control" >
-								<option v-for='area in areas' v-if='area.length!=0'>{{area}}</option>
+							<select class="form-control" id="Uarea" style="width: 49%;position: relative;left: 237px;top: -38px;">
+								<option v-for='area in areas' v-if='areas.length!=0'>{{area}}</option>
 							</select>
-							<input type="text" class="form-control" placeholder="详细地址" required/>
+							<input type="text" class="form-control" placeholder="详细地址" id="addrDetail" style="position: relative;top: -30px;" required/>
 						</div>
+					</div>
+					<!--支付宝账号 -->
+					<div class="form-group">
+						<label >支付宝账号:</label>
+						<input type="text" class="form-control" id="pay" required/>
 					</div>
 				</div>
 

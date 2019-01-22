@@ -23,10 +23,8 @@ public interface UserMapper {
     boolean addUserMsg(Map map);
 
     @SelectProvider(type = UserDaoProvider.class,method = "getUserMsg")
-    @Results({
-            @Result(property = "")
-    })
-    List getUserMsg(String phone);
+    @ResultType(MessageModel.class)
+    MessageModel getUserMsg(String phone);
 
     class UserDaoProvider{
         public String getUserMsg(String phone){
