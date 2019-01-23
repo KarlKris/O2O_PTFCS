@@ -32,14 +32,19 @@ public interface UserMapper {
                     .SELECT("payId","role","chinese","math"
                             ,"english,arts_or_science","comprehensive_liberal_or_science"
                             ,"major","university","cityName","cityArea","addressDetail")
-                    .FROM("user inner join " +
-                                    "(usermsg inner join studentmsg on usermsg.id=studentmsg.id) " +
-                                    "on user.id = usermsg.uid",
+                    .FROM("user inner join "
+                                    +"(usermsg inner join studentmsg on usermsg.id=studentmsg.id) "
+                                    + "on user.id = usermsg.uid",
                             "address inner join city on address.cid = city.id")
                     .WHERE("phone=#{phone}")
                     .toString();
 
             return sql;
+        }
+
+        public String setUserMsg(Map map){
+            return new SQL()
+                    .toString();
         }
     }
 

@@ -8,6 +8,7 @@ $(document).ready(function(){
 				data:{},
 				userName:{},
 				areas:{},
+				selectArea:''
 			}
 		},
 		methods:{
@@ -133,12 +134,15 @@ $(document).ready(function(){
 								//大学跟专业
 								$('#university').val(str.university);
 								$('#major').val(str.major);
+
 								//居住地址
 								var city=str.cityName;var area=str.cityArea;
 								var optionCity="option:contains('"+city+"')";
 								var optionArea="option:contains('"+area+"')";
+								that.selectArea = area;
+								// console.log(optionArea);
 								$('#Ucity').find(optionCity).attr('selected', true);
-								$('#Uarea').find(optionArea).attr('selected', true);
+								// $('#Uarea').find(optionArea).attr('selected', true);
 								$('#addrDetail').val(str.addressDetail);
 								//支付宝账号
 								$('#pay').val(str.payId);
@@ -146,6 +150,27 @@ $(document).ready(function(){
 						}
 					}	
 				});
+			},
+			setUserMsg(){
+				if (confirm("确认提交保存吗")) {
+					var data={
+						userName:$('#userName').val(),
+						role:$('input:radio[name="role"]:checked').val(),
+						classify:$('input:radio[name="classify"]:checked').val(),
+						university:$('#university').val(),
+						major:$('#major').val(),
+						chinese:$('#chinese').val(),
+						math:$('#math').val(),
+						english:$('#english').val(),
+						comScience:$('#comScience').val(),
+						comLiberal:$('#comLiberal').val(),
+						city:$('#Ucity option:selected').val(),
+						area:$('#Uarea option:selected').val(),
+						addrDetail:$('#addrDetail').val(),
+						payId:$('#pay').val(),
+					}
+					console.log(data);
+				}
 			}
 		},
 		created:function(){

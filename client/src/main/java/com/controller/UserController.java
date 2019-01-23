@@ -135,4 +135,12 @@ public class UserController extends BaseController {
         map.put("area",list);
         return map;
     }
+
+    @ResponseBody
+    @RequestMapping(path = "setUserMsg.do",method = RequestMethod.POST)
+    public Map setUserMsg(){
+        return null;
+
+    }
+
 }

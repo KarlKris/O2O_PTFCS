@@ -407,11 +407,11 @@
 						<label >角 色:</label>
 						<div>
 							<div class="custom-control custom-radio" style="left: 150px;top: -27px;">
-								<input type="radio" class="custom-control-input" id="student" name="role">
+								<input type="radio" class="custom-control-input" id="student" name="role" value="大学生">
 								<label class="custom-control-label" for="student">大学生</label>
 							</div>
 							<div class="custom-control custom-radio" style="left: 300px;top: -49px;">
-								<input type="radio" class="custom-control-input" id="person" name="role">
+								<input type="radio" class="custom-control-input" id="person" name="role" value="群众">
 								<label class="custom-control-label" for="person">群众</label>
 							</div>
 						</div>
@@ -421,11 +421,11 @@
 						<label >文 理:</label>
 						<div class="height_0" style="height: 0;">
 							<div class="custom-control custom-radio" style="left: 150px;top: -27px;">
-								<input type="radio" class="custom-control-input" id="arts" name="classify">
+								<input type="radio" class="custom-control-input" id="arts" name="classify" value="文科">
 								<label class="custom-control-label" for="arts">文科</label>
 							</div>
 							<div class="custom-control custom-radio" style="left: 300px;top: -49px;">
-								<input type="radio" class="custom-control-input" id="science" name="classify">
+								<input type="radio" class="custom-control-input" id="science" name="classify" value="理科">
 								<label class="custom-control-label" for="science">理科</label>
 							</div>
 						</div>
@@ -481,7 +481,7 @@
 								<option v-for='city in cities' >{{city}}</option>
 							</select>
 							<select class="form-control" id="Uarea" style="width: 49%;position: relative;left: 237px;top: -38px;">
-								<option v-for='area in areas' v-if='areas.length!=0'>{{area}}</option>
+								<option v-for='area in areas' v-if='areas.length!=0' :selected="area==selectArea">{{area}}</option>
 							</select>
 							<input type="text" class="form-control" placeholder="详细地址" id="addrDetail" style="position: relative;top: -30px;" required/>
 						</div>
@@ -496,7 +496,7 @@
 				<!-- 模态框底部 -->
 				<div class="modal-footer">
 					<div style="text-align: center;">
-						<button type="button" class="btn btn-success">保存</button>
+						<button type="button" class="btn btn-success" v-on:click='setUserMsg()'>保存</button>
 					    <button type="button" class="btn btn-success" data-dismiss="modal">关闭</button>
 					</div>
 				</div>
