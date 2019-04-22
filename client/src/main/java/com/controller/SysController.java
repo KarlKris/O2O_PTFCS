@@ -123,12 +123,12 @@ public class SysController extends BaseController {
         List<String> cityAreaList=new ArrayList<>();
         List<Recruit> recruitList=new ArrayList<>();
 
-        cityAreaList=CacheUtil.getCache().getList(cityName);
+        cityAreaList=CacheUtil.getCache().getList(cityName+":Recruit");
         System.out.println("打印从缓冲的取出来的内容:  "+cityAreaList);
         if(cityAreaList.isEmpty()){
             System.out.println("从数据库中查询市区数据。。。。");
             cityAreaList=(List) sysService.findSome(cityName);
-            CacheUtil.getCache().setList(cityName,cityAreaList);
+            CacheUtil.getCache().setList(cityName+":Recruit",cityAreaList);
         }
 
         map.put("cityArea",cityAreaList);
@@ -141,11 +141,11 @@ public class SysController extends BaseController {
     public List getPersonMsgFromCity(String cityName){
         System.out.println("正在获取下级城市信息。。。。"+cityName);
         List list=new ArrayList();
-        list=CacheUtil.getCache().getList(cityName);
+        list=CacheUtil.getCache().getList(cityName+":Subordinate");
         if(list.isEmpty()){
             System.out.println("从数据库中查询市区数据。。。。");
             list=(List) sysService.findSome(cityName);
-            CacheUtil.getCache().setList(cityName,list);
+            CacheUtil.getCache().setList(cityName+":Subordinate",list);
         }
         return list;
     }

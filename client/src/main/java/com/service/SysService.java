@@ -41,4 +41,9 @@ public class SysService implements BaseService {
     public Boolean addOne(Object object) {
         return null;
     }
+
+    @Override
+    public Object addOneToMsg(Object object) {
+        return null;
+    }
 }

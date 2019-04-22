@@ -14,6 +14,7 @@ import org.apache.shiro.authc.UnknownAccountException;
 import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.subject.Subject;
 import org.springframework.stereotype.Controller;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -125,11 +126,11 @@ public class UserController extends BaseController {
         map.put("message",msg);
         List list=new ArrayList();
         if(msg.getCityName()!=null){
-            list=CacheUtil.getCache().getList(msg.getCityName());
+            list=CacheUtil.getCache().getList(msg.getCityName()+":Subordinate");
             if(list.isEmpty()){
                 System.out.println("从数据库中查询市区数据。。。。");
                 list=(List) userService.findSome(msg.getCityName());
-                CacheUtil.getCache().setList(msg.getCityName(),list);
+                CacheUtil.getCache().setList(msg.getCityName()+":Subordinate",list);
             }
         }
         map.put("area",list);
@@ -137,10 +138,35 @@ public class UserController extends BaseController {
     }
 
     @ResponseBody
-    @RequestMapping(path = "setUserMsg.do",method = RequestMethod.POST)
-    public Map setUserMsg(){
-        return null;
+    @RequestMapping(path = "/updateUserMsg.do",method = RequestMethod.POST)
+    @Transactional
+    public Map updateUserMsg(MessageModel mm){
+        Map<String,Object> map=new HashMap();
+        User user = (User) SecurityUtils.getSubject().getPrincipal();
+        if(user == null){
+            return ajaxReturn(false,"用户未登录");
+        }
+        /**
+         * 先从redis获取到数据，查看是否有变化
+         **/
+        MessageModel msg = (MessageModel) CacheUtil.getCache().get("UserMsg:"+user.getPhone());
+        if(msg == null){
+            msg=(MessageModel) userService.selectOne(user.getPhone());
+        }
+        //检查数据库是否有该用户信息，如果没有则插入，有则更新
+        if (msg == null){
+            //插入信息
+            userService.addOneToMsg(mm);
+        }
+        if (mm.equals(msg)){
+            //用户未修改任何信息
+            map.put("status",false);
+            return map;
+        }
+        //更新数据库保存的信息
 
+
+        return null;
     }
 
 }

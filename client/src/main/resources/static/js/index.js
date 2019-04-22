@@ -155,7 +155,7 @@ $(document).ready(function(){
 				if (confirm("确认提交保存吗")) {
 					var data={
 						userName:$('#userName').val(),
-						role:$('input:radio[name="role"]:checked').val(),
+						role:$('input:radio[name="role"]:checked').val()=="大学生" ? false : true ,
 						classify:$('input:radio[name="classify"]:checked').val(),
 						university:$('#university').val(),
 						major:$('#major').val(),
@@ -170,6 +170,15 @@ $(document).ready(function(){
 						payId:$('#pay').val(),
 					}
 					console.log(data);
+					$.ajax({
+						url: 'setUserMsg.do',
+						type: 'POST',
+						data: data,
+						success:function(msg){
+                        	
+						}
+					});
+					
 				}
 			}
 		},

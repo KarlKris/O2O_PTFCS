@@ -90,6 +90,8 @@
 						<button type="button" class="btn btn-light dropdown-toggle " data-toggle="dropdown" style="background: local;font-size: smaller;">欢迎你,{{userName}}</button>
 						<div class="dropdown-menu city-name smallerfont" style="min-width: auto;">
 							<a class="dropdown-item" data-toggle="modal" data-target="#message" v-on:click="getUserMsg()">个人信息</a>
+							<a class="dropdown-item" data-toggle="modal" data-target="#message" v-on:click="">修改密码</a>
+							<a class="dropdown-item" data-toggle="modal" data-target="#message" v-on:click="">身份认证</a>
 						</div>
 					</div>
 					<div class="logout"><a href="javascript:void(0);" v-on:click="logout()" color="#000">退出</a></div>

@@ -21,5 +21,10 @@ public interface BaseService {
      * 添加一条属性
      **/
     Boolean addOne(Object object);
+
+    /**
+     *  插入用户信息
+     **/
+     Object addOneToMsg(Object object);
 }
 
