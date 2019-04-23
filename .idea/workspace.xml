@@ -7,24 +7,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ba9b438e-9ac2-4c39-8fe2-2cb11207a1df" name="Default Changelist" comment="19/01/15 15点26分">
-      <change afterPath="$PROJECT_DIR$/client/src/main/java/com/mapper/AddressMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/main/java/com/model/PO/UserMag.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/O2O_PTFCS.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/java/com/util/authenticaton/AliYunAuthentication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/java/com/util/authenticaton/HttpUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/resources/generator.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/resources/generatorConfig.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/artifacts/client_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/client_war_exploded.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/da0c951e-5420-4241-928e-4d9661f50b94.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/da0c951e-5420-4241-928e-4d9661f50b94.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/fffec81f-5dd8-486f-8ffe-4e69a8bff8ac.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/fffec81f-5dd8-486f-8ffe-4e69a8bff8ac.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/java/com/controller/SysController.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/com/controller/SysController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/client/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/main/java/com/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/com/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/java/com/mapper/CityMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/com/mapper/CityMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/main/java/com/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/com/mapper/UserMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/java/com/model/VO/MessageModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/com/model/VO/MessageModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/java/com/service/BaseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/com/service/BaseService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/java/com/service/SysService.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/com/service/SysService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/java/com/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/com/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/resources/static/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/resources/static/js/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/webapp/WEB-INF/view/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/webapp/WEB-INF/view/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/target/classes/com/controller/SysController.class" beforeDir="false" afterPath="$PROJECT_DIR$/client/target/classes/com/controller/SysController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/target/classes/com/mapper/UserMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/client/target/classes/com/mapper/UserMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/target/classes/com/service/BaseService.class" beforeDir="false" afterPath="$PROJECT_DIR$/client/target/classes/com/service/BaseService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/target/classes/com/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/client/target/classes/com/service/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/test/client - 快捷方式.lnk" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/target/classes/com/util/verificationCode/GifCaptcha.class" beforeDir="false" afterPath="$PROJECT_DIR$/client/target/classes/com/util/verificationCode/GifCaptcha.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/target/client/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/client/target/client/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/target/client/WEB-INF/classes/com/controller/SysController.class" beforeDir="false" afterPath="$PROJECT_DIR$/client/target/client/WEB-INF/classes/com/controller/SysController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/target/client/WEB-INF/classes/com/mapper/UserMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/client/target/client/WEB-INF/classes/com/mapper/UserMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/target/client/WEB-INF/classes/com/service/BaseService.class" beforeDir="false" afterPath="$PROJECT_DIR$/client/target/client/WEB-INF/classes/com/service/BaseService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/target/client/WEB-INF/classes/com/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/client/target/client/WEB-INF/classes/com/service/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/target/client/WEB-INF/classes/com/util/verificationCode/GifCaptcha.class" beforeDir="false" afterPath="$PROJECT_DIR$/client/target/client/WEB-INF/classes/com/util/verificationCode/GifCaptcha.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/target/client/WEB-INF/view/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/target/client/WEB-INF/view/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -70,123 +75,19 @@
     </expand>
     <select />
   </component>
-  <component name="FUSProjectUsageTrigger">
-    <session id="-81263348">
-      <usages-collector id="statistics.lifecycle.project">
-        <counts>
-          <entry key="project.closed" value="40" />
-          <entry key="project.open.time.0" value="4" />
-          <entry key="project.open.time.1" value="6" />
-          <entry key="project.open.time.11" value="2" />
-          <entry key="project.open.time.12" value="2" />
-          <entry key="project.open.time.15" value="3" />
-          <entry key="project.open.time.16" value="1" />
-          <entry key="project.open.time.17" value="1" />
-          <entry key="project.open.time.2" value="1" />
-          <entry key="project.open.time.20" value="1" />
-          <entry key="project.open.time.21" value="2" />
-          <entry key="project.open.time.22" value="2" />
-          <entry key="project.open.time.23" value="2" />
-          <entry key="project.open.time.26" value="1" />
-          <entry key="project.open.time.27" value="2" />
-          <entry key="project.open.time.29" value="2" />
-          <entry key="project.open.time.3" value="1" />
-          <entry key="project.open.time.32" value="1" />
-          <entry key="project.open.time.33" value="2" />
-          <entry key="project.open.time.34" value="1" />
-          <entry key="project.open.time.38" value="2" />
-          <entry key="project.open.time.39" value="1" />
-          <entry key="project.open.time.4" value="1" />
-          <entry key="project.open.time.48" value="1" />
-          <entry key="project.open.time.51" value="1" />
-          <entry key="project.open.time.52" value="1" />
-          <entry key="project.open.time.84" value="1" />
-          <entry key="project.opened" value="45" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.open">
-        <counts>
-          <entry key="class" value="20" />
-          <entry key="css" value="15" />
-          <entry key="gitignore" value="1" />
-          <entry key="html" value="30" />
-          <entry key="ico" value="1" />
-          <entry key="iml" value="1" />
-          <entry key="java" value="250" />
-          <entry key="jpg" value="3" />
-          <entry key="js" value="10" />
-          <entry key="properties" value="11" />
-          <entry key="sql" value="2" />
-          <entry key="user" value="1" />
-          <entry key="xml" value="20" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.open">
-        <counts>
-          <entry key="CLASS" value="20" />
-          <entry key="CSS" value="15" />
-          <entry key="Database Element" value="1" />
-          <entry key="Git file" value="1" />
-          <entry key="HTML" value="30" />
-          <entry key="IDEA_MODULE" value="1" />
-          <entry key="Image" value="4" />
-          <entry key="JAVA" value="250" />
-          <entry key="JavaScript" value="10" />
-          <entry key="Properties" value="11" />
-          <entry key="Scratch" value="2" />
-          <entry key="XML" value="20" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.edit">
-        <counts>
-          <entry key="css" value="36" />
-          <entry key="dummy" value="26" />
-          <entry key="ft" value="33" />
-          <entry key="html" value="211" />
-          <entry key="java" value="10568" />
-          <entry key="js" value="29" />
-          <entry key="properties" value="63" />
-          <entry key="scss" value="1" />
-          <entry key="txt" value="127" />
-          <entry key="xml" value="103" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.edit">
-        <counts>
-          <entry key="CSS" value="36" />
-          <entry key="HTML" value="211" />
-          <entry key="JAVA" value="10568" />
-          <entry key="JavaScript" value="29" />
-          <entry key="PLAIN_TEXT" value="154" />
-          <entry key="Properties" value="63" />
-          <entry key="VTL" value="33" />
-          <entry key="XML" value="103" />
-        </counts>
-      </usages-collector>
-    </session>
+  <component name="DefaultGradleProjectSettings">
+    <option name="testRunner" value="GRADLE" />
+    <option name="delegatedBuild" value="true" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/main/java/com/mapper/UserMapper.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1652">
-              <caret line="65" column="28" selection-start-line="65" selection-start-column="28" selection-end-line="65" selection-end-column="28" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/client/src/main/java/com/controller/UserController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="156" column="25" lean-forward="true" selection-start-line="156" selection-start-column="25" selection-end-line="156" selection-end-column="25" />
+            <state relative-caret-position="892">
+              <caret line="165" column="20" selection-start-line="165" selection-start-column="20" selection-end-line="165" selection-end-column="20" />
               <folding>
                 <element signature="method#register#0;class#UserController#0" />
-                <element signature="method#login#0;class#UserController#0" />
                 <element signature="method#getPhoneVerificationCode#0;class#UserController#0" />
               </folding>
             </state>
@@ -194,12 +95,27 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/main/java/com/model/PO/Address.java">
+        <entry file="file://$PROJECT_DIR$/client/src/main/java/com/util/authenticaton/AliYunAuthentication.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="392">
-              <caret line="16" column="33" selection-start-line="16" selection-start-column="33" selection-end-line="16" selection-end-column="33" />
+            <state relative-caret-position="121">
+              <caret line="105" column="15" selection-start-line="105" selection-start-column="15" selection-end-line="105" selection-end-column="87" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1846#1862#0" expanded="true" />
+                <element signature="e#2063#2079#0" expanded="true" />
+              </folding>
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2005">
+              <caret line="266" column="21" lean-forward="true" selection-start-line="266" selection-start-column="21" selection-end-line="266" selection-end-column="21" />
+            </state>
+          </provider>
+          <provider editor-type-id="MavenHelperPluginDependencyAnalyzer" />
         </entry>
       </file>
     </leaf>
@@ -209,6 +125,7 @@
       <list>
         <option value="HTML File" />
         <option value="Interface" />
+        <option value="Mybatis-XML" />
         <option value="Class" />
       </list>
     </option>
@@ -229,11 +146,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/client/src/main/java/com/model/User.java" />
-        <option value="$PROJECT_DIR$/client/src/main/java/com/config/ShiroConfig.java" />
-        <option value="$PROJECT_DIR$/client/src/main/java/com/model/City.java" />
-        <option value="$PROJECT_DIR$/client/src/main/java/com/model/Address.java" />
-        <option value="$PROJECT_DIR$/client/src/main/java/com/model/Subject.java" />
         <option value="$PROJECT_DIR$/client/src/main/java/com/model/PTJob.java" />
         <option value="$PROJECT_DIR$/client/src/main/java/com/model/Recruit.java" />
         <option value="$PROJECT_DIR$/client/src/main/java/com/model/PO/City.java" />
@@ -257,7 +169,6 @@
         <option value="$PROJECT_DIR$/client/src/main/java/com/util/RandomUserName/RandomUName.java" />
         <option value="$PROJECT_DIR$/client/src/main/webapp/WEB-INF/view/message.html" />
         <option value="$PROJECT_DIR$/client/src/main/java/com/util/redis/RedisUtil.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/client/src/main/java/com/util/redis/RedissionHelper.java" />
         <option value="$PROJECT_DIR$/client/src/main/java/com/util/redis/Client.java" />
         <option value="$PROJECT_DIR$/client/src/main/java/com/util/redis/RedissonHelper.java" />
@@ -277,23 +188,23 @@
         <option value="$PROJECT_DIR$/client/src/main/java/com/model/PO/Address.java" />
         <option value="$PROJECT_DIR$/client/src/main/java/com/mapper/CityMapper.java" />
         <option value="$PROJECT_DIR$/client/src/main/java/com/model/PO/UserMag.java" />
-        <option value="$PROJECT_DIR$/client/src/main/java/com/mapper/UserMapper.java" />
         <option value="$PROJECT_DIR$/client/src/main/java/com/service/UserService.java" />
+        <option value="$PROJECT_DIR$/client/src/main/java/com/mapper/UserMapper.java" />
+        <option value="$PROJECT_DIR$/client/src/main/resources/generator.properties" />
+        <option value="$PROJECT_DIR$/client/src/main/resources/generatorConfig.xml" />
+        <option value="$PROJECT_DIR$/client/pom.xml" />
         <option value="$PROJECT_DIR$/client/src/main/java/com/controller/UserController.java" />
+        <option value="$PROJECT_DIR$/client/src/main/java/com/util/authenticaton/HttpUtils.java" />
+        <option value="$PROJECT_DIR$/client/src/main/java/com/util/authenticaton/AliYunAuthentication.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
       </list>
     </option>
   </component>
-  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
   <component name="JsFlowSettings">
     <service-enabled>true</service-enabled>
     <exe-path />
     <other-services-enabled>true</other-services-enabled>
     <auto-save>true</auto-save>
-  </component>
-  <component name="JsGulpfileManager">
-    <detection-done>true</detection-done>
-    <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
@@ -309,16 +220,26 @@
       </MavenGeneralSettings>
     </option>
   </component>
-  <component name="NodePackageJsonFileManager">
-    <packageJsonPaths>
-      <path value="$PROJECT_DIR$/client/src/main/resources/static/htmlTemplates/index/vendor/fontawesome-free/package.json" />
-    </packageJsonPaths>
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <expand>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="O2O_PTFCS" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="O2O_PTFCS" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Plugins" type="7aea1407:MavenProjectsStructure$PluginsNode" />
+        </path>
+      </expand>
+      <select />
+    </treeState>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="155" />
-    <option name="y" value="10" />
-    <option name="width" value="1685" />
-    <option name="height" value="970" />
+    <option name="y" value="23" />
+    <option name="width" value="1280" />
+    <option name="height" value="726" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -388,41 +309,28 @@
               <item name="client" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="util" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="O2O_PTFCS" type="b2602c69:ProjectViewProjectNode" />
+              <item name="O2O_PTFCS" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="O2O_PTFCS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="O2O_PTFCS" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="O2O_PTFCS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="O2O_PTFCS" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="O2O_PTFCS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="O2O_PTFCS" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
-              <item name="view" type="462c0819:PsiDirectoryNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -431,6 +339,9 @@
     <property name="Downloaded.Files.Path.Enabled" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
     <property name="database.console.LAST_STATE" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -438,7 +349,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.applicationServers" />
+    <property name="settings.editor.selected.configurable" value="fileTemplates" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -477,8 +388,35 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="MybatisGenerator" type="MavenRunConfiguration" factoryName="Maven">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="mybatis-generator:generate" />
+                <option value="-e" />
+              </list>
+            </option>
+            <option name="pomFileName" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$/client" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
     <configuration name="Tomcat 9.0" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.0.M26" ALTERNATIVE_JRE_ENABLED="false">
-      <option name="UPDATING_POLICY" value="restart-server" />
+      <option name="UPDATE_ON_FRAME_DEACTIVATION" value="true" />
+      <option name="UPDATE_CLASSES_ON_FRAME_DEACTIVATION" value="true" />
       <deployment>
         <artifact name="client:war exploded">
           <settings>
@@ -489,15 +427,100 @@
       <server-settings>
         <option name="BASE_DIRECTORY_NAME" value="Unnamed_O2O_PTFCS" />
       </server-settings>
-      <predefined_log_file id="Tomcat" enabled="true" />
-      <predefined_log_file id="Tomcat Catalina" enabled="true" />
-      <predefined_log_file id="Tomcat Manager" enabled="false" />
-      <predefined_log_file id="Tomcat Host Manager" enabled="false" />
-      <predefined_log_file id="Tomcat Localhost Access" enabled="false" />
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
       <RunnerSettings RunnerId="Debug">
         <option name="DEBUG_PORT" value="54174" />
       </RunnerSettings>
+      <RunnerSettings RunnerId="Debug with VisualVM">
+        <option name="DEBUG_PORT" value="51304" />
+        <option name="visualVMId" value="18102175581757" />
+      </RunnerSettings>
+      <RunnerSettings RunnerId="JProfiler">
+        <option name="jreHome" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home" />
+      </RunnerSettings>
+      <RunnerSettings RunnerId="JRebel Debug">
+        <option name="DEBUG_PORT" value="51305" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug with VisualVM">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="JProfiler">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="JRebel Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="JRebel Executor">
         <option name="USE_ENV_VARIABLES" value="true" />
         <STARTUP>
           <option name="USE_DEFAULT" value="true" />
@@ -527,6 +550,21 @@
           <option name="PROGRAM_PARAMETERS" value="" />
         </SHUTDOWN>
       </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run with VisualVM">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
       <method v="2">
         <option name="BuildArtifacts" enabled="true">
           <artifact name="client:war exploded" />
@@ -534,8 +572,9 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Tomcat Server.Tomcat 9.0" />
       <item itemvalue="Application.UserRealm" />
+      <item itemvalue="Maven.MybatisGenerator" />
+      <item itemvalue="Tomcat Server.Tomcat 9.0" />
     </list>
     <recent_temporary>
       <list>
@@ -545,6 +584,20 @@
   </component>
   <component name="SvnConfiguration">
     <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ba9b438e-9ac2-4c39-8fe2-2cb11207a1df" name="Default Changelist" comment="19/01/15 15点26分" />
+      <created>1555981609568</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1555981609568</updated>
+      <workItem from="1555981612159" duration="6225000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="6225000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -556,18 +609,29 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="124" y="8" width="1348" height="776" extended-state="0" />
+    <frame x="0" y="23" width="1280" height="725" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28294572" />
+      <window_info id="JRebel" side_tool="true" />
+      <window_info id="Capture Tool" />
+      <window_info id="Image Layers" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21682848" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
       <window_info id="Favorites" order="4" side_tool="true" />
       <window_info id="Web" order="5" side_tool="true" />
+      <window_info anchor="bottom" id="Application Servers" />
+      <window_info anchor="bottom" id="Run with VisualVM" />
+      <window_info anchor="bottom" id="Terminal" />
+      <window_info anchor="bottom" id="JProfiler" />
+      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
+      <window_info anchor="bottom" id="JRebel Executor" weight="0.328594" />
+      <window_info anchor="bottom" id="JRebel Console" side_tool="true" />
+      <window_info anchor="bottom" id="Debug with VisualVM" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3290938" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4992658" weight="0.56120825" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4992658" weight="0.5608215" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.5023847" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -581,6 +645,12 @@
       <window_info anchor="bottom" id="Database Console" order="13" weight="0.3290938" />
       <window_info anchor="bottom" id="Messages" order="14" weight="0.3290938" />
       <window_info anchor="bottom" id="Problems" order="15" />
+      <window_info anchor="right" id="Maven" weight="0.32928804" />
+      <window_info anchor="right" id="Capture Analysis" />
+      <window_info anchor="right" id="Key Promoter X" />
+      <window_info anchor="right" id="BPMNPalette" />
+      <window_info anchor="right" id="Mybatis datasource" side_tool="true" />
+      <window_info anchor="right" id="Theme Preview" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -592,9 +662,6 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
-  </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="19/01/09 13点44分" />
@@ -624,22 +691,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/client/src/main/java/com/controller/BaseController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="278">
-          <caret line="17" column="23" lean-forward="true" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/main/resources/static/htmlTemplates/register/js/scripts.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="56">
-          <caret line="50" column="26" lean-forward="true" selection-start-line="50" selection-start-column="26" selection-end-line="50" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/main/java/com/util/phoneVerificationCode/Bmob.java" />
-    <entry file="file://$PROJECT_DIR$/client/src/main/java/com/util/phoneVerificationCode/Config.java" />
     <entry file="file://$PROJECT_DIR$/client/src/main/java/com/util/phoneVerificationCode/IndustrySMS.java" />
     <entry file="file://$PROJECT_DIR$/client/src/main/java/com/util/phoneVerificationCode/HttpUtil.java" />
     <entry file="file://$PROJECT_DIR$/client/src/main/java/com/util/phoneVerificationCode/SendSMS.java">
@@ -677,34 +728,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/redis/clients/jedis/3.0.1/jedis-3.0.1.jar!/redis/clients/jedis/JedisPool.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-redis/2.1.4.RELEASE/spring-data-redis-2.1.4.RELEASE.jar!/org/springframework/data/redis/connection/jedis/JedisClientConfiguration.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1020">
-          <caret line="17" column="17" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="20" column="39" selection-start-line="20" selection-start-column="39" selection-end-line="20" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="39" column="36" lean-forward="true" selection-start-line="39" selection-start-column="36" selection-end-line="39" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/redis/clients/jedis/3.0.1/jedis-3.0.1.jar!/redis/clients/jedis/JedisPool.class" />
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-redis/2.1.4.RELEASE/spring-data-redis-2.1.4.RELEASE.jar!/org/springframework/data/redis/connection/jedis/JedisClientConfiguration.class" />
     <entry file="file://$PROJECT_DIR$/client/src/main/java/com/util/redis/RedisUtil.java" />
     <entry file="file://$PROJECT_DIR$/client/src/main/java/com/config/ShiroConfig.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -729,13 +754,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/client/src/main/resources/log4j.properties">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/main/resources/application.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="348">
-          <caret line="15" column="23" lean-forward="true" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
-        </state>
-      </provider>
     </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-redis/1.8.7.RELEASE/spring-data-redis-1.8.7.RELEASE.jar!/org/springframework/data/redis/core/ListOperations.class">
       <provider selected="true" editor-type-id="text-editor">
@@ -765,9 +783,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/main/resources/favicon.ico">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/main/resources/static/css/index.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1122">
@@ -782,13 +797,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-databind/2.9.8/jackson-databind-2.9.8.jar!/com/fasterxml/jackson/databind/ser/std/MapSerializer.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="460" selection-start-line="460" selection-end-line="460" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-databind/2.9.8/jackson-databind-2.9.8.jar!/com/fasterxml/jackson/databind/ser/std/MapSerializer.class" />
     <entry file="file://$PROJECT_DIR$/client/src/main/java/com/model/PO/User.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="390">
@@ -924,28 +933,91 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/client/src/main/java/com/mapper/UserMapper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1652">
-          <caret line="65" column="28" selection-start-line="65" selection-start-column="28" selection-end-line="65" selection-end-column="28" />
+        <state relative-caret-position="-18">
+          <caret line="10" column="4" lean-forward="true" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="4" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/main/java/com/model/PO/Address.java">
+    <entry file="file://$PROJECT_DIR$/client/src/main/resources/favicon.ico">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/main/resources/application.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="392">
-          <caret line="16" column="33" selection-start-line="16" selection-start-column="33" selection-end-line="16" selection-end-column="33" />
+        <state relative-caret-position="30">
+          <caret line="2" column="34" lean-forward="true" selection-start-line="2" selection-start-column="27" selection-end-line="2" selection-end-column="34" />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/main/java/com/model/PO/Address.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/main/resources/generatorConfig.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="945">
+          <caret line="63" column="85" selection-start-line="63" selection-start-column="85" selection-end-line="63" selection-end-column="85" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="71" column="47" lean-forward="true" selection-start-line="71" selection-start-column="47" selection-end-line="71" selection-end-column="47" />
+        </state>
+      </provider>
+      <provider editor-type-id="MavenHelperPluginDependencyAnalyzer" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/main/resources/generator.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/main/java/com/util/authenticaton/HttpUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="481">
+          <caret line="318" column="1" selection-start-line="318" selection-start-column="1" selection-end-line="318" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#9508#9509#0" expanded="true" />
+            <element signature="e#9559#9560#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/main/java/com/util/authenticaton/AliYunAuthentication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="121">
+          <caret line="105" column="15" selection-start-line="105" selection-start-column="15" selection-end-line="105" selection-end-column="87" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1846#1862#0" expanded="true" />
+            <element signature="e#2063#2079#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2005">
+          <caret line="266" column="21" lean-forward="true" selection-start-line="266" selection-start-column="21" selection-end-line="266" selection-end-column="21" />
+        </state>
+      </provider>
+      <provider editor-type-id="MavenHelperPluginDependencyAnalyzer" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/main/java/com/controller/UserController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="156" column="25" lean-forward="true" selection-start-line="156" selection-start-column="25" selection-end-line="156" selection-end-column="25" />
+        <state relative-caret-position="892">
+          <caret line="165" column="20" selection-start-line="165" selection-start-column="20" selection-end-line="165" selection-end-column="20" />
           <folding>
             <element signature="method#register#0;class#UserController#0" />
-            <element signature="method#login#0;class#UserController#0" />
             <element signature="method#getPhoneVerificationCode#0;class#UserController#0" />
           </folding>
         </state>
@@ -962,7 +1034,6 @@
             <option name="proportions">
               <list>
                 <option value="0.2" />
-                <option value="0.5" />
               </list>
             </option>
           </splitter-proportions>

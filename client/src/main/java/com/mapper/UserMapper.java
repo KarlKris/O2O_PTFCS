@@ -4,8 +4,6 @@ import com.model.PO.User;
 import com.model.VO.MessageModel;
 import org.apache.ibatis.annotations.*;
 import org.apache.ibatis.jdbc.SQL;
-
-import java.util.List;
 import java.util.Map;
 
 /**
