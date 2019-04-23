@@ -4,7 +4,6 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONException;
 import com.alibaba.fastjson.JSONObject;
-import com.aliyun.api.gateway.demo.util.HttpUtils;
 import org.apache.http.HttpResponse;
 import org.apache.http.util.EntityUtils;
 
@@ -37,6 +36,8 @@ public class AliYunAuthentication {
         }
         return obj;
     }
+
+
 
     public static void main(String[] args){
 
