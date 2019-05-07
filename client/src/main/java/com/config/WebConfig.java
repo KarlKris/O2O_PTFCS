@@ -21,7 +21,7 @@ import java.io.IOException;
  **/
 @Configuration
 @EnableWebMvc
-@ComponentScan(basePackages = {"com.controller","com.service"}) //这里要扫描控制层
+@ComponentScan(basePackages = {"com.controller","com.service","com.dao"})
 public class WebConfig extends WebMvcConfigurerAdapter{
 
 

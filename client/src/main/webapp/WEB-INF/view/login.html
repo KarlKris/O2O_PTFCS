@@ -41,9 +41,8 @@
                     console.log(msg);
                     if(msg.status){
                         location='index.html';
-
                     }else{
-                     alert(msg.message);
+                        alert(msg.message);
                  }
              });
             });
@@ -75,11 +74,10 @@
         <input type="tel" id="inputPhone" class="form-control" placeholder="手机号码" name="phone" required autofocus>
         <label for="inputPassword" class="sr-only">Password</label>
         <input type="password" id="inputPassword" class="form-control" placeholder="密码" name="psw" required autocomplete >
-
         <div class="input-group mb-3">
             <input type="text" class="form-control vc" placeholder="验证码" name="verificationCode" required>
             <div class="input-group-prepend">
-              <img src="getGIFCode.do" alt="yanzhengma" class="vcode">
+              <img src="getGIFCode.do" alt="验证码" class="vcode">
           </div>
       </div>
 

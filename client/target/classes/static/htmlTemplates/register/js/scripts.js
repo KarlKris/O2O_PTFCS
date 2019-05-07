@@ -63,13 +63,15 @@ jQuery(document).ready(function() {
             var c=/^\d{6}$/;
             var phone=$('.phone').val();
             var code=$('.code').val();
-            if( (p.test(phone)) && (c.test(code)) ) {
+            var role=$('input:radio[name="role"]:checked').val();//0--大学生；1--家长
+            if( (p.test(phone)) && (c.test(code)) && role !=null) {
                 $.ajax({
                     url:"register.do",
                     type:"POST",
                     data:{
                         phone:phone,
                         phoneVerificationCode:code,
+                        role : role,
                     },
                     success:function(msg){
                         console.log(msg.message);
@@ -82,7 +84,7 @@ jQuery(document).ready(function() {
                     }
                 });
             }else{
-                alert("手机号码或验证码有误");
+                alert("手机号码或验证码有误或没选择角色");
             }
         });
     });

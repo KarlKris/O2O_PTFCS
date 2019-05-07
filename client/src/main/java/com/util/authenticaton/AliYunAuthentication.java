@@ -37,14 +37,11 @@ public class AliYunAuthentication {
         return obj;
     }
 
-
-
-    public static void main(String[] args){
-
+    public void auchenticatiion(String imgPath){
         String host = "http://dm-51.data.aliyun.com";
         String path = "/rest/160601/ocr/ocr_idcard.json";
         String appcode = "你的APPCODE";
-        String imgFile = "图片路径";
+        String imgFile = imgPath;
         Boolean is_old_format = false;//如果文档的输入中含有inputs字段，设置为True， 否则设置为False
         //请根据线上文档修改configure字段
         JSONObject configObj = new JSONObject();
@@ -129,4 +126,5 @@ public class AliYunAuthentication {
             e.printStackTrace();
         }
     }
+
 }

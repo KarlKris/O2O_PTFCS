@@ -1,7 +1,7 @@
 package com.realm;
 
 import com.model.PO.User;
-import com.service.BaseService;
+import com.service.UserService;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.authz.AuthorizationInfo;
 import org.apache.shiro.authz.SimpleAuthorizationInfo;
@@ -12,12 +12,12 @@ import org.apache.shiro.util.ByteSource;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.UUID;
+import java.util.logging.Logger;
 
 public class UserRealm extends AuthorizingRealm {
 
-
     @Autowired
-    BaseService userService;
+    UserService userService;
 
     //执行授权
     @Override

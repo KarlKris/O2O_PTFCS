@@ -10,7 +10,7 @@
 
 	<title>大学生兼职家教--为你的生活增添色彩</title>
 
-	<link rel="icon" href="/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="favicon.ico" type="image/x-icon">
 
 	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 
@@ -90,8 +90,9 @@
 						<button type="button" class="btn btn-light dropdown-toggle " data-toggle="dropdown" style="background: local;font-size: smaller;">欢迎你,{{userName}}</button>
 						<div class="dropdown-menu city-name smallerfont" style="min-width: auto;">
 							<a class="dropdown-item" data-toggle="modal" data-target="#message" v-on:click="getUserMsg()">个人信息</a>
-							<a class="dropdown-item" data-toggle="modal" data-target="#message" v-on:click="">修改密码</a>
-							<a class="dropdown-item" data-toggle="modal" data-target="#message" v-on:click="">身份认证</a>
+							<a class="dropdown-item" data-toggle="modal" data-target="#changePsw" v-on:click="">修改密码</a>
+							<a class="dropdown-item" data-toggle="modal" data-target="#studentMsg" v-on:click="getStudentMsg()" v-if=" role == '0' ">学生信息</a>
+							<a class="dropdown-item" data-toggle="modal" data-target="#auth" v-on:click="">身份认证</a>
 						</div>
 					</div>
 					<div class="logout"><a href="javascript:void(0);" v-on:click="logout()" color="#000">退出</a></div>
@@ -150,13 +151,13 @@
 		<div class="container">
 			<div class="row workMsg">
 
-				<div class="card col-lg-3 col-md-6" v-if='data.recruit && data.recruit.length'>
+				<div class="card col-lg-12 col-md-12" v-if='data.recruit && data.recruit.length==0'>
 					<div class="card-body padding-left  padding-top">
 						暂时没有满足条件的招聘信息
 					</div>
 				</div>
 
-				<div class="card col-lg-3 col-md-6" v-for="msg in data.recruit" v-if='data.recruit && data.recruit.length!=0'>
+				<div class="card col-lg-3 col-md-6" v-for="msg in data.recruit" v-else-if='data.recruit && data.recruit.length!=0'>
 					<div class="card-body padding-left">
 						<div style="padding-bottom: inherit;">
 							<span class="ui-icon  ui-icon-grip-solid-vertical"></span>家教
@@ -177,7 +178,7 @@
 					</div>
 				</div>
 
-				<div class="card col-lg-3 col-md-6" v-if="data.recruit && 0<data.recruit.length<4">
+				<div class="card col-lg-3 col-md-6" v-else="data.recruit && 0<data.recruit.length<4">
 					<div class="card-body padding-left padding-top">
 						暂时只有这些满足条件的招聘信息
 					</div>
@@ -386,7 +387,24 @@
 		</div>
 	</section>
 
-	<!-- 模态框 -->
+	<!--模态框-修改密码 -->
+	<div class="modal fade" id="changePsw">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<!--头部 -->
+				<div class="modal-header">
+					<h4 class="modal-title">修改密码</h4>
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+				</div>
+				<!--主体 -->
+				<div class="modal-body"></div>
+				<!--底部 -->
+				<div class="modal-footer"></div>
+			</div>
+		</div>
+	</div>
+
+	<!-- 模态框-个人信息 -->
 	<div class="modal fade" id="message">
 		<div class="modal-dialog">
 			<div class="modal-content">
@@ -413,11 +431,54 @@
 								<label class="custom-control-label" for="student">大学生</label>
 							</div>
 							<div class="custom-control custom-radio" style="left: 300px;top: -49px;">
-								<input type="radio" class="custom-control-input" id="person" name="role" value="群众">
-								<label class="custom-control-label" for="person">群众</label>
+								<input type="radio" class="custom-control-input" id="person" name="role" value="家长">
+								<label class="custom-control-label" for="person">家长</label>
 							</div>
 						</div>
 					</div>
+					<!--家庭住址 -->
+					<div class="form-group">
+						<label >居住地址:</label>
+						<div style="height: 75px;">
+							<select class="form-control" @change='getPersonMsgFromCity($event)' id="Ucity" style="width: 49%;">
+								<option v-for='city in cities' >{{city}}</option>
+							</select>
+							<select class="form-control" id="Uarea" style="width: 49%;position: relative;left: 237px;top: -38px;">
+								<option v-for='area in areas' v-if='areas.length!=0' :selected="area==selectArea">{{area}}</option>
+							</select>
+							<input type="text" class="form-control" placeholder="详细地址" id="addrDetail" style="position: relative;top: -30px;" required/>
+						</div>
+					</div>
+					<!--支付宝账号 -->
+					<div class="form-group">
+						<label >支付宝账号:</label>
+						<input type="text" class="form-control" id="pay" required/>
+					</div>
+				</div>
+
+				<!-- 模态框底部 -->
+				<div class="modal-footer">
+					<div style="text-align: center;">
+						<button type="button" class="btn btn-success" v-on:click='updateUserMsg()'>保存</button>
+					    <button type="button" class="btn btn-success" data-dismiss="modal">关闭</button>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+	<!--模态框-学生信息 -->
+	<div class="modal fade" id="studentMsg">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<!--头部 -->
+				<div class="modal-header">
+					<h4 class="modal-title">学生信息</h4>
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+				</div>
+				<!--主体 -->
+				<div class="modal-body">
 					<!--文理 -->
 					<div  id="classify" style="display: none;height: 200px">
 						<label >文 理:</label>
@@ -475,34 +536,31 @@
 							<input type="text" class="form-control" id="comLiberal" required>
 						</div>
 					</div>
-					<!--家庭住址 -->
-					<div class="form-group">
-						<label >居住地址:</label>
-						<div style="height: 75px;">
-							<select class="form-control" @change='getPersonMsgFromCity($event)' id="Ucity" style="width: 49%;">
-								<option v-for='city in cities' >{{city}}</option>
-							</select>
-							<select class="form-control" id="Uarea" style="width: 49%;position: relative;left: 237px;top: -38px;">
-								<option v-for='area in areas' v-if='areas.length!=0' :selected="area==selectArea">{{area}}</option>
-							</select>
-							<input type="text" class="form-control" placeholder="详细地址" id="addrDetail" style="position: relative;top: -30px;" required/>
-						</div>
-					</div>
-					<!--支付宝账号 -->
-					<div class="form-group">
-						<label >支付宝账号:</label>
-						<input type="text" class="form-control" id="pay" required/>
-					</div>
 				</div>
-
-				<!-- 模态框底部 -->
+				<!--底部 -->
 				<div class="modal-footer">
 					<div style="text-align: center;">
-						<button type="button" class="btn btn-success" v-on:click='setUserMsg()'>保存</button>
+						<button type="button" class="btn btn-success" v-on:click='updateStudentMsg()'>保存</button>
 					    <button type="button" class="btn btn-success" data-dismiss="modal">关闭</button>
 					</div>
 				</div>
+			</div>
+		</div>
+	</div>
 
+	<!--模态框-身份认证 -->
+	<div class="modal fade" id="auth">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<!--头部 -->
+				<div class="modal-header">
+					<h4 class="modal-title">身份认证</h4>
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+				</div>
+				<!--主体 -->
+				<div class="modal-body"></div>
+				<!--底部 -->
+				<div class="modal-footer"></div>
 			</div>
 		</div>
 	</div>

@@ -4,7 +4,7 @@ import com.model.PO.User;
 import com.model.VO.LoginModel;
 import com.model.VO.MessageModel;
 import com.model.VO.RegisterModel;
-import com.service.BaseService;
+import com.service.UserService;
 import com.util.phoneVerificationCode.SendSMS;
 import com.util.redis.CacheUtil;
 import org.apache.shiro.SecurityUtils;
@@ -38,18 +38,22 @@ public class UserController extends BaseController {
 
 
     @Resource(name = "userService")
-    BaseService userService;
+    UserService userService;
 
 
     @RequestMapping(path = "/register.do", method = RequestMethod.POST)
     @ResponseBody
     public Map  register(RegisterModel pm, HttpServletRequest request) {
         //取出验证码
-        String code = (String) request.getSession().getAttribute("_phoneVerificationCode");
+        String code = (String) request.getSession().getAttribute("_phoneVerificationCode:"+pm.getPhone());
         if(pm.getPhoneVerificationCode().equals(code)){
-            boolean flag=userService.addOne(pm.getPhone());
-            if (flag){
-                return ajaxReturn(true,"success");
+            Map flag=userService.addOne(pm.getPhone());
+            if (String.valueOf(flag.get("status")).equals("true")){
+                //插入用户信息
+                int res = userService.addOneToMsg((User)flag.get("user"),pm.getRole());
+                if (res>0){
+                    return ajaxReturn(true,"success");
+                }
             }
         }
         return ajaxReturn(false,"fail");
@@ -101,7 +105,7 @@ public class UserController extends BaseController {
             String code= SendSMS.randomVCode();
             System.out.println(code+"..............");
             //SendSMS.sendRegisterMsg(phone,code,"130486");
-            session.setAttribute("_phoneVerificationCode",code);
+            session.setAttribute("_phoneVerificationCode:"+phone,code);
             return ajaxReturn(true,"发送成功");
         }else{
             return ajaxReturn(false,"该手机号码已注册");
@@ -120,7 +124,7 @@ public class UserController extends BaseController {
         map.put("userName",user.getName());
         MessageModel msg = (MessageModel) CacheUtil.getCache().get("UserMsg:"+user.getPhone());
         if(msg == null){
-            msg=(MessageModel) userService.selectOne(user.getPhone());
+            msg=(MessageModel) userService.selectOne(user.getId());
             CacheUtil.getCache().set("UserMsg:"+user.getPhone(),msg);
         }
         map.put("message",msg);
@@ -156,7 +160,7 @@ public class UserController extends BaseController {
         //检查数据库是否有该用户信息，如果没有则插入，有则更新
         if (msg == null){
             //插入信息
-            userService.addOneToMsg(mm);
+            //userService.addOneToMsg(mm);
         }
         if (mm.equals(msg)){
             //用户未修改任何信息
@@ -164,8 +168,13 @@ public class UserController extends BaseController {
             return map;
         }
         //更新数据库保存的信息
-
-        return null;
+        int res = userService.updateUserMsg(mm);
+        if (res > 0){
+            map.put("status",true);
+        }else {
+            map.put("status",false);
+        }
+        return map;
     }
 
 }

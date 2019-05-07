@@ -11,10 +11,10 @@ import java.util.Map;
  **/
 public interface UserMapper {
 
-    @Select("select*from User where phone=#{phone} ")
+    @Select("select*from Users where phone=#{phone} ")
     User selectOne(String phone);
 
-    @Insert({"insert user(id,name,phone,psw) value( #{id},#{name},#{phone},#{psw} )"})
+    @Insert({"insert users(id,name,phone,psw) value( #{id},#{name},#{phone},#{psw} )"})
     boolean addOne(User user);
 
     @SelectProvider(type = UserDaoProvider.class,method = "insertUserMsg")
@@ -30,16 +30,13 @@ public interface UserMapper {
     class UserDaoProvider{
         public String getUserMsg(){
             String sql = new SQL()
-                    .SELECT("payId","role","chinese","math"
-                            ,"english,arts_or_science","comprehensive_liberal_or_science"
-                            ,"major","university","cityName","cityArea","addressDetail")
-                    .FROM("user inner join "
-                                    +"(usermsg inner join studentmsg on usermsg.id=studentmsg.id) "
-                                    + "on user.id = usermsg.uid",
+                    .SELECT("payId","role","cityName","cityArea","addressDetail")
+                    .FROM("users inner join "
+                                    +"usermsg"
+                                    + "on users.id = usermsg.uid",
                             "address inner join city on address.cid = city.id")
                     .WHERE("phone=#{phone}")
                     .toString();
-
             return sql;
         }
 
@@ -68,6 +65,12 @@ public interface UserMapper {
                     .VALUES("payId","#{payId}")
                     .VALUES("aid","#{aid}")
                     .VALUES("role","#{role}")
+                    .toString();
+        }
+
+        public String updateUserMsg(){
+            return new SQL()
+                    .UPDATE("UserMsg")
                     .toString();
         }
     }

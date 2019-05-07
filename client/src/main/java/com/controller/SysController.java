@@ -1,24 +1,16 @@
 package com.controller;
 
 import com.model.PO.*;
-import com.model.VO.LoginModel;
-import com.model.VO.RegisterModel;
-import com.service.BaseService;
-import com.util.phoneVerificationCode.SendSMS;
+import com.service.SysService;
 import com.util.redis.CacheUtil;
 import com.util.verificationCode.Captcha;
 import com.util.verificationCode.GifCaptcha;
 import org.apache.shiro.SecurityUtils;
-import org.apache.shiro.authc.AuthenticationException;
-import org.apache.shiro.authc.IncorrectCredentialsException;
-import org.apache.shiro.authc.UnknownAccountException;
-import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
@@ -38,7 +30,7 @@ public class SysController extends BaseController {
 
     @Autowired
     @Qualifier("sysService")
-    BaseService sysService;
+    SysService sysService;
 
     @RequestMapping(path = {"/","index"})
     public String index() {
@@ -67,7 +59,7 @@ public class SysController extends BaseController {
         if (user == null) {
             return ajaxReturn(false, "");
         }
-        return ajaxReturn(true, user.getName());
+        return ajaxReturn(true, user.getName()+","+user.getId());
     }
 
     @RequestMapping(path="/logout.do", produces="application/json;charset=utf-8")
