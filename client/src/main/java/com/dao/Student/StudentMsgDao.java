@@ -26,12 +26,15 @@ public class StudentMsgDao {
      **/
     public StudentModel getStudentMsg(String id){
         StudentModel studentModel = studentMapper.getMsg(id);
+        if (studentModel==null){
+            return new StudentModel();
+        }
         String score = studentModel.getComprehensive_liberal_or_science();
-        //true为文科
+        //true为理科
         if (studentModel.isClassify()){
-            studentModel.setComLiberal(score);
-        }else {
             studentModel.setComScience(score);
+        }else {
+            studentModel.setComLiberal(score);
         }
         return studentModel;
     }

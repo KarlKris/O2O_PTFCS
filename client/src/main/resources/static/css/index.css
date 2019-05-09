@@ -72,3 +72,8 @@
 .quhao{
 	padding: 10px;
 }
+
+#growls.default {  
+    top: 50px!important;  
+    right: 100px!important;//如果准备左边显示，就把这个数值调成80%;  
+}  

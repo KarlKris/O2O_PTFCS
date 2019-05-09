@@ -40,6 +40,17 @@ public class StudentMsgService {
         StudentModel temp = getStudentMsg(id);
         StudentMsgDO studentMsgDO = new StudentMsgDO();
         BeanUtils.copyProperties(studentModel,studentMsgDO);
+        //String--Doucle
+        studentMsgDO.setChinese(Double.valueOf(studentModel.getChinese()));
+        studentMsgDO.setMath(Double.valueOf(studentModel.getMath()));
+        studentMsgDO.setEnglish(Double.valueOf(studentModel.getEnglish()));
+        studentMsgDO.setArtsOrScience(studentModel.isClassify());
+        //true为理科
+        if (studentModel.isClassify()){
+            studentMsgDO.setComprehensiveLiberalOrScience(Double.valueOf(studentModel.getComScience()));
+        }else{
+            studentMsgDO.setComprehensiveLiberalOrScience(Double.valueOf(studentModel.getComLiberal()));
+        }
         if (temp.getId()==null || temp.getId().equals("")){
             return studentMsgDao.insert(studentMsgDO);
         }

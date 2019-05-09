@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" >
 
 <head>
 
@@ -12,7 +12,7 @@
 
 	<link rel="icon" href="favicon.ico" type="image/x-icon">
 
-	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+	<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
 
 	<!-- Bootstrap core CSS -->
 	<link href="static/htmlTemplates/index/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -33,11 +33,20 @@
 
 	<!-- Index styles for this template -->
 	<link href="static/css/index.css" rel="stylesheet">
+	<!--消息提示 -->
+	<link href="static/css/jquery.growl.css" rel="stylesheet">
+	<!--图片上传插件 -->
+	<link href="static/css/dropify.min.css" rel="stylesheet">
 
 	<!--vue.js必须在Jquery.js之上 -->
 	<script src="static/js/vue.js"></script>
-	<!--Vue 要实现异步加载需要使用到 vue-resource 库。 -->
-	<script src="https://cdn.staticfile.org/vue-resource/1.5.1/vue-resource.min.js"></script>
+
+	<!--消息提示的位置 -->
+    <style>
+        #growls.default {
+            right: 47% !important;//如果准备左边显示，就把这个数值调成80%;
+        }
+	</style>
 
 </head>
 
@@ -91,8 +100,8 @@
 						<div class="dropdown-menu city-name smallerfont" style="min-width: auto;">
 							<a class="dropdown-item" data-toggle="modal" data-target="#message" v-on:click="getUserMsg()">个人信息</a>
 							<a class="dropdown-item" data-toggle="modal" data-target="#changePsw" v-on:click="">修改密码</a>
-							<a class="dropdown-item" data-toggle="modal" data-target="#studentMsg" v-on:click="getStudentMsg()" v-if=" role == '0' ">学生信息</a>
-							<a class="dropdown-item" data-toggle="modal" data-target="#auth" v-on:click="">身份认证</a>
+							<a class="dropdown-item" data-toggle="modal" data-target="#studentMsg" v-on:click="getStudentMsg()" v-if=" role == 1 ">学生信息</a>
+							<a class="dropdown-item" data-toggle="modal" data-target="#auth" v-on:click="picUpload()">身份认证</a>
 						</div>
 					</div>
 					<div class="logout"><a href="javascript:void(0);" v-on:click="logout()" color="#000">退出</a></div>
@@ -480,15 +489,15 @@
 				<!--主体 -->
 				<div class="modal-body">
 					<!--文理 -->
-					<div  id="classify" style="display: none;height: 200px">
+					<div  id="classify" style="height: 200px">
 						<label >文 理:</label>
 						<div class="height_0" style="height: 0;">
 							<div class="custom-control custom-radio" style="left: 150px;top: -27px;">
-								<input type="radio" class="custom-control-input" id="arts" name="classify" value="文科">
+								<input type="radio" class="custom-control-input" id="arts" name="classify" value="0">
 								<label class="custom-control-label" for="arts">文科</label>
 							</div>
 							<div class="custom-control custom-radio" style="left: 300px;top: -49px;">
-								<input type="radio" class="custom-control-input" id="science" name="classify" value="理科">
+								<input type="radio" class="custom-control-input" id="science" name="classify" value="1">
 								<label class="custom-control-label" for="science">理科</label>
 							</div>
 						</div>
@@ -504,7 +513,7 @@
 						</div>
 					</div>
 					<!--高考成绩 -->
-					<div id="score" style="display: none;">
+					<div id="score">
 						<label >高考成绩:</label>
 						<!--语数英 -->
 						<div class="input-group mb-3">
@@ -539,7 +548,7 @@
 				</div>
 				<!--底部 -->
 				<div class="modal-footer">
-					<div style="text-align: center;">
+					<div>
 						<button type="button" class="btn btn-success" v-on:click='updateStudentMsg()'>保存</button>
 					    <button type="button" class="btn btn-success" data-dismiss="modal">关闭</button>
 					</div>
@@ -558,9 +567,27 @@
 					<button type="button" class="close" data-dismiss="modal">&times;</button>
 				</div>
 				<!--主体 -->
-				<div class="modal-body"></div>
+				<div class="modal-body">
+					<!--身份证正面照 -->
+					<div id="front">
+						<label for="dropify-front">身份证正面照</label>
+						<input type="file" class="dropify" id="dropify-front" 
+							data-allowed-file-extensions="jpg png jpeg gif"  required>
+					</div>
+					<!--身份证反面照 -->
+					<div id="reverse">
+						<label for="dropify-reverse">身份证反面照</label>
+						<input  type="file" class="dropify" id="dropify-reverse"
+							data-allowed-file-extensions="jpg png jpeg gif"  required>
+					</div>
+				</div>
 				<!--底部 -->
-				<div class="modal-footer"></div>
+				<div class="modal-footer">
+					<div>
+						<button type="button" class="btn btn-success" v-on:click='auth()'>认证</button>
+					    <button type="button" class="btn btn-success" data-dismiss="modal">关闭</button>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -585,6 +612,11 @@
 
 <!-- Custom scripts for this template -->
 <script src="static/htmlTemplates/index/js/jquery-ui.js"></script>
+<!--图片上传插件 -->
+<script src="static/js/dropify.min.js" ></script>
+
+<!--消息提示 -->
+<script src="static/js/jquery.growl.js" ></script>
 
 <!-- Custom scripts for this template -->
 <script src="static/js/index.js"></script>

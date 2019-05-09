@@ -84,7 +84,7 @@ jQuery(document).ready(function() {
                     }
                 });
             }else{
-                alert("手机号码或验证码有误");
+                alert("手机号码或验证码有误或没选择角色");
             }
         });
     });

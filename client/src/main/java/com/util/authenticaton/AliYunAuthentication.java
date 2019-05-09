@@ -37,11 +37,10 @@ public class AliYunAuthentication {
         return obj;
     }
 
-    public void auchenticatiion(String imgPath){
+    public static void auchenticatiion(String imgBase64){
         String host = "http://dm-51.data.aliyun.com";
         String path = "/rest/160601/ocr/ocr_idcard.json";
-        String appcode = "你的APPCODE";
-        String imgFile = imgPath;
+        String appcode = "adf1eb19b9e344b6b0576b4aec21de95";
         Boolean is_old_format = false;//如果文档的输入中含有inputs字段，设置为True， 否则设置为False
         //请根据线上文档修改configure字段
         JSONObject configObj = new JSONObject();
@@ -57,19 +56,6 @@ public class AliYunAuthentication {
 
         Map<String, String> querys = new HashMap<String, String>();
 
-        // 对图像进行base64编码
-        String imgBase64 = "";
-        try {
-            File file = new File(imgFile);
-            byte[] content = new byte[(int) file.length()];
-            FileInputStream finputstream = new FileInputStream(file);
-            finputstream.read(content);
-            finputstream.close();
-            imgBase64 = new String(encodeBase64(content));
-        } catch (IOException e) {
-            e.printStackTrace();
-            return;
-        }
         // 拼装请求body的json字符串
         JSONObject requestObj = new JSONObject();
         try {

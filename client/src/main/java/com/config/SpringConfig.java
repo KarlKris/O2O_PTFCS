@@ -10,11 +10,14 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
+import org.springframework.core.io.Resource;
+import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import javax.sql.DataSource;
+import java.io.IOException;
 
 /**
  * Spring的配置类 在SSM框架中对应spring-mybatis.xml
@@ -24,7 +27,7 @@ import javax.sql.DataSource;
 @ComponentScan //扫描自定义的组件,默认会扫描该类所在的包下所有的配置类
                //使用ApplicationContext的getBeanDefinitionNames()方法获取已经注册到容器中的 bean 的名称。
 @PropertySource("classpath:application.properties")  //读取属性文件
-@MapperScan({"com.mapper","classpath*:/mapper/*.xml"})    //扫描Mybatis的Mapper接口
+@MapperScan(basePackages = {"com.mapper"})    //扫描Mybatis的Mapper接口
 @EnableTransactionManagement  //开启事务管理
 public class SpringConfig {
 
@@ -51,7 +54,15 @@ public class SpringConfig {
     @Bean
     public SqlSessionFactoryBean sqlSessionFactoryBean(DataSource dataSource,PropertiesConfig propertiesConfig){
         SqlSessionFactoryBean sqlSessionFactoryBean=new SqlSessionFactoryBean();
+        //分页插件pagehelper
         sqlSessionFactoryBean.setPlugins(new Interceptor[]{new PageInterceptor()});
+        //多模块扫描
+        try{
+            Resource[] resources = new PathMatchingResourcePatternResolver().getResources(propertiesConfig.getMapperLocations());
+            sqlSessionFactoryBean.setMapperLocations(resources);
+        }catch (IOException e){
+            e.printStackTrace();
+        }
         sqlSessionFactoryBean.setDataSource(dataSource);
         sqlSessionFactoryBean.setTypeAliasesPackage(propertiesConfig.getMybatisTypeAliasPackage());
         return sqlSessionFactoryBean;

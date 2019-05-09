@@ -57,6 +57,13 @@ public class PropertiesConfig {
     @Value("${redis.expiration}")
     private int redisExpiration;
 
+    @Value("${mybatis.mapperLocations}")
+    private String mapperLocations;
+
+    public String getMapperLocations() {
+        return mapperLocations;
+    }
+
     public int getRedisExpiration() {
         return redisExpiration;
     }

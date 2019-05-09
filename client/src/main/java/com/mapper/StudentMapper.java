@@ -13,7 +13,8 @@ public interface StudentMapper {
      **/
     @SelectProvider(type = StudentSqlProvider.class,method = "getMsg")
     @Results({
-            @Result(column = "chinese",property = "chinses", jdbcType = JdbcType.VARCHAR),
+            @Result(column = "id",property = "id", jdbcType = JdbcType.VARCHAR),
+            @Result(column = "chinese",property = "chinese", jdbcType = JdbcType.VARCHAR),
             @Result(column = "math",property = "math", jdbcType = JdbcType.VARCHAR),
             @Result(column = "english",property = "english", jdbcType = JdbcType.VARCHAR),
             @Result(column = "arts_or_science",property = "classify", javaType = Boolean.class),
@@ -31,7 +32,7 @@ public interface StudentMapper {
 
         public String getMsg(){
             return new SQL()
-                    .SELECT("chinese","math"
+                    .SELECT("id","chinese","math"
                             ,"english,arts_or_science","comprehensive_liberal_or_science"
                             ,"major","university")
                     .FROM("studentmsg")

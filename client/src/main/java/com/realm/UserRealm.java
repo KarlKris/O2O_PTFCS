@@ -61,7 +61,7 @@ public class UserRealm extends AuthorizingRealm {
     }
 
     public static void main(String[] args) {
-        Md5Hash hash=new Md5Hash("123456","mm");
+        Md5Hash hash=new Md5Hash("13420120528","81CfNff9");
         System.out.println(UUID.randomUUID().toString());
     }
 

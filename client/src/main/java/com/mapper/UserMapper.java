@@ -31,10 +31,9 @@ public interface UserMapper {
         public String getUserMsg(){
             String sql = new SQL()
                     .SELECT("payId","role","cityName","cityArea","addressDetail")
-                    .FROM("users inner join "
-                                    +"usermsg"
-                                    + "on users.id = usermsg.uid",
-                            "address inner join city on address.cid = city.id")
+                    .FROM("(users inner join usermsg on users.id=usermsg.uid) " +
+                            "left join (address inner join city on address.cid = city.id) " +
+                            "on usermsg.uid = address.uid ")
                     .WHERE("phone=#{phone}")
                     .toString();
             return sql;

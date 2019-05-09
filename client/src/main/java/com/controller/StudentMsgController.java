@@ -26,10 +26,6 @@ public class StudentMsgController extends BaseController{
     public Map getStudentMsg(String id){
         Map map = new HashMap();
         StudentModel sm =  studentMsgService.getStudentMsg(id);
-        if (sm.getId().equals("")){
-            map.put("status",false);
-            return map;
-        }
         map.put("status",true);
         map.put("data",sm);
         return map;

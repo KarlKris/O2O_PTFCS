@@ -1,6 +1,6 @@
 $(document).ready(function(){
 
-	var vue1=new Vue({
+	var v=new Vue({
 		el:'.maxDiv',
 		data:()=>{
 			return {
@@ -15,6 +15,40 @@ $(document).ready(function(){
 			}
 		},
 		methods:{
+			message:function(msg){
+				if (msg.status) {
+                 	//消息提示框---用jquery的Growl插件
+                 	$.growl.notice({title: "", message: msg.message });
+                }else{
+                	//消息提示框---用jquery的Growl插件
+                	$.growl.notice({title: "", message: msg.message });
+                }
+			},
+			picUpload(){
+				// 图片上传初始化
+                $('#dropify-front').dropify({
+                    messages: {
+                        default: '身份证正面照',
+                        replace: '换一张',
+                        remove:  '删除',
+                        error:   '错误'
+                    }
+                });
+                $('#dropify-reverse').dropify({
+                    messages: {
+                        default: '身份证反面照',
+                        replace: '换一张',
+                        remove:  '删除',
+                        error:   '错误'
+                    }
+                });
+			},
+			auth(){
+				var frontBase64 = $('#front').find('img').attr('src');
+				var reversetBase64 = $('#reverse').find('img').attr('src');
+				console.log(frontBase64);
+				console.log(reversetBase64);
+			},
 			getCity(){
 				var that =this;
 				$.ajax({
@@ -58,7 +92,6 @@ $(document).ready(function(){
 					url:"getUserName.do",
 					success:function(msg){
 						if(msg.status){
-							alert(msg.message);
 							var a = new Array();
 							a =  msg.message.split(",");
 							that.userName=a[0];
@@ -120,8 +153,8 @@ $(document).ready(function(){
 							    	$('#student').click();
 							    }
 							    //默认不允许再次选择
-							    $('#person').attr('readonly', 'true');
-							    $('#student').attr('readonly', 'true');
+							    $('#person').attr('disabled', 'true');
+							    $('#student').attr('disabled', 'true');
 								//居住地址
 								var city=str.cityName;var area=str.cityArea;
 								var optionCity="option:contains('"+city+"')";
@@ -154,7 +187,9 @@ $(document).ready(function(){
 						type: 'POST',
 						data: data,
 						success:function(msg){
-                        	
+                        	v.message(msg);
+                        	//关闭模态框
+                        	$('#message').modal('hide');
 						}
 					});
 					
@@ -169,18 +204,17 @@ $(document).ready(function(){
 							id : that.id
 						},
 						success:function(msg){
-                        	alert(666);
-                        	console.log(mag);
+                        	console.log(msg);
                         	if (msg.status) {
                         		//赋值
                         		var data = msg.data;
                         		if (data.classify) {
-                        			//文科
-                        			$('#arts').click();
-                        			$('#comLiberal').val(data.comprehensive_liberal_or_science);
-                        		}else{
+                        			//理科
                         			$('#science').click();
                         			$('#comScience').val(data.comprehensive_liberal_or_science);
+                        		}else{
+                        			$('#arts').click();
+                        			$('#comLiberal').val(data.comprehensive_liberal_or_science);
                         		}
                         		//大学，专业
                         		$('#university').val(data.university);
@@ -191,15 +225,15 @@ $(document).ready(function(){
                         		$('#english').val(data.english);
                         		//判断是否认证,如果已认证则不允许修改
                         		if (that.status == '1') {
-                        			$('#arts').attr('readonly', 'true');
-                        			$('#comLiberal').attr('readonly', 'true');
-                        			$('#science').attr('readonly', 'true');
-                        			$('#comScience').attr('readonly', 'true');
-                        			$('#university').attr('readonly', 'true');
-                        			$('#major').attr('readonly', 'true');
-                        			$('#chinese').attr('readonly', 'true');
-                        			$('#math').attr('readonly', 'true');
-                        			$('#english').attr('readonly', 'true');
+                        			$('#arts').attr('disabled', 'true');
+                        			$('#comLiberal').attr('disabled', 'true');
+                        			$('#science').attr('disabled', 'true');
+                        			$('#comScience').attr('disabled', 'true');
+                        			$('#university').attr('disabled', 'true');
+                        			$('#major').attr('disabled', 'true');
+                        			$('#chinese').attr('disabled', 'true');
+                        			$('#math').attr('disabled', 'true');
+                        			$('#english').attr('disabled', 'true');
                         		}
 
                         	}
@@ -227,7 +261,8 @@ $(document).ready(function(){
 						type: 'POST',
 						data: data,
 						success:function(msg){
-                        	//消息提示框---用jquery的Growl插件
+                        	v.message(msg);
+                        	$('#studentMsg').modal('hide')
 						}
 					});
 					
@@ -236,9 +271,9 @@ $(document).ready(function(){
 		},
 		created:function(){
 			this.getUserName();
-			this.getUserMsg();
 			this.getCity();
 			this.getMsgFromCity();
+			this.getUserMsg();
 		}
 	})
 

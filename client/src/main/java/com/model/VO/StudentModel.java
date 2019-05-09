@@ -13,8 +13,8 @@ public class StudentModel {
     private String math;
     private String english;
     /**
-     * 0-false-理科
-     * 1-true-文科
+     * 0-false-文科
+     * 1-true-理科
      **/
     private boolean classify;
     private String comprehensive_liberal_or_science;

@@ -124,7 +124,7 @@ public class UserController extends BaseController {
         map.put("userName",user.getName());
         MessageModel msg = (MessageModel) CacheUtil.getCache().get("UserMsg:"+user.getPhone());
         if(msg == null){
-            msg=(MessageModel) userService.selectOne(user.getId());
+            msg=(MessageModel) userService.selectOne(user.getPhone());
             CacheUtil.getCache().set("UserMsg:"+user.getPhone(),msg);
         }
         map.put("message",msg);
