@@ -7,37 +7,80 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ba9b438e-9ac2-4c39-8fe2-2cb11207a1df" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/client/src/main/java/com/controller/AuthController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/main/java/com/service/AuthService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/main/resources/static/css/dropify.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/main/resources/static/css/jquery.growl.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/main/resources/static/fonts/dropify.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/main/resources/static/fonts/dropify.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/main/resources/static/js/dropify.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/main/resources/static/js/jquery.growl.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Common/src/main/java/com/Exception/CustomizeException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Common/src/main/java/com/Exception/CustomizeExceptionAdvice.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/java/com/dao/auth/AuthDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/java/com/model/Param/ChangePswParam.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/java/com/model/VO/AuthModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/java/com/util/authenticaton/BuildAuthDOUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/resources/static/htmlTemplates/publish/css/bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/resources/static/htmlTemplates/publish/css/demo.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/resources/static/htmlTemplates/publish/css/paper-bootstrap-wizard.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/resources/static/htmlTemplates/publish/css/themify-icons-demo.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/resources/static/htmlTemplates/publish/css/themify-icons.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/resources/static/htmlTemplates/publish/fonts/themify.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/resources/static/htmlTemplates/publish/fonts/themify.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/resources/static/htmlTemplates/publish/fonts/themify.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/resources/static/htmlTemplates/publish/fonts/themify.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/resources/static/htmlTemplates/publish/img/apple-icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/resources/static/htmlTemplates/publish/img/default-avatar.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/resources/static/htmlTemplates/publish/img/favicon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/resources/static/htmlTemplates/publish/img/new_logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/resources/static/htmlTemplates/publish/img/paper-1.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/resources/static/htmlTemplates/publish/img/paper-2.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/resources/static/htmlTemplates/publish/img/paper-3.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/resources/static/htmlTemplates/publish/img/thumb_list_boat.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/resources/static/htmlTemplates/publish/img/thumb_list_place.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/resources/static/htmlTemplates/publish/img/thumb_register.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/resources/static/htmlTemplates/publish/img/tim_80x80.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/resources/static/htmlTemplates/publish/img/wizard-boat.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/resources/static/htmlTemplates/publish/img/wizard-city.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/resources/static/htmlTemplates/publish/img/wizard.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/resources/static/htmlTemplates/publish/js/bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/resources/static/htmlTemplates/publish/js/jquery-2.2.4.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/resources/static/htmlTemplates/publish/js/jquery.bootstrap.wizard.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/resources/static/htmlTemplates/publish/js/jquery.validate.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/resources/static/htmlTemplates/publish/js/paper-bootstrap-wizard.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/resources/static/htmlTemplates/publish/scss/paper-bootstrap-wizard.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/resources/static/htmlTemplates/publish/scss/paper-bootstrap-wizard/_buttons.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/resources/static/htmlTemplates/publish/scss/paper-bootstrap-wizard/_card.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/resources/static/htmlTemplates/publish/scss/paper-bootstrap-wizard/_footers.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/resources/static/htmlTemplates/publish/scss/paper-bootstrap-wizard/_inputs.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/resources/static/htmlTemplates/publish/scss/paper-bootstrap-wizard/_labels-progress-bar.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/resources/static/htmlTemplates/publish/scss/paper-bootstrap-wizard/_misc.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/resources/static/htmlTemplates/publish/scss/paper-bootstrap-wizard/_mixins.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/resources/static/htmlTemplates/publish/scss/paper-bootstrap-wizard/_navs-pagination.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/resources/static/htmlTemplates/publish/scss/paper-bootstrap-wizard/_responsive.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/resources/static/htmlTemplates/publish/scss/paper-bootstrap-wizard/_tooltips.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/resources/static/htmlTemplates/publish/scss/paper-bootstrap-wizard/_typography.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/resources/static/htmlTemplates/publish/scss/paper-bootstrap-wizard/_variables.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/resources/static/htmlTemplates/publish/scss/paper-bootstrap-wizard/_wizard-card.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/resources/static/htmlTemplates/publish/scss/paper-bootstrap-wizard/mixins/_buttons.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/resources/static/htmlTemplates/publish/scss/paper-bootstrap-wizard/mixins/_inputs.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/resources/static/htmlTemplates/publish/scss/paper-bootstrap-wizard/mixins/_labels.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/resources/static/htmlTemplates/publish/scss/paper-bootstrap-wizard/mixins/_transparency.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/resources/static/htmlTemplates/publish/scss/paper-bootstrap-wizard/mixins/_vendor-prefixes.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/webapp/WEB-INF/view/publish.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/java/com/config/PropertiesConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/com/config/PropertiesConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/java/com/config/SpringConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/com/config/SpringConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/java/com/controller/StudentMsgController.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/com/controller/StudentMsgController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Common/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Common/src/main/resources/generatorConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Common/src/main/resources/generatorConfig.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main/java/com/config/WebConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/com/config/WebConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main/java/com/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/com/controller/AuthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main/java/com/controller/BaseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/com/controller/BaseController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/main/java/com/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/com/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/java/com/dao/Student/StudentMsgDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/com/dao/Student/StudentMsgDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/java/com/mapper/StudentMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/com/mapper/StudentMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/main/java/com/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/com/mapper/UserMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/java/com/model/VO/StudentModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/com/model/VO/StudentModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main/java/com/model/VO/MessageModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/com/model/VO/MessageModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/main/java/com/realm/UserRealm.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/com/realm/UserRealm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/java/com/service/StudentMsgService.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/com/service/StudentMsgService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main/java/com/service/AuthService.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/com/service/AuthService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main/java/com/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/com/service/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/main/java/com/util/authenticaton/AliYunAuthentication.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/com/util/authenticaton/AliYunAuthentication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/resources/static/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/resources/static/css/index.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/main/resources/static/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/resources/static/js/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/main/webapp/WEB-INF/view/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/webapp/WEB-INF/view/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/client/target/classes/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/target/client/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/client/target/client/META-INF/MANIFEST.MF" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/target/client/WEB-INF/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/client/target/client/WEB-INF/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/target/client/WEB-INF/classes/com/config/PropertiesConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/client/target/client/WEB-INF/classes/com/config/PropertiesConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/target/client/WEB-INF/classes/com/config/SpringConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/client/target/client/WEB-INF/classes/com/config/SpringConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/target/client/WEB-INF/classes/com/config/WebConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/client/target/client/WEB-INF/classes/com/config/WebConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/target/client/WEB-INF/classes/com/mapper/UserMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/client/target/client/WEB-INF/classes/com/mapper/UserMapper.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/target/client/WEB-INF/classes/com/realm/UserRealm.class" beforeDir="false" afterPath="$PROJECT_DIR$/client/target/client/WEB-INF/classes/com/realm/UserRealm.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/target/client/WEB-INF/classes/static/htmlTemplates/register/js/scripts.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/target/client/WEB-INF/classes/static/htmlTemplates/register/js/scripts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/target/client/WEB-INF/classes/com/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/client/target/client/WEB-INF/classes/com/service/UserService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/target/client/WEB-INF/view/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/target/client/WEB-INF/view/index.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -93,66 +136,68 @@
     <session id="-81263348">
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="class" value="11" />
+          <entry key="class" value="12" />
           <entry key="css" value="4" />
-          <entry key="html" value="63" />
-          <entry key="java" value="260" />
-          <entry key="js" value="22" />
+          <entry key="html" value="67" />
+          <entry key="java" value="313" />
+          <entry key="js" value="28" />
           <entry key="md" value="1" />
           <entry key="properties" value="10" />
-          <entry key="xml" value="47" />
+          <entry key="xml" value="50" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CLASS" value="11" />
+          <entry key="CLASS" value="12" />
           <entry key="CSS" value="4" />
-          <entry key="HTML" value="63" />
-          <entry key="JAVA" value="260" />
-          <entry key="JavaScript" value="22" />
+          <entry key="HTML" value="67" />
+          <entry key="JAVA" value="313" />
+          <entry key="JavaScript" value="28" />
           <entry key="Markdown" value="1" />
           <entry key="Properties" value="10" />
-          <entry key="XML" value="47" />
+          <entry key="XML" value="50" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="html" value="1256" />
-          <entry key="java" value="4685" />
-          <entry key="js" value="3" />
+          <entry key="ft" value="15" />
+          <entry key="html" value="1263" />
+          <entry key="java" value="8389" />
+          <entry key="js" value="37" />
           <entry key="properties" value="39" />
-          <entry key="txt" value="18" />
-          <entry key="xml" value="445" />
+          <entry key="txt" value="27" />
+          <entry key="xml" value="467" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="1256" />
-          <entry key="JAVA" value="4685" />
-          <entry key="JavaScript" value="3" />
-          <entry key="PLAIN_TEXT" value="18" />
+          <entry key="HTML" value="1263" />
+          <entry key="JAVA" value="8389" />
+          <entry key="JavaScript" value="37" />
+          <entry key="PLAIN_TEXT" value="27" />
           <entry key="Properties" value="39" />
-          <entry key="XML" value="445" />
+          <entry key="VTL" value="15" />
+          <entry key="XML" value="467" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="16" />
-          <entry key="project.open.time.1" value="2" />
+          <entry key="project.closed" value="19" />
+          <entry key="project.open.time.1" value="3" />
           <entry key="project.open.time.10" value="1" />
           <entry key="project.open.time.17" value="2" />
           <entry key="project.open.time.18" value="1" />
           <entry key="project.open.time.19" value="1" />
           <entry key="project.open.time.26" value="1" />
-          <entry key="project.open.time.28" value="1" />
-          <entry key="project.open.time.30" value="1" />
+          <entry key="project.open.time.28" value="2" />
+          <entry key="project.open.time.30" value="2" />
           <entry key="project.open.time.31" value="1" />
           <entry key="project.open.time.38" value="1" />
           <entry key="project.open.time.41" value="1" />
           <entry key="project.open.time.5" value="2" />
           <entry key="project.open.time.54" value="1" />
           <entry key="project.open.time.71" value="1" />
-          <entry key="project.opened" value="17" />
+          <entry key="project.opened" value="20" />
         </counts>
       </usages-collector>
     </session>
@@ -160,19 +205,19 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/main/java/com/controller/AuthController.java">
+        <entry file="file://$PROJECT_DIR$/client/src/main/webapp/WEB-INF/view/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="10" selection-start-line="10" selection-end-line="10" />
+            <state relative-caret-position="307">
+              <caret line="284" column="72" lean-forward="true" selection-start-line="284" selection-start-column="51" selection-end-line="284" selection-end-column="72" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/client/src/main/java/com/service/AuthService.java">
+        <entry file="file://$PROJECT_DIR$/client/src/main/resources/static/js/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="8" column="8" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="8" />
+            <state relative-caret-position="344">
+              <caret line="283" column="20" lean-forward="true" selection-start-line="283" selection-start-column="20" selection-end-line="283" selection-end-column="20" />
             </state>
           </provider>
         </entry>
@@ -205,19 +250,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/backend/src/main/resources/pages/admin/role-add.html" />
-        <option value="$PROJECT_DIR$/backend/src/main/resources/pages/admin/rule.html" />
-        <option value="$PROJECT_DIR$/backend/src/main/resources/pages/article/add.html" />
-        <option value="$PROJECT_DIR$/backend/src/main/resources/pages/article/category.html" />
-        <option value="$PROJECT_DIR$/backend/src/main/resources/pages/article/category-add.html" />
-        <option value="$PROJECT_DIR$/backend/src/main/resources/pages/article/category-edit.html" />
-        <option value="$PROJECT_DIR$/backend/src/main/resources/pages/article/list.html" />
-        <option value="$PROJECT_DIR$/backend/src/main/resources/pages/article/复制 list.html" />
-        <option value="$PROJECT_DIR$/backend/src/main/resources/pages/echarts/echarts1.html" />
-        <option value="$PROJECT_DIR$/backend/src/main/resources/pages/echarts/echarts2.html" />
-        <option value="$PROJECT_DIR$/backend/src/main/resources/pages/echarts/echarts3.html" />
-        <option value="$PROJECT_DIR$/backend/src/main/resources/pages/echarts/echarts4.html" />
-        <option value="$PROJECT_DIR$/backend/src/main/resources/pages/echarts/echarts5.html" />
         <option value="$PROJECT_DIR$/backend/src/main/resources/pages/echarts/echarts6.html" />
         <option value="$PROJECT_DIR$/backend/src/main/resources/pages/echarts/echarts7.html" />
         <option value="$PROJECT_DIR$/backend/src/main/resources/pages/echarts/echarts8.html" />
@@ -237,25 +269,38 @@
         <option value="$PROJECT_DIR$/client/src/main/java/com/controller/SysController.java" />
         <option value="$PROJECT_DIR$/client/src/main/webapp/WEB-INF/view/login.html" />
         <option value="$PROJECT_DIR$/client/src/main/java/com/dao/user/UserMsgDao.java" />
-        <option value="$PROJECT_DIR$/client/src/main/java/com/service/UserService.java" />
         <option value="$PROJECT_DIR$/client/src/main/java/com/model/VO/RegisterModel.java" />
-        <option value="$PROJECT_DIR$/client/src/main/java/com/model/VO/MessageModel.java" />
         <option value="$PROJECT_DIR$/client/src/main/java/com/config/PropertiesConfig.java" />
         <option value="$PROJECT_DIR$/client/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/client/src/main/java/com/config/SpringConfig.java" />
-        <option value="$PROJECT_DIR$/client/src/main/java/com/controller/UserController.java" />
-        <option value="$PROJECT_DIR$/client/src/main/java/com/mapper/UserMapper.java" />
         <option value="$PROJECT_DIR$/client/src/main/java/com/controller/StudentMsgController.java" />
-        <option value="$PROJECT_DIR$/client/src/main/java/com/realm/UserRealm.java" />
         <option value="$PROJECT_DIR$/client/src/main/java/com/dao/Student/StudentMsgDao.java" />
         <option value="$PROJECT_DIR$/client/src/main/java/com/model/VO/StudentModel.java" />
         <option value="$PROJECT_DIR$/client/src/main/java/com/mapper/StudentMapper.java" />
         <option value="$PROJECT_DIR$/client/src/main/java/com/service/StudentMsgService.java" />
         <option value="$PROJECT_DIR$/client/src/main/webapp/WEB-INF/view/index.html" />
-        <option value="$PROJECT_DIR$/client/src/main/java/com/util/authenticaton/AliYunAuthentication.java" />
+        <option value="$PROJECT_DIR$/Common/src/main/resources/generatorConfig.xml" />
+        <option value="$PROJECT_DIR$/Common/src/main/java/com/Exception/CustomizeExceptionResolver.java" />
+        <option value="$PROJECT_DIR$/Common/src/main/java/com/Exception/CustomizeException.java" />
+        <option value="$PROJECT_DIR$/client/src/main/java/com/dao/AuthDao.java" />
+        <option value="$PROJECT_DIR$/Common/pom.xml" />
+        <option value="$PROJECT_DIR$/client/src/main/java/com/controller/BaseController.java" />
+        <option value="$PROJECT_DIR$/client/src/main/java/com/config/WebConfig.java" />
+        <option value="$PROJECT_DIR$/client/src/main/java/com/model/VO/AuthModel.java" />
         <option value="$PROJECT_DIR$/client/src/main/resources/static/js/index.js" />
+        <option value="$PROJECT_DIR$/client/src/main/java/com/util/authenticaton/BuildAuthDOUtil.java" />
+        <option value="$PROJECT_DIR$/client/src/main/java/com/dao/auth/AuthDao.java" />
         <option value="$PROJECT_DIR$/client/src/main/java/com/controller/AuthController.java" />
         <option value="$PROJECT_DIR$/client/src/main/java/com/service/AuthService.java" />
+        <option value="$PROJECT_DIR$/client/src/main/java/com/util/authenticaton/AliYunAuthentication.java" />
+        <option value="$PROJECT_DIR$/Common/src/main/java/com/Exception/CustomizeExceptionAdvice.java" />
+        <option value="$PROJECT_DIR$/client/src/main/java/com/model/Param/ChangePswParam.java" />
+        <option value="$PROJECT_DIR$/client/src/main/java/com/realm/UserRealm.java" />
+        <option value="$PROJECT_DIR$/client/src/main/java/com/mapper/UserMapper.java" />
+        <option value="$PROJECT_DIR$/client/src/main/java/com/controller/UserController.java" />
+        <option value="$PROJECT_DIR$/client/src/main/java/com/model/VO/MessageModel.java" />
+        <option value="$PROJECT_DIR$/client/src/main/java/com/service/UserService.java" />
+        <option value="$PROJECT_DIR$/client/src/main/webapp/WEB-INF/view/publish.html" />
       </list>
     </option>
   </component>
@@ -316,7 +361,7 @@
       <path value="$PROJECT_DIR$/client/src/main/resources/static/htmlTemplates/index/vendor/fontawesome-free/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="1">
     <option name="x" value="125" />
     <option name="y" value="40" />
     <option name="width" value="1685" />
@@ -342,6 +387,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -390,36 +436,6 @@
               <item name="client" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="O2O_PTFCS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="O2O_PTFCS" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="realm" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="O2O_PTFCS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="O2O_PTFCS" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="util" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="O2O_PTFCS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="O2O_PTFCS" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -430,6 +446,16 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="static" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="O2O_PTFCS" type="b2602c69:ProjectViewProjectNode" />
+              <item name="O2O_PTFCS" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="htmlTemplates" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="O2O_PTFCS" type="b2602c69:ProjectViewProjectNode" />
@@ -458,12 +484,21 @@
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
               <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="O2O_PTFCS" type="b2602c69:ProjectViewProjectNode" />
+              <item name="O2O_PTFCS" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -479,18 +514,18 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/client" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="fileTemplates" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Program Files\JetBrains\IntelliJ IDEA 2018.2.4\workspace\O2O_PTFCS\client\src\main\webapp\WEB-INF\view" />
+      <recent name="D:\Program Files\JetBrains\IntelliJ IDEA 2018.2.4\workspace\O2O_PTFCS\client\src\main\resources\static\htmlTemplates\publish" />
       <recent name="D:\Program Files\JetBrains\IntelliJ IDEA 2018.2.4\workspace\O2O_PTFCS\client\src\main\resources\static\js" />
       <recent name="D:\Program Files\JetBrains\IntelliJ IDEA 2018.2.4\workspace\O2O_PTFCS\client\src\main\resources\static\fonts" />
       <recent name="D:\Program Files\JetBrains\IntelliJ IDEA 2018.2.4\workspace\O2O_PTFCS\client\src\main\resources\static\css" />
-      <recent name="D:\Program Files\JetBrains\IntelliJ IDEA 2018.2.4\workspace\O2O_PTFCS\backend\src\main\webapp\WEB-INF\view" />
-      <recent name="D:\Program Files\JetBrains\IntelliJ IDEA 2018.2.4\workspace\O2O_PTFCS\backend\src\main\resources" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.controller" />
@@ -842,7 +877,56 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="100" y="32" width="1348" height="776" extended-state="0" />
+    <editor active="true" />
     <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23894492" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Designer" order="2" />
+      <window_info id="UI Designer" order="3" />
+      <window_info id="Favorites" order="4" side_tool="true" />
+      <window_info id="Web" order="5" side_tool="true" />
+      <window_info id="JRebel" order="6" side_tool="true" />
+      <window_info id="Image Layers" order="7" />
+      <window_info id="Capture Tool" order="8" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3290938" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4988363" weight="0.25596184" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.5023847" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.3290938" />
+      <window_info anchor="bottom" id="Spring" order="7" weight="0.3290938" />
+      <window_info anchor="bottom" id="Database Changes" order="8" weight="0.3290938" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5007342" side_tool="true" weight="0.53895074" />
+      <window_info anchor="bottom" id="FindBugs-IDEA" order="10" weight="0.3290938" />
+      <window_info anchor="bottom" id="Version Control" order="11" weight="0.3290938" />
+      <window_info anchor="bottom" id="Java Enterprise" order="12" weight="0.3290938" />
+      <window_info anchor="bottom" id="Database Console" order="13" weight="0.3290938" />
+      <window_info anchor="bottom" id="Messages" order="14" weight="0.3290938" />
+      <window_info anchor="bottom" id="Problems" order="15" />
+      <window_info anchor="bottom" id="Application Servers" order="16" />
+      <window_info anchor="bottom" id="Terminal" order="17" />
+      <window_info anchor="bottom" id="Docker" order="18" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Run with VisualVM" order="19" />
+      <window_info anchor="bottom" id="JProfiler" order="20" />
+      <window_info anchor="bottom" id="JRebel Executor" order="21" sideWeight="0.4972847" weight="0.5071542" />
+      <window_info anchor="bottom" id="JRebel Console" order="22" sideWeight="0.5027153" side_tool="true" weight="0.59618443" />
+      <window_info anchor="bottom" id="Debug with VisualVM" order="23" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Maven Projects" order="4" weight="0.32893717" />
+      <window_info anchor="right" id="Database" order="5" weight="0.32966226" />
+      <window_info anchor="right" id="Palette&#9;" order="6" />
+      <window_info anchor="right" id="Maven" order="7" weight="0.32928804" />
+      <window_info anchor="right" id="Capture Analysis" order="8" />
+      <window_info anchor="right" id="Key Promoter X" order="9" />
+      <window_info anchor="right" id="Mybatis datasource" order="10" side_tool="true" />
+      <window_info anchor="right" id="BPMNPalette" order="11" />
+      <window_info anchor="right" id="Theme Preview" order="12" />
+    </layout>
+    <layout-to-restore>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2591156" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
@@ -889,7 +973,7 @@
       <window_info anchor="right" id="Mybatis datasource" order="10" side_tool="true" />
       <window_info anchor="right" id="BPMNPalette" order="11" />
       <window_info anchor="right" id="Theme Preview" order="12" />
-    </layout>
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -912,7 +996,8 @@
     <MESSAGE value="19/01/23 14点12分" />
     <MESSAGE value="19/01/15 15点26分" />
     <MESSAGE value="2019/05/07 14点43分" />
-    <option name="LAST_COMMIT_MESSAGE" value="2019/05/07 14点43分" />
+    <MESSAGE value="2019/05/09 08点53分" />
+    <option name="LAST_COMMIT_MESSAGE" value="2019/05/09 08点53分" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -926,181 +1011,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/client/src/main/java/com/controller/BaseController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="10" column="29" lean-forward="true" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/shiro/shiro-core/1.4.0/shiro-core-1.4.0.jar!/org/apache/shiro/authz/SimpleAuthorizationInfo.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/main/java/com/controller/SysController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="371">
-          <caret line="60" column="9" lean-forward="true" selection-start-line="60" selection-start-column="9" selection-end-line="60" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/mybatis/mybatis/3.4.6/mybatis-3.4.6.jar!/org/apache/ibatis/annotations/SelectProvider.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="17" column="20" lean-forward="true" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/mybatis/mybatis/3.4.6/mybatis-3.4.6.jar!/org/apache/ibatis/annotations/ResultMap.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="18" column="1" lean-forward="true" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/mybatis/mybatis/3.4.6/mybatis-3.4.6.jar!/org/apache/ibatis/annotations/Results.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="16" column="18" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/mybatis/mybatis/3.4.6/mybatis-3.4.6.jar!/org/apache/ibatis/annotations/Result.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="18" column="18" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/main/java/com/model/VO/RegisterModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="7" column="4" lean-forward="true" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/main/java/com/model/VO/MessageModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="12" column="51" lean-forward="true" selection-start-line="12" selection-start-column="51" selection-end-line="12" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Common/src/main/resources/generatorConfig.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1834">
-          <caret line="111" column="74" selection-start-line="111" selection-start-column="74" selection-end-line="111" selection-end-column="74" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../../../../Java/jdk1.8.0_121/src.zip!/java/util/function/Supplier.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="410">
-          <caret line="47" column="6" selection-start-line="47" selection-start-column="6" selection-end-line="47" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Common/src/main/resources/mapper/StudentMsgDOMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="118" column="2" selection-start-line="118" selection-start-column="2" selection-end-line="118" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Common/src/main/java/com/mapper/StudentMsgDOMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="355">
-          <caret line="38" column="8" selection-start-line="38" selection-start-column="8" selection-end-line="38" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/main/java/com/config/RedisConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-748">
-          <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/main/java/com/config/ShiroConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1122">
-          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/main/java/com/config/WebClientInitializer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-704">
-          <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/main/java/com/config/WebConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="23" column="69" lean-forward="true" selection-start-line="23" selection-start-column="69" selection-end-line="23" selection-end-column="69" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/mybatis/mybatis-spring/1.3.2/mybatis-spring-1.3.2.jar!/org/mybatis/spring/annotation/MapperScan.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="226">
-          <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/main/resources/application.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="7" column="45" lean-forward="true" selection-start-line="7" selection-start-column="45" selection-end-line="7" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/main/java/com/config/PropertiesConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="484">
-          <caret line="36" column="26" lean-forward="true" selection-start-line="36" selection-start-column="26" selection-end-line="36" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/mybatis/mybatis/3.4.6/mybatis-3.4.6.jar!/org/apache/ibatis/jdbc/AbstractSQL.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="150" column="13" selection-start-line="150" selection-start-column="13" selection-end-line="150" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Common/src/main/java/com/mapper/UserMsgDOMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="30" column="8" selection-start-line="30" selection-start-column="8" selection-end-line="30" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/main/java/com/config/SpringConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="836">
-          <caret line="57" column="83" lean-forward="true" selection-start-line="57" selection-start-column="83" selection-end-line="57" selection-end-column="83" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Common/src/main/resources/mapper/UserMsgDOMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2530">
-          <caret line="115" selection-start-line="115" selection-end-line="115" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/main/java/com/mapper/UserMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="29" column="26" lean-forward="true" selection-start-line="29" selection-start-column="26" selection-end-line="29" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/main/java/com/dao/user/UserMsgDao.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-88">
@@ -1122,32 +1032,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/main/java/com/service/UserService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="72" column="31" selection-start-line="72" selection-start-column="24" selection-end-line="72" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/main/java/com/realm/UserRealm.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="63" column="56" selection-start-line="63" selection-start-column="56" selection-end-line="63" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/main/resources/static/css/jquery.growl.css">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/client/src/main/resources/static/js/jquery.growl.js">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/main/java/com/controller/UserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
-          <caret line="166" column="36" lean-forward="true" selection-start-line="166" selection-start-column="36" selection-end-line="166" selection-end-column="36" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/src/main/java/com/controller/StudentMsgController.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -1184,24 +1073,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/main/java/com/service/StudentMsgService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="56" column="53" lean-forward="true" selection-start-line="56" selection-start-column="53" selection-end-line="56" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/main/resources/static/css/index.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="132">
           <caret line="78" column="3" lean-forward="true" selection-start-line="78" selection-start-column="3" selection-end-line="78" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/main/webapp/WEB-INF/view/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="52" column="20" lean-forward="true" selection-start-line="52" selection-start-column="20" selection-end-line="52" selection-end-column="20" />
         </state>
       </provider>
     </entry>
@@ -1214,32 +1089,230 @@
     <entry file="file://$PROJECT_DIR$/client/src/main/resources/static/js/dropify.min.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/main/java/com/util/authenticaton/AliYunAuthentication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="37" column="5" lean-forward="true" selection-start-line="37" selection-start-column="5" selection-end-line="37" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/main/resources/static/js/dropify.js" />
-    <entry file="file://$PROJECT_DIR$/client/src/main/resources/static/js/index.js">
+    <entry file="file://$PROJECT_DIR$/Common/src/main/resources/generatorConfig.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="48" column="16" lean-forward="true" selection-start-line="48" selection-start-column="16" selection-end-line="49" selection-end-column="44" />
+        <state relative-caret-position="82">
+          <caret line="104" selection-start-line="104" selection-end-line="104" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/main/java/com/controller/AuthController.java">
+    <entry file="file://$PROJECT_DIR$/Common/src/main/java/com/Exception.java" />
+    <entry file="file://$PROJECT_DIR$/Common/src/main/java/com/Exception/CustomizeExceptionResolver.java" />
+    <entry file="file://$PROJECT_DIR$/Common/src/main/java/com/Exception/CustomizeException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="7" column="57" selection-start-line="7" selection-start-column="57" selection-end-line="7" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-context/4.3.18.RELEASE/spring-context-4.3.18.RELEASE.jar!/org/springframework/context/annotation/ComponentScan.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="220">
-          <caret line="10" selection-start-line="10" selection-end-line="10" />
+          <caret line="20" column="18" selection-start-line="20" selection-start-column="18" selection-end-line="20" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="12" column="30" lean-forward="true" selection-start-line="12" selection-start-column="30" selection-end-line="12" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Common/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="8" column="13" lean-forward="true" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/main/java/com/config/WebClientInitializer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/main/java/com/service/StudentMsgService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="34" column="7" lean-forward="true" selection-start-line="34" selection-start-column="7" selection-end-line="34" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/main/java/com/config/SpringConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="704">
+          <caret line="57" column="83" selection-start-line="57" selection-start-column="83" selection-end-line="57" selection-end-column="83" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/main/java/com/controller/BaseController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/main/java/com/config/WebConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="31" column="63" lean-forward="true" selection-start-line="31" selection-start-column="63" selection-end-line="31" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/main/java/com/model/VO/LoginModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/main/java/com/util/authenticaton/BuildAuthDOUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="518">
+          <caret line="28" column="33" lean-forward="true" selection-start-line="28" selection-start-column="33" selection-end-line="28" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Common/src/main/java/com/model/AuthDO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-340">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/main/java/com/dao/auth/AuthDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="572">
+          <caret line="26" column="19" selection-start-line="26" selection-start-column="19" selection-end-line="26" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/main/java/com/util/authenticaton/HttpUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="51" column="24" lean-forward="true" selection-start-line="51" selection-start-column="24" selection-end-line="51" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Common/src/main/java/com/Exception/CustomizeExceptionAdvice.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="19" column="16" lean-forward="true" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/src/main/java/com/service/AuthService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="8" column="8" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="8" />
+        <state relative-caret-position="628">
+          <caret line="43" column="9" lean-forward="true" selection-start-line="43" selection-start-column="9" selection-end-line="43" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/main/java/com/controller/AuthController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="364">
+          <caret line="32" column="5" lean-forward="true" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/main/java/com/model/VO/AuthModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="14" column="31" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/main/java/com/util/authenticaton/AliYunAuthentication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="100" column="21" selection-start-line="100" selection-start-column="21" selection-end-line="100" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/main/java/com/model/Param/ChangePswParam.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/main/java/com/config/ShiroConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="60" column="25" lean-forward="true" selection-start-line="60" selection-start-column="25" selection-end-line="60" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/main/java/com/realm/UserRealm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="63" column="59" selection-start-line="63" selection-start-column="59" selection-end-line="63" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/main/java/com/mapper/UserMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="26" column="35" lean-forward="true" selection-start-line="26" selection-start-column="35" selection-end-line="26" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/main/java/com/dao/user/UserBus.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="16" column="5" lean-forward="true" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/main/java/com/model/VO/MessageModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="15" column="28" selection-start-line="15" selection-start-column="28" selection-end-line="15" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/main/java/com/service/UserService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="803">
+          <caret line="103" column="9" selection-start-line="103" selection-start-column="9" selection-end-line="103" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/main/java/com/controller/SysController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="28" column="13" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/main/java/com/controller/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="518">
+          <caret line="171" column="43" selection-start-line="171" selection-start-column="30" selection-end-line="171" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/main/webapp/WEB-INF/view/publish.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="416">
+          <caret line="281" lean-forward="true" selection-start-line="281" selection-end-line="281" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/main/webapp/WEB-INF/view/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="307">
+          <caret line="284" column="72" lean-forward="true" selection-start-line="284" selection-start-column="51" selection-end-line="284" selection-end-column="72" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/main/resources/static/js/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="344">
+          <caret line="283" column="20" lean-forward="true" selection-start-line="283" selection-start-column="20" selection-end-line="283" selection-end-column="20" />
         </state>
       </provider>
     </entry>
@@ -1297,7 +1370,7 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>common</last-edited>
+          <last-edited>backend</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

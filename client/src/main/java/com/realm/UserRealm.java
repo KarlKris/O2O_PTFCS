@@ -53,7 +53,7 @@ public class UserRealm extends AuthorizingRealm {
                     //realmName
                     user.getName());
             //加盐
-             simpleAuthenticationInfo.setCredentialsSalt(ByteSource.Util.bytes(user.getName()));
+             simpleAuthenticationInfo.setCredentialsSalt(ByteSource.Util.bytes(user.getPhone()));
              return simpleAuthenticationInfo;
         }
         //方法返回Null代表验证失败
@@ -61,8 +61,8 @@ public class UserRealm extends AuthorizingRealm {
     }
 
     public static void main(String[] args) {
-        Md5Hash hash=new Md5Hash("13420120528","81CfNff9");
-        System.out.println(UUID.randomUUID().toString());
+        Md5Hash hash=new Md5Hash("13420120525","13420120525");
+        System.out.println(hash.toString());
     }
 
 }

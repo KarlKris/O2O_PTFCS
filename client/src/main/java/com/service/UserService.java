@@ -10,6 +10,7 @@ import com.model.AddressDO;
 import com.model.PO.Address;
 import com.model.PO.City;
 import com.model.PO.User;
+import com.model.Param.ChangePswParam;
 import com.model.UserMsgDO;
 import com.model.VO.MessageModel;
 import com.util.RandomUserName.RandomUName;
@@ -70,7 +71,10 @@ public class UserService{
         user.setName(RandomUName.getStringRandom(8));
         user.setPhone(phone);
         user.setId(UUID.randomUUID().toString().replaceAll("-",""));
-        user.setPsw(new Md5Hash(phone,user.getName()).toString());
+        String psw = new Md5Hash(phone,phone).toString();
+        System.out.println("-------------------------------------------------------------密码为 : " +
+                psw+"  -------------------");
+        user.setPsw(psw);
         map.put("user",user);
         map.put("status",String.valueOf(userMapper.addOne(user)));
         return map;
@@ -110,7 +114,33 @@ public class UserService{
                 //2.1--更新失败，抛出异常
             }
         }
-        return 0;
+        user.setName(mm.getUserName());
+        return 1;
+    }
+
+    /**
+     *  修改密码
+     *  返回值：
+     *  -1----修改失败
+     *   0----原密码错误
+     *   1----成功
+     **/
+    public int changePsw(ChangePswParam param){
+        //得到当前用户
+        User currentUser = userBus.getUser();
+        //原密码加密后跟数据库作比较
+        String orgPsw = new Md5Hash(param.getOrgPsw(),currentUser.getPhone()).toString();
+        if (!orgPsw.equals(currentUser.getPsw())){
+            return 0;
+        }
+        //修改密码
+        String newPsw = new Md5Hash(param.getNewPsw(),currentUser.getPhone()).toString();
+        int res = userMapper.changePsw(newPsw,currentUser.getId());
+        if (res>0){
+            currentUser.setPsw(newPsw);
+            return 1;
+        }
+        return -1;
     }
 
 

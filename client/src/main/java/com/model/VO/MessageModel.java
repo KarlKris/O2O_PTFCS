@@ -13,6 +13,7 @@ import java.util.Objects;
 public class MessageModel implements Serializable {
 
     private String payId;
+    private String userName;
     private int role;
     private String cityName;
     private String cityArea;

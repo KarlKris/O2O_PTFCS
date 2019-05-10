@@ -1,5 +1,6 @@
 package com.config;
 
+import com.Exception.CustomizeExceptionAdvice;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -24,6 +25,13 @@ import java.io.IOException;
 @ComponentScan(basePackages = {"com.controller","com.service","com.dao"})
 public class WebConfig extends WebMvcConfigurerAdapter{
 
+    /**
+     *  异常处理类
+     **/
+    @Bean
+    public CustomizeExceptionAdvice customizeExceptionAdvice(){
+        return new CustomizeExceptionAdvice();
+    }
 
     /**
      *  配置静态资源

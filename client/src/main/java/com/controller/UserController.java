@@ -1,6 +1,7 @@
 package com.controller;
 
 import com.model.PO.User;
+import com.model.Param.ChangePswParam;
 import com.model.VO.LoginModel;
 import com.model.VO.MessageModel;
 import com.model.VO.RegisterModel;
@@ -98,7 +99,7 @@ public class UserController extends BaseController {
 
     @ResponseBody
     @RequestMapping(path = "/getPhoneVerificationCode.do")
-    public Map getPhoneVerificationCode(String phone,HttpServletRequest request) throws UnsupportedEncodingException {
+    public Map getPhoneVerificationCode(String phone,HttpServletRequest request){
         System.out.println("发送手机短信验证码。。。。"+"    "+phone);
         if((User)userService.findOne(phone)==null){
             HttpSession session = request.getSession(true);
@@ -175,6 +176,19 @@ public class UserController extends BaseController {
             map.put("status",false);
         }
         return map;
+    }
+
+    @RequestMapping(path = "/changePsw.do",method = RequestMethod.POST)
+    @ResponseBody
+    public Map changePsw(ChangePswParam param){
+        int res = userService.changePsw(param);
+        if (res==1){
+            return ajaxReturn(true,"修改成功");
+        }else if (res ==0){
+            return ajaxReturn(false,"原密码错误");
+        }else {
+            return ajaxReturn(false,"修改失败,请重试");
+        }
     }
 
 }

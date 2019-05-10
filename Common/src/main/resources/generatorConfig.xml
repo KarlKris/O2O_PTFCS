@@ -98,6 +98,7 @@
         <table tableName="time" domainObjectName="TimeDO"></table>
         <table tableName="usermsg" domainObjectName="UserMsgDO"></table>
         <table tableName="studentmsg" domainObjectName="StudentMsgDO"></table>
+        <table tableName="auth" domainObjectName="AuthDO"></table>
 
 <!--
         <table tableName="lession" schema="louis">

@@ -27,6 +27,9 @@ public interface UserMapper {
     @ResultType(MessageModel.class)
     MessageModel getUserMsg(String phone);
 
+    @Update({"update users set psw = #{newPsw}  where id = #{id} "})
+    int changePsw(@Param("newPsw") String newPsw,@Param("id") String id);
+
     class UserDaoProvider{
         public String getUserMsg(){
             String sql = new SQL()

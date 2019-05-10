@@ -19,4 +19,5 @@ public class BaseController {
         map.put("message", msg);
         return map;
     }
+
 }

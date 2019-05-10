@@ -1,9 +1,11 @@
 package com.util.authenticaton;
 
+import com.Exception.CustomizeException;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONException;
 import com.alibaba.fastjson.JSONObject;
+import com.model.AuthDO;
 import org.apache.http.HttpResponse;
 import org.apache.http.util.EntityUtils;
 
@@ -37,14 +39,16 @@ public class AliYunAuthentication {
         return obj;
     }
 
-    public static void auchenticatiion(String imgBase64){
+    public static Map auchenticatiion(String imgBase64, String side, AuthDO authDO) throws CustomizeException{
+        Map map = new HashMap();
         String host = "http://dm-51.data.aliyun.com";
         String path = "/rest/160601/ocr/ocr_idcard.json";
         String appcode = "adf1eb19b9e344b6b0576b4aec21de95";
-        Boolean is_old_format = false;//如果文档的输入中含有inputs字段，设置为True， 否则设置为False
+        //如果文档的输入中含有inputs字段，设置为True， 否则设置为False
+        Boolean is_old_format = false;
         //请根据线上文档修改configure字段
         JSONObject configObj = new JSONObject();
-        configObj.put("side", "face");
+        configObj.put("side", side);
         String config_str = configObj.toString();
         //            configObj.put("min_size", 5);
         //            String config_str = "";
@@ -95,22 +99,30 @@ public class AliYunAuthentication {
                 System.out.println("Http code: " + stat);
                 System.out.println("http header error msg: "+ response.getFirstHeader("X-Ca-Error-Message"));
                 System.out.println("Http body error msg:" + EntityUtils.toString(response.getEntity()));
-                return;
+                String msg = side.equals("face") ? "身份证正面照不合规范！" : "身份证反面照不合规范";
+                map.put("status",false);
+                map.put("msg",msg);
+                return map;
             }
 
             String res = EntityUtils.toString(response.getEntity());
+            //返回结果
             JSONObject res_obj = JSON.parseObject(res);
             if(is_old_format) {
                 JSONArray outputArray = res_obj.getJSONArray("outputs");
                 String output = outputArray.getJSONObject(0).getJSONObject("outputValue").getString("dataValue");
                 JSONObject out = JSON.parseObject(output);
+                System.out.println("============================================================================");
                 System.out.println(out.toJSONString());
             }else{
-                System.out.println(res_obj.toJSONString());
+                //构建AuthDO
+                BuildAuthDOUtil.build(res_obj,authDO,side);
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
+        map.put("status",true);
+        return map;
     }
 
 }

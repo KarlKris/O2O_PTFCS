@@ -21,7 +21,7 @@ $(document).ready(function(){
                  	$.growl.notice({title: "", message: msg.message });
                 }else{
                 	//消息提示框---用jquery的Growl插件
-                	$.growl.notice({title: "", message: msg.message });
+                	$.growl.error({title: "", message: msg.message });
                 }
 			},
 			picUpload(){
@@ -44,10 +44,26 @@ $(document).ready(function(){
                 });
 			},
 			auth(){
-				var frontBase64 = $('#front').find('img').attr('src');
-				var reversetBase64 = $('#reverse').find('img').attr('src');
-				console.log(frontBase64);
-				console.log(reversetBase64);
+				var that = this;
+				var tempFront = new Array();
+				tempFront =  $('#front').find('img').attr('src').split(",");
+				var frontBase64 = tempFront[1];
+				var tempReverse = $('#reverse').find('img').attr('src').split(",");
+				var reverseBase64 = tempReverse[1];
+				$.ajax({
+					url:'auth.do',
+					type:'POST',
+					data:{
+						id:that.id,
+						frontBase64: frontBase64,
+						reverseBase64: reverseBase64
+					},
+					success:function(msg){
+						v.message(msg);
+						$('#auth').modal('hide');
+					}
+				})
+
 			},
 			getCity(){
 				var that =this;
@@ -267,6 +283,35 @@ $(document).ready(function(){
 					});
 					
 				}
+			},
+			changePsw(){
+				var orgPsw = $('#orgPsw').val();
+				var newPsw = $('#newPsw').val();
+				var comPsw = $('#comPsw').val();
+				if (newPsw!=comPsw) {
+					alert("确认密码与新密码不一致");
+					return;
+				}
+				$.ajax({
+					url:'changePsw.do',
+					type:'POST',
+					data:{
+						orgPsw:orgPsw,
+						newPsw:newPsw,
+					},
+					success:function(msg){
+						v.message(msg);
+						if (msg.status) {
+							$('#changePsw').modal('hide')
+							$('#orgPsw').val("");
+							$('#newPsw').val("");
+							$('#comPsw').val("");
+						}
+					}
+				})
+			},
+			change(){
+				location = 'publish.html'
 			}
 		},
 		created:function(){
@@ -277,7 +322,7 @@ $(document).ready(function(){
 		}
 	})
 
-	    function changepic(obj){
+/*	    function changepic(obj){
             //console.log(obj.files[0]);//这里可以获取上传文件的name
             var newsrc=getObjectURL(obj.files[0]);
             $(".show").attr('src', newsrc);
@@ -295,7 +340,7 @@ $(document).ready(function(){
             	url = window.webkitURL.createObjectURL(file) ;
             }
             return url ;
-        }
+        }*/
 
         //$('#student').click(function() {
         //	/* Act on the event */
