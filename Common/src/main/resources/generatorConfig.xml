@@ -86,19 +86,7 @@
         </javaClientGenerator>
 
         <!-- 需要生成的实体类对应的表名，多个实体类复制多份该配置即可 -->
-        <table tableName="userrole" domainObjectName="UserRoleDO"></table>
-        <table tableName="address" domainObjectName="AddressDO"></table>
-        <table tableName="city" domainObjectName="CityDO"></table>
-        <table tableName="course" domainObjectName="CourseDO"></table>
-        <table tableName="coursetime" domainObjectName="CourseTimeDO"></table>
-        <table tableName="permission" domainObjectName="PermissionDO"></table>
-        <table tableName="recruit" domainObjectName="RecruitDO"></table>
-        <table tableName="role" domainObjectName="RoleDO"></table>
-        <table tableName="roleperm" domainObjectName="RolePermDO"></table>
-        <table tableName="time" domainObjectName="TimeDO"></table>
-        <table tableName="usermsg" domainObjectName="UserMsgDO"></table>
-        <table tableName="studentmsg" domainObjectName="StudentMsgDO"></table>
-        <table tableName="auth" domainObjectName="AuthDO"></table>
+        <table tableName="deal" domainObjectName="DealDO"></table>
 
 <!--
         <table tableName="lession" schema="louis">

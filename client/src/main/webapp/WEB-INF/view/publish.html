@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -13,36 +13,34 @@
 	<!-- CSS Files -->
     <link href="static/htmlTemplates/publish/css/bootstrap.min.css" rel="stylesheet" />
 	<link href="static/htmlTemplates/publish/css/paper-bootstrap-wizard.css" rel="stylesheet" />
-
-	<!-- CSS Just for demo purpose, don't include it in your project -->
 	<link href="static/htmlTemplates/publish/css/demo.css" rel="stylesheet" />
+	<link href="static/htmlTemplates/publish/css/vuedatepicker.css" rel="stylesheet" />
+
+
+
 
 	<!-- Fonts and Icons -->
     <link href="http://netdna.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.css" rel="stylesheet">
 	<link href='https://fonts.googleapis.com/css?family=Muli:400,300' rel='stylesheet' type='text/css'>
 	<link href="static/htmlTemplates/publish/css/themify-icons.css" rel="stylesheet">
+
+	<!--vue.js必须在Jquery.js之上 -->
+	<script src="static/js/vue.js"></script>
 </head>
 
 <body>
-	<div class="image-container set-full-height" style="background-image: url('assets/img/paper-2.jpeg')">
+	<div class="image-container set-full-height maxDiv" style="background-image: url('static/htmlTemplates/publish/img/paper-2.jpeg')">
 	    <!--   Creative Tim Branding   -->
 	    <a href="#">
 	         <div class="logo-container">
 	            <div class="logo">
 	                <img src="static/htmlTemplates/publish/img/new_logo.png">
 	            </div>
-	            <div class="brand">
-	                Creative Tim
+	            <div class="brand" style="position: relative;top: 10px;">
+	                {{userName}}
 	            </div>
 	        </div>
 	    </a>
-
-		<!--  Made With Paper Kit  -->
-		<a href="#/paper-kit?ref=paper-bootstrap-wizard" class="made-with-pk">
-			<div class="brand">PK</div>
-			<div class="made-with">Made with <strong>Paper Kit</strong></div>
-		</a>
-		<div class="copyrights">Collect from <a href="http://www.cssmoban.com/"  title="网站模板">网站模板</a></div>
 	    <!--   Big container   -->
 	    <div class="container">
 	        <div class="row">
@@ -55,8 +53,8 @@
 		                <!--        You can switch " data-color="green" "  with one of the next bright colors: "blue", "azure", "orange", "red"       -->
 
 		                    	<div class="wizard-header">
-		                        	<h3 class="wizard-title">List your place</h3>
-		                        	<p class="category">This information will let us know more about your place.</p>
+		                        	<h3 class="wizard-title">发布招聘信息</h3>
+		                        	<p class="category">让他们更加了解你的家教信息吧.</p>
 		                    	</div>
 								<div class="wizard-navigation">
 									<div class="progress-with-circle">
@@ -64,11 +62,11 @@
 									</div>
 									<ul>
 			                            <li>
-											<a href="#location" data-toggle="tab">
+											<a href="#basic" data-toggle="tab">
 												<div class="icon-circle">
 													<i class="ti-map"></i>
 												</div>
-												Location
+												基本信息
 											</a>
 										</li>
 			                            <li>
@@ -76,7 +74,7 @@
 												<div class="icon-circle">
 													<i class="ti-direction-alt"></i>
 												</div>
-												Type
+												付款方式
 											</a>
 										</li>
 			                            <li>
@@ -84,7 +82,7 @@
 												<div class="icon-circle">
 													<i class="ti-panel"></i>
 												</div>
-												Facilities
+												上课时间
 											</a>
 										</li>
 			                            <li>
@@ -92,149 +90,102 @@
 												<div class="icon-circle">
 													<i class="ti-comments"></i>
 												</div>
-												Comments
+												招聘标题
 											</a>
 										</li>
 			                        </ul>
 								</div>
 		                        <div class="tab-content">
-		                            <div class="tab-pane" id="location">
+		                            <div class="tab-pane" id="basic">
 		                            	<div class="row">
 		                                	<div class="col-sm-12">
-		                                    	<h5 class="info-text"> Let's start with the basic details</h5>
+		                                    	<h5 class="info-text"></h5>
 		                            		</div>
+		                                	<div class="col-sm-12 col-sm-offset-1">
+		                                    	<!--家庭住址 -->
+												<div class="form-group">
+													<label >家教地址:</label>
+													<div style="height: 75px;">
+														<select class="form-control" @change='getPersonMsgFromCity($event)' id="Ucity" style="width: 18%;" name="city" required>
+															<option v-for='city in cities' :value="city">{{city}}</option>
+														</select>
+														<select class="form-control" id="Uarea" style="width: 18%;position: absolute;left: 160px;top: 25px;" name="area" required>
+															<option v-for='area in areas' v-if='areas.length!=0' :selected="area==selectArea" :value="area">{{area}}</option>
+														</select>
+														<input type="text" class="form-control" placeholder="详细地址" id="addrDetail" style="position: absolute;top: 25px;width: 37%;left: 325px;"  required/>
+													</div>
+												</div>
+		                                	</div>
 		                                	<div class="col-sm-5 col-sm-offset-1">
 		                                    	<div class="form-group">
-		                                        	<label>City</label>
-		                                        	<input type="text" class="form-control" id="exampleInputEmail1" placeholder="Where is your place located?">
-		                                    	</div>
-		                                	</div>
-		                                	<div class="col-sm-5">
-		                                    	<div class="form-group">
-		                                            <label>Country</label><br>
-		                                            <select name="country" class="form-control">
-		                                                <option disabled="" selected="">- country -</option>
-		                                                <option value="Afghanistan"> Afghanistan </option>
-		                                                <option value="Albania"> Albania </option>
-		                                                <option value="Algeria"> Algeria </option>
-		                                                <option value="American Samoa"> American Samoa </option>
-		                                                <option value="Andorra"> Andorra </option>
-		                                                <option value="Angola"> Angola </option>
-		                                                <option value="Anguilla"> Anguilla </option>
-		                                                <option value="Antarctica"> Antarctica </option>
-		                                                <option value="...">...</option>
-		                                            </select>
+		                                            <label>科目</label><br>
+		                                            <vue-select  :options="courses" multiple placeholder="请选择" label="name" @input="selected_courses"></vue-select>
 		                                        </div>
 		                                	</div>
-		                                	<div class="col-sm-5 col-sm-offset-1">
+		                                	<div class="col-sm-5 ">
 		                                    	<div class="form-group">
-		                                        	<label>Accommodates</label>
-		                                        	<select class="form-control">
-			                                            <option disabled="" selected="">- persons -</option>
-			                                            <option>1 Person</option>
-			                                            <option>2 Persons </option>
-			                                            <option>3 Persons</option>
-			                                            <option>4 Persons</option>
-			                                            <option>5 Persons</option>
-			                                            <option>6+ Persons</option>
+		                                        	<label>招聘人数</label>
+		                                        	<select class="form-control" name="num" required="">
+			                                            <option disabled="" selected="" value="0">- persons -</option>
+			                                            <option value="1">1</option>
+			                                            <option value="2">2</option>
+			                                            <option value="3">3</option>
+			                                            <option value="4">4</option>
+			                                            <option value="5">5</option>
+			                                            <option value="6">6+</option>
 		                                        	</select>
-		                                    	</div>
-		                                	</div>
-		                                	<div class="col-sm-5">
-		                                    	<div class="form-group">
-		                                        	<label>Rent price</label>
-		                                        	<div class="input-group">
-		                                            	<input type="text" class="form-control" placeholder="Rent price per day">
-		                                            	<span class="input-group-addon">$</span>
-		                                        	</div>
 		                                    	</div>
 		                                	</div>
 		                            	</div>
 		                            </div>
-		                            <div class="tab-pane" id="type">
-		                                <h5 class="info-text">What type of location do you have? </h5>
+
+		                            <div class="tab-pane" id="type" style="position: relative;top: 100px;">
+		                                <h5 class="info-text"></h5>
 		                                <div class="row">
-		                                    <div class="col-sm-8 col-sm-offset-2">
-		                                        <div class="col-sm-4 col-sm-offset-2">
-													<div class="choice" data-toggle="wizard-checkbox">
-		                                                <input type="checkbox" name="jobb" value="Design">
-		                                                <div class="card card-checkboxes card-hover-effect">
-		                                                    <i class="ti-home"></i>
-															<p>Home</p>
-		                                                </div>
-		                                            </div>
-		                                        </div>
-		                                        <div class="col-sm-4">
-													<div class="choice" data-toggle="wizard-checkbox">
-		                                                <input type="checkbox" name="jobb" value="Design">
-		                                                <div class="card card-checkboxes card-hover-effect">
-		                                                    <i class="ti-package"></i>
-															<p>Apartment</p>
-		                                                </div>
-		                                            </div>
-		                                        </div>
+		                                    <div class="col-sm-6 col-sm-offset-3">
+		                                    	<div class="form-group">
+		                                        	<label>时薪</label>
+		                                        	<div class="input-group">
+		                                        		<span class="input-group-addon">￥</span>
+		                                            	<input type="text" class="form-control" placeholder="每小时价格" name="money" oninput="value=value.replace(/[^\d]/g,'')" required>
+		                                        	</div>
+		                                    	</div>
 		                                    </div>
 		                                </div>
 		                            </div>
 		                            <div class="tab-pane" id="facilities">
-		                                <h5 class="info-text">Tell us more about facilities. </h5>
+		                                <h5 class="info-text">请填写课时信息. </h5>
 		                                <div class="row">
-		                                    <div class="col-sm-5 col-sm-offset-1">
-		                                    	<div class="form-group">
-		                                        	<label>Your place is good for</label>
-		                                        	<select class="form-control">
-			                                            <option disabled="" selected="">- type -</option>
-			                                            <option>Business</option>
-			                                            <option>Vacation </option>
-			                                            <option>Work</option>
-		                                        	</select>
-		                                    	</div>
+		                                   <!-- <full-calendar :events="dayData" locale="zh-cn" v-on:day-click="addCourseTime"></full-calendar> -->
+											 <div class="col-sm-6 col-sm-offset-3">
+		                                        <div class="form-group ">
+		                                            <label>时间范围</label>
+		                                            <vue-datepicker-local v-model="range" v-on:confirm="getDay()" show-buttons></vue-datepicker-local>
+		                                        </div>
 		                                    </div>
-		                                    <div class="col-sm-5">
-		                                    	<div class="form-group">
-		                                        	<label>Is air conditioning included ?</label>
-		                                        	<select class="form-control">
-			                                            <option disabled="" selected="">- response -</option>
-			                                            <option>Yes</option>
-			                                            <option>No </option>
-		                                        	</select>
-		                                    	</div>
-		                                    </div>
-		                                    <div class="col-sm-5 col-sm-offset-1">
-		                                    	<div class="form-group">
-		                                        	<label>Does your place have wi-fi?</label>
-		                                        	<select class="form-control">
-			                                            <option disabled="" selected="">- response -</option>
-			                                            <option>Yes</option>
-			                                            <option>No </option>
-		                                        	</select>
-		                                    	</div>
-		                                    </div>
-		                                    <div class="col-sm-5">
-		                                    	<div class="form-group">
-		                                        	<label>Is breakfast included?</label>
-		                                        	<select class="form-control">
-			                                            <option disabled="" selected="">- response -</option>
-			                                            <option>Yes</option>
-			                                            <option>No </option>
-		                                        	</select>
-		                                    	</div>
+		                                    <div class="col-sm-6 col-sm-offset-3">
+		                                        <div class="col-sm-6" style="position: relative;left: -15px;">
+		                                        	<div class="form-group ">
+		                                            	<label>天数</label>
+		                                           		<input type="text" class="form-control" :value="days" disabled>
+		                                        	</div>
+		                                        </div>
+		                                        <div class="col-sm-6">
+		                                        	<div class="form-group ">
+		                                            	<label>预计课时</label>
+		                                           		<input type="text" class="form-control" id="hours" placeholder="一节课2个小时!!!!!!" oninput="value=value.replace(/[^\d]/g,'')" required>
+		                                        	</div>
+		                                        </div>
 		                                    </div>
 		                                </div>
 		                            </div>
 		                            <div class="tab-pane" id="description">
 		                                <div class="row">
-		                                    <h5 class="info-text"> Drop us a small description. </h5>
-		                                    <div class="col-sm-6 col-sm-offset-1">
+		                                    <h5 class="info-text"> 起一个醒目的招聘标题吧. </h5>
+		                                    <div class="col-sm-6 col-sm-offset-3">
 		                                        <div class="form-group">
-		                                            <label>Place description</label>
-		                                            <textarea class="form-control" placeholder="" rows="9"></textarea>
-		                                        </div>
-		                                    </div>
-		                                    <div class="col-sm-4">
-		                                        <div class="form-group">
-		                                            <label>Example</label>
-		                                            <p class="description">"The place is really nice. We use it every sunday when we go fishing. It is so awesome."</p>
+		                                            <label>招聘标题</label>
+		                                            <input type="text" class="form-control"  id="title" required>
 		                                        </div>
 		                                    </div>
 		                                </div>
@@ -243,11 +194,11 @@
 		                        <div class="wizard-footer">
 	                            	<div class="pull-right">
 	                                    <input type='button' class='btn btn-next btn-fill btn-success btn-wd' name='next' value='Next' />
-	                                    <input type='button' class='btn btn-finish btn-fill btn-success btn-wd' name='finish' value='Finish' />
+	                                    <input type='button' class='btn btn-finish btn-fill btn-success btn-wd' @click="publish()" name='finish' value='Finish' />
 									</div>
 
 	                                <div class="pull-left">
-	                                    <input type='button' class='btn btn-previous btn-default btn-wd' name='previous' value='Previous' />
+	                                    <input type='button' class='btn btn-previous btn-default btn-wd'  name='previous' value='Previous' />
 	                                </div>
 	                                <div class="clearfix"></div>
 		                        </div>
@@ -271,11 +222,14 @@
 	<script src="static/htmlTemplates/publish/js/jquery-2.2.4.min.js" type="text/javascript"></script>
 	<script src="static/htmlTemplates/publish/js/bootstrap.min.js" type="text/javascript"></script>
 	<script src="static/htmlTemplates/publish/js/jquery.bootstrap.wizard.js" type="text/javascript"></script>
-
-	<!--  Plugin for the Wizard -->
-	<script src="static/htmlTemplates/publish/js/paper-bootstrap-wizard.js" type="text/javascript"></script>
-
+	<script src="static/js/vue-select.js" type="text/javascript"></script>
+	<!-- <script src="https://unpkg.com/vue-select@2.0.0/dist/vue-select.js"></script> -->
+	<script src="static/js/vue-datepicker-local.js" type="text/javascript"></script>
 	<!--  More information about jquery.validate here: http://jqueryvalidation.org/	 -->
 	<script src="static/htmlTemplates/publish/js/jquery.validate.min.js" type="text/javascript"></script>
+
+	<!-- Custom scripts for this template -->
+	<script src="static/js/publish.js"></script>
+
 
 </html>

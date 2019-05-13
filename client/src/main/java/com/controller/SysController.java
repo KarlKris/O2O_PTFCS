@@ -1,5 +1,6 @@
 package com.controller;
 
+import com.model.CourseDO;
 import com.model.PO.*;
 import com.service.SysService;
 import com.util.redis.CacheUtil;
@@ -46,6 +47,9 @@ public class SysController extends BaseController {
     public String login() {
         return "login";
     }
+
+    @RequestMapping(path = "/publish")
+    public String publish(){return "publish";}
 
 
 
@@ -103,6 +107,7 @@ public class SysController extends BaseController {
             list=(List) sysService.findSome();
             CacheUtil.getCache().setList("市级",list);
         }
+        //得到用户信息中的居住信息
         return list;
     }
 
@@ -141,6 +146,17 @@ public class SysController extends BaseController {
         }
         return list;
     }
+
+    @RequestMapping(path = "/getCourses.do")
+    @ResponseBody
+    public Map getCourses(){
+        Map map = new HashMap();
+        List<CourseDO> list = sysService.getAllCources();
+        map.put("status",true);
+        map.put("data",list);
+        return map;
+    }
+
 
 
 

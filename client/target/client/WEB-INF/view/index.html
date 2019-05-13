@@ -102,9 +102,9 @@
 							<a class="dropdown-item" data-toggle="modal" data-target="#changePsw" >修改密码</a>
 							<a class="dropdown-item" data-toggle="modal" data-target="#studentMsg" v-on:click="getStudentMsg()" v-if=" role == 1 ">学生信息</a>
 							<a class="dropdown-item" data-toggle="modal" data-target="#auth" v-on:click="picUpload()">身份认证</a>
-							<a class="dropdown-item" data-toggle="modal" data-target="#auth" v-on:click="picUpload()">我的发布</a>
-							<a class="dropdown-item" data-toggle="modal" data-target="#auth" >招聘发布</a>
-							<a class="dropdown-item" data-toggle="modal" data-target="#auth" v-if=" role == 1 ">求职发布</a>
+							<a class="dropdown-item" data-toggle="modal" data-target="#myPublish" v-on:click="picUpload()">我的发布</a>
+							<a class="dropdown-item" href="publish.html" v-if=" role == 1 ">求职发布</a>
+							<a class="dropdown-item" href="publish.html"  v-else>招聘发布</a>
 						</div>
 					</div>
 					<div class="logout"><a href="javascript:void(0);" v-on:click="logout()" color="#000">退出</a></div>
@@ -455,11 +455,11 @@
 						<label >角 色:</label>
 						<div>
 							<div class="custom-control custom-radio" style="left: 150px;top: -27px;">
-								<input type="radio" class="custom-control-input" id="student" name="role" value="大学生">
+								<input type="radio" class="custom-control-input" id="student" name="role" value="1">
 								<label class="custom-control-label" for="student">大学生</label>
 							</div>
 							<div class="custom-control custom-radio" style="left: 300px;top: -49px;">
-								<input type="radio" class="custom-control-input" id="person" name="role" value="家长">
+								<input type="radio" class="custom-control-input" id="person" name="role" value="2">
 								<label class="custom-control-label" for="person">家长</label>
 							</div>
 						</div>

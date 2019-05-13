@@ -30,6 +30,9 @@ public interface UserMapper {
     @Update({"update users set psw = #{newPsw}  where id = #{id} "})
     int changePsw(@Param("newPsw") String newPsw,@Param("id") String id);
 
+    @Update({"update users set name = #{name}  where id = #{id} "})
+    int modifyUserName(@Param("id") String id,@Param("name") String name);
+
     class UserDaoProvider{
         public String getUserMsg(){
             String sql = new SQL()

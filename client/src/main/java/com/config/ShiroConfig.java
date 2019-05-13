@@ -28,7 +28,7 @@ public class ShiroConfig {
         filterChainDefinitionMap.put("/images/**", "anon");
         filterChainDefinitionMap.put("/login.do", "anon");
         filterChainDefinitionMap.put("/getGIFCode.do", "anon");
-        filterChainDefinitionMap.put("/authc/**", "authc");
+        filterChainDefinitionMap.put("/publish.html", "authc");
 
         return filterChainDefinitionMap;
     }

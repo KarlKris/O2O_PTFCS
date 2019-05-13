@@ -1,5 +1,6 @@
 package com.controller;
 
+import com.Exception.CustomizeException;
 import com.model.PO.User;
 import com.model.Param.ChangePswParam;
 import com.model.VO.LoginModel;
@@ -144,36 +145,20 @@ public class UserController extends BaseController {
 
     @ResponseBody
     @RequestMapping(path = "/updateUserMsg.do",method = RequestMethod.POST)
-    @Transactional
-    public Map updateUserMsg(MessageModel mm){
+    public Map updateUserMsg(MessageModel mm) throws CustomizeException {
         Map<String,Object> map=new HashMap();
         User user = (User) SecurityUtils.getSubject().getPrincipal();
         if(user == null){
             return ajaxReturn(false,"用户未登录");
         }
-        /**
-         * 先从redis获取到数据，查看是否有变化
-         **/
-        MessageModel msg = (MessageModel) CacheUtil.getCache().get("UserMsg:"+user.getPhone());
-        if(msg == null){
-            msg=(MessageModel) userService.selectOne(user.getPhone());
-        }
-        //检查数据库是否有该用户信息，如果没有则插入，有则更新
-        if (msg == null){
-            //插入信息
-            //userService.addOneToMsg(mm);
-        }
-        if (mm.equals(msg)){
-            //用户未修改任何信息
-            map.put("status",false);
-            return map;
-        }
         //更新数据库保存的信息
         int res = userService.updateUserMsg(mm);
         if (res > 0){
             map.put("status",true);
+            map.put("message","保存成功");
         }else {
             map.put("status",false);
+            map.put("message","保存失败");
         }
         return map;
     }

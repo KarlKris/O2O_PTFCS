@@ -1,8 +1,10 @@
 package com.dao.address;
 
+import com.dao.user.UserBus;
 import com.mapper.AddressDOMapper;
 import com.model.AddressDO;
 import com.model.AddressDOExample;
+import com.util.redis.CacheUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -15,6 +17,8 @@ public class AddressDao {
 
     @Autowired
     AddressDOMapper addressDOMapper;
+    @Autowired
+    UserBus userBus;
 
     /**
      * 根据用户id和城市id
@@ -31,9 +35,18 @@ public class AddressDao {
      *  更新用户地址信息
      **/
     public int updateAddressByAddressDO(AddressDO addressDO){
+        String phone = userBus.getUser().getPhone();
         AddressDOExample example = new AddressDOExample();
         example.createCriteria().andIdEqualTo(addressDO.getId());
-        return addressDOMapper.updateByExample(addressDO,example);
+        //双删redis缓存
+        CacheUtil.getCache().del("UserMsg:"+phone);
+        int res = addressDOMapper.updateByExample(addressDO,example);
+        if (res>0){
+            //删除redis缓存
+            CacheUtil.getCache().del("UserMsg:"+phone);
+            return res;
+        }
+        return 0;
     }
 
 

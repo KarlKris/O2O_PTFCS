@@ -1,7 +1,9 @@
 package com.service;
 
+import com.Exception.CustomizeException;
 import com.dao.address.AddressDao;
 import com.dao.user.UserBus;
+import com.dao.user.UserDao;
 import com.dao.user.UserMsgDao;
 import com.mapper.AddressMapper;
 import com.mapper.CityMapper;
@@ -39,6 +41,8 @@ public class UserService{
     CityMapper cityMapper;
     @Autowired
     AddressDao addressDao;
+    @Autowired
+    UserDao userDao;
     @Autowired
     UserMsgDao userMsgDao;
     @Autowired
@@ -98,8 +102,9 @@ public class UserService{
             addressDO.setCid(city.getId());
             //3.1--更新数据库
             int i = addressDao.updateAddressByAddressDO(addressDO);
-            if (i<0){
+            if (i<=0){
                 //3.2--更新失败，抛出异常
+                throw new CustomizeException("更新失败，请稍后重试");
             }
         }
         //更新支付宝账号
@@ -114,8 +119,9 @@ public class UserService{
                 //2.1--更新失败，抛出异常
             }
         }
+        //修改用户名
         user.setName(mm.getUserName());
-        return 1;
+        return userDao.modifyUserName(user.getId(),mm.getUserName());
     }
 
     /**

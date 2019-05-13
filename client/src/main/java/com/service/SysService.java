@@ -1,9 +1,13 @@
 package com.service;
 
+import com.dao.Pay.PayDao;
+import com.dao.course.CourseDao;
 import com.mapper.CityMapper;
-import com.mapper.UserMapper;
+import com.model.CourseDO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 /**
  * @author:liyuanwen
@@ -14,16 +18,10 @@ public class SysService {
 
     @Autowired
     CityMapper cityMapper;
-
-
-    public Object selectOne(String id) {
-        return null;
-    }
-
-    public Object findOne(String phone) {
-
-        return null;
-    }
+    @Autowired
+    CourseDao courseDao;
+    @Autowired
+    PayDao payDao;
 
     public Object findSome() {
         return cityMapper.findSome();
@@ -33,11 +31,7 @@ public class SysService {
         return cityMapper.findAny(object);
     }
 
-    public Boolean addOne(Object object) {
-        return null;
-    }
-
-    public Object addOneToMsg(Object object) {
-        return null;
+    public List<CourseDO> getAllCources(){
+        return courseDao.getAll();
     }
 }

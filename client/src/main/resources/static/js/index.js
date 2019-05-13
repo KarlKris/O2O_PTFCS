@@ -86,7 +86,6 @@ $(document).ready(function(){
 					url:"getMsgFromCity.do",
 					data:{cityName:cityName},
 					success:function(msg){
-						console.log(msg);
 						that.data=msg;
 					}});
 			},
@@ -97,7 +96,6 @@ $(document).ready(function(){
 					url:"getPersonMsgFromCity.do",
 					data:{cityName:cityName},
 					success:function(msg){
-						console.log(msg);
 						that.areas=msg;
 					}
 				});
@@ -192,10 +190,10 @@ $(document).ready(function(){
 					var data={
 						userName:$('#userName').val(),
 						role:$('input:radio[name="role"]:checked').val(),
-						city:$('#Ucity option:selected').val(),
-						area:$('#Uarea option:selected').val(),
-						addrDetail:$('#addrDetail').val(),
-						payId:$('#pay').val(),
+						cityName:$('#Ucity option:selected').val(),
+						cityArea:$('#Uarea option:selected').val(),
+						addressDetail:$('#addrDetail').val(),
+						payId:$('#pay').val()
 					}
 					console.log(data);
 					$.ajax({
@@ -309,9 +307,6 @@ $(document).ready(function(){
 						}
 					}
 				})
-			},
-			change(){
-				location = 'publish.html'
 			}
 		},
 		created:function(){
